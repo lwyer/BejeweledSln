@@ -1,0 +1,4 @@
+#ifndef CBEJEWELEDAPP_H
+#define CBEJEWELEDAPP_H
+
+#endif // CBEJEWELEDAPP_H

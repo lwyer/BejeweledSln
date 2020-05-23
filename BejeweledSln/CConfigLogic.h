@@ -1,0 +1,4 @@
+#ifndef CCONFIGLOGIC_H
+#define CCONFIGLOGIC_H
+
+#endif // CCONFIGLOGIC_H

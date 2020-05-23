@@ -1,0 +1,4 @@
+#ifndef CBEJEWELEDDLG_H
+#define CBEJEWELEDDLG_H
+
+#endif // CBEJEWELEDDLG_H
