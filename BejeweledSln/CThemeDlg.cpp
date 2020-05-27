@@ -1,4 +1,14 @@
-#ifndef CTHEMEDLG_H
-#define CTHEMEDLG_H
+#include "CThemeDlg.h"
+#include "ui_CThemeDlg.h"
 
-#endif // CTHEMEDLG_H
+CThemeDlg::CThemeDlg(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::CThemeDlg)
+{
+    ui->setupUi(this);
+}
+
+CThemeDlg::~CThemeDlg()
+{
+    delete ui;
+}
