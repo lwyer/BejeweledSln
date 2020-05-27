@@ -1,4 +1,14 @@
-#ifndef CMUSICDLG_H
-#define CMUSICDLG_H
+#include "CMusicDlg.h"
+#include "ui_CMusicDlg.h"
 
-#endif // CMUSICDLG_H
+CMusicDlg::CMusicDlg(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::CMusicDlg)
+{
+    ui->setupUi(this);
+}
+
+CMusicDlg::~CMusicDlg()
+{
+    delete ui;
+}

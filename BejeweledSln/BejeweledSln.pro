@@ -18,52 +18,57 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     CAboutDlg.cpp \
     CBejeweledApp.cpp \
-    CBejeweledDlg.cpp \
     CConfig.cpp \
     CConfigDao.cpp \
     CConfigLogic.cpp \
     CGameDlg.cpp \
     CGameLogic.cpp \
-    CHelpDlg.cpp \
     CMenuDlg.cpp \
-    CMusicDlg.cpp \
     CMusicPlayer.cpp \
-    CNameDlg.cpp \
     CPathTool.cpp \
     CRankDao.cpp \
     CRankDlg.cpp \
     CRankLogic.cpp \
     CSetDlg.cpp \
-    CThemeDlg.cpp \
     main.cpp \
-    mainwindow.cpp
+    CBejeweledDlg.cpp \
+    CNameDlg.cpp \
+    CThemeDlg.cpp \
+    CMusicDlg.cpp \
+    CHelpDlg.cpp
 
 HEADERS += \
     CAboutDlg.h \
     CBejeweledApp.h \
-    CBejeweledDlg.h \
     CConfig.h \
     CConfigDao.h \
     CConfigLogic.h \
     CGameDlg.h \
     CGameLogic.h \
-    CHelpDlg.h \
     CMenuDlg.h \
-    CMusicDlg.h \
     CMusicPlayer.h \
-    CNameDlg.h \
     CPathTool.h \
     CRankDao.h \
     CRankDlg.h \
     CRankLogic.h \
     CSetDlg.h \
+    CBejeweledDlg.h \
+    CNameDlg.h \
     CThemeDlg.h \
-    mainwindow.h
+    CMusicDlg.h \
+    CHelpDlg.h
 
 FORMS += \
-    mainwindow.ui
+    CNameDlg.ui \
+    CThemeDlg.ui \
+    CMusicDlg.ui \
+    CBejeweledDlg.ui \
+    CHelpDlg.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    image.qrc
