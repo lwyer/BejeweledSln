@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Bejeweed3</string>
+   <string>Dialog</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -84,7 +84,7 @@
    <property name="geometry">
     <rect>
      <x>660</x>
-     <y>300</y>
+     <y>310</y>
      <width>201</width>
      <height>191</height>
     </rect>
@@ -100,9 +100,9 @@
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>340</y>
+     <y>350</y>
      <width>121</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="font">
@@ -119,9 +119,9 @@
    <property name="geometry">
     <rect>
      <x>400</x>
-     <y>340</y>
+     <y>350</y>
      <width>121</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="font">
@@ -137,10 +137,10 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>340</y>
+     <x>710</x>
+     <y>350</y>
      <width>121</width>
-     <height>91</height>
+     <height>71</height>
     </rect>
    </property>
    <property name="font">
@@ -171,34 +171,17 @@
    <slot>config()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>196</x>
-     <y>369</y>
+     <x>203</x>
+     <y>402</y>
     </hint>
     <hint type="destinationlabel">
-     <x>175</x>
-     <y>224</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_2</sender>
-   <signal>clicked()</signal>
-   <receiver>CBejeweledDlg</receiver>
-   <slot>start()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>461</x>
-     <y>411</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>441</x>
-     <y>276</y>
+     <x>275</x>
+     <y>663</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
   <slot>config()</slot>
-  <slot>start()</slot>
  </slots>
 </ui>

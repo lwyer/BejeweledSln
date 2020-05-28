@@ -32,13 +32,13 @@ struct qt_meta_stringdata_CBejeweledDlg_t {
 static const qt_meta_stringdata_CBejeweledDlg_t qt_meta_stringdata_CBejeweledDlg = {
     {
 QT_MOC_LITERAL(0, 0, 13), // "CBejeweledDlg"
-QT_MOC_LITERAL(1, 14, 6), // "config"
-QT_MOC_LITERAL(2, 21, 0), // ""
-QT_MOC_LITERAL(3, 22, 5), // "start"
+QT_MOC_LITERAL(1, 14, 5), // "start"
+QT_MOC_LITERAL(2, 20, 0), // ""
+QT_MOC_LITERAL(3, 21, 6), // "config"
 QT_MOC_LITERAL(4, 28, 5) // "score"
 
     },
-    "CBejeweledDlg\0config\0\0start\0score"
+    "CBejeweledDlg\0start\0\0config\0score"
 };
 #undef QT_MOC_LITERAL
 
@@ -74,8 +74,8 @@ void CBejeweledDlg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         CBejeweledDlg *_t = static_cast<CBejeweledDlg *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->config(); break;
-        case 1: _t->start(); break;
+        case 0: _t->start(); break;
+        case 1: _t->config(); break;
         case 2: _t->score(); break;
         default: ;
         }
