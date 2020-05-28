@@ -21,6 +21,7 @@ SOURCES += \
     CConfig.cpp \
     CConfigDao.cpp \
     CConfigLogic.cpp \
+    CGameDlg.cpp \
     CGameLogic.cpp \
     CMenuDlg.cpp \
     CMusicPlayer.cpp \
@@ -43,6 +44,7 @@ HEADERS += \
     CConfig.h \
     CConfigDao.h \
     CConfigLogic.h \
+    CGameDlg.h \
     CGameLogic.h \
     CMenuDlg.h \
     CMusicPlayer.h \
@@ -59,6 +61,7 @@ HEADERS += \
     MyPushButton.h
 
 FORMS += \
+    CGameDlg.ui \
     CNameDlg.ui \
     CThemeDlg.ui \
     CMusicDlg.ui \
