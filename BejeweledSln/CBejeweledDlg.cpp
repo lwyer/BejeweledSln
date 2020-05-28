@@ -1,4 +1,14 @@
-#ifndef CBEJEWELEDDLG_H
-#define CBEJEWELEDDLG_H
+#include "CBejeweledDlg.h"
+#include "ui_cbejeweleddlg.h"
 
-#endif // CBEJEWELEDDLG_H
+CBejeweledDlg::CBejeweledDlg(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::CBejeweledDlg)
+{
+    ui->setupUi(this);
+}
+
+CBejeweledDlg::~CBejeweledDlg()
+{
+    delete ui;
+}

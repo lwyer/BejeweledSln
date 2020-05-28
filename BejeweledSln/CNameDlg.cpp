@@ -1,4 +1,14 @@
-#ifndef CNAMEDLG_H
-#define CNAMEDLG_H
+#include "CNameDlg.h"
+#include "ui_CNameDlg.h"
 
-#endif // CNAMEDLG_H
+CNameDlg::CNameDlg(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::CNameDlg)
+{
+    ui->setupUi(this);
+}
+
+CNameDlg::~CNameDlg()
+{
+    delete ui;
+}
