@@ -30,6 +30,7 @@ SOURCES += \
     CRankDlg.cpp \
     CRankLogic.cpp \
     CSetDlg.cpp \
+    MyPushButton.cpp \
     main.cpp \
     CBejeweledDlg.cpp \
     CNameDlg.cpp \
@@ -56,9 +57,11 @@ HEADERS += \
     CNameDlg.h \
     CThemeDlg.h \
     CMusicDlg.h \
-    CHelpDlg.h
+    CHelpDlg.h \
+    MyPushButton.h
 
 FORMS += \
+    CGameDlg.ui \
     CNameDlg.ui \
     CThemeDlg.ui \
     CMusicDlg.ui \
@@ -71,4 +74,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    image.qrc
+    image.qrc \
+    res.qrc \
+    res.qrc \
+    res.qrc \
+    res.qrc
