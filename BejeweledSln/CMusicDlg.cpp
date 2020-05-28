@@ -12,3 +12,19 @@ CMusicDlg::~CMusicDlg()
 {
     delete ui;
 }
+
+void CMusicDlg::theme()
+{
+    CThemeDlg w;
+    w.show();
+    w.exec();
+    this->close();
+}
+
+void CMusicDlg::name()
+{
+    CNameDlg w;
+    w.show();
+    w.exec();
+    this->close();
+}

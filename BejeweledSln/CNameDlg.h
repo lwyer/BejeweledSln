@@ -2,6 +2,8 @@
 #define CNAMEDLG_H
 
 #include <QDialog>
+#include "CThemeDlg.h"
+#include "CMusicDlg.h"
 
 namespace Ui {
 class CNameDlg;
@@ -17,6 +19,9 @@ public:
 
 private:
     Ui::CNameDlg *ui;
+private slots:
+    void music();
+    void theme();
 };
 
 #endif // CNAMEDLG_H
