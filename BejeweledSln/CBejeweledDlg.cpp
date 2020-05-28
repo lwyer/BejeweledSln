@@ -13,3 +13,19 @@ CBejeweledDlg::~CBejeweledDlg()
 {
     delete ui;
 }
+
+void CBejeweledDlg::config()
+{
+    CMusicDlg w;
+    w.show();
+    w.exec();
+}
+
+void CBejeweledDlg::start()
+{
+}
+
+void CBejeweledDlg::score()
+{
+
+}
