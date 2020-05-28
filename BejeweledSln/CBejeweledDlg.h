@@ -2,6 +2,7 @@
 #define CBEJEWELEDDLG_H
 
 #include <QDialog>
+#include "CMusicDlg.h"
 
 namespace Ui {
 class CBejeweledDlg;
@@ -17,6 +18,10 @@ public:
 
 private:
     Ui::CBejeweledDlg *ui;
+private slots:
+    void start();
+    void config();
+    void score();
 };
 
 #endif // CBEJEWELEDDLG_H

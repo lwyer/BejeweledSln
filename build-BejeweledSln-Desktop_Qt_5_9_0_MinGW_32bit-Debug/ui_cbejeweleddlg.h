@@ -16,6 +16,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,6 +28,9 @@ public:
     QLabel *start;
     QLabel *config;
     QLabel *score;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
 
     void setupUi(QDialog *CBejeweledDlg)
     {
@@ -54,13 +58,32 @@ public:
         score->setObjectName(QStringLiteral("score"));
         score->setGeometry(QRect(660, 310, 201, 191));
         score->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/score.png);"));
+        pushButton = new QPushButton(CBejeweledDlg);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(140, 350, 121, 71));
+        QFont font;
+        font.setFamily(QStringLiteral("Adobe Devanagari"));
+        font.setPointSize(18);
+        pushButton->setFont(font);
+        pushButton_2 = new QPushButton(CBejeweledDlg);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(400, 350, 121, 71));
+        pushButton_2->setFont(font);
+        pushButton_3 = new QPushButton(CBejeweledDlg);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(710, 350, 121, 71));
+        pushButton_3->setFont(font);
         label_2->raise();
         label->raise();
         start->raise();
         config->raise();
         score->raise();
+        pushButton->raise();
+        pushButton_2->raise();
+        pushButton_3->raise();
 
         retranslateUi(CBejeweledDlg);
+        QObject::connect(pushButton, SIGNAL(clicked()), CBejeweledDlg, SLOT(config()));
 
         QMetaObject::connectSlotsByName(CBejeweledDlg);
     } // setupUi
@@ -73,6 +96,9 @@ public:
         start->setText(QString());
         config->setText(QString());
         score->setText(QString());
+        pushButton->setText(QApplication::translate("CBejeweledDlg", "\350\256\276\347\275\256", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("CBejeweledDlg", "\345\274\200\345\247\213", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("CBejeweledDlg", "\350\256\260\345\275\225", Q_NULLPTR));
     } // retranslateUi
 
 };

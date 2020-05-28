@@ -13,6 +13,7 @@ INPUT(
 ./debug\CRankDlg.o
 ./debug\CRankLogic.o
 ./debug\CSetDlg.o
+./debug\MyPushButton.o
 ./debug\main.o
 ./debug\CBejeweledDlg.o
 ./debug\CNameDlg.o
@@ -20,9 +21,12 @@ INPUT(
 ./debug\CMusicDlg.o
 ./debug\CHelpDlg.o
 ./debug\qrc_image.o
+./debug\qrc_res.o
+./debug\moc_CGameDlg.o
 ./debug\moc_CBejeweledDlg.o
 ./debug\moc_CNameDlg.o
 ./debug\moc_CThemeDlg.o
 ./debug\moc_CMusicDlg.o
 ./debug\moc_CHelpDlg.o
+./debug\moc_MyPushButton.o
 );
