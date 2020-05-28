@@ -187,5 +187,42 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CMusicDlg</receiver>
+   <slot>theme()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>157</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>170</x>
+     <y>84</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>CMusicDlg</receiver>
+   <slot>name()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>38</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>283</x>
+     <y>13</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>theme()</slot>
+  <slot>name()</slot>
+ </slots>
 </ui>

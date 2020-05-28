@@ -12,3 +12,12 @@ CThemeDlg::~CThemeDlg()
 {
     delete ui;
 }
+
+void CThemeDlg::name()
+{
+
+}
+void CThemeDlg::music()
+{
+
+}

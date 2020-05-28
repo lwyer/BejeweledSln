@@ -37,7 +37,7 @@ CGameDlg::CGameDlg(QWidget *parent) :
             label->setGeometry(0,0,50,50);
             label->setPixmap(pixmap);
             label->setParent(this);
-            label->move(60+i*50,80+j*50);
+            label->move(60+i*50,100+j*50);
         }
 
     }
