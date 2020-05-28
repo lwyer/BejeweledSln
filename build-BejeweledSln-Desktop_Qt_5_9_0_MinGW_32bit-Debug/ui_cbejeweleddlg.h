@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'cbejeweleddlg.ui'
+** Form generated from reading UI file 'CBejeweledDlg.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.9.0
 **
@@ -45,15 +45,15 @@ public:
         start = new QLabel(CBejeweledDlg);
         start->setObjectName(QStringLiteral("start"));
         start->setGeometry(QRect(360, 300, 201, 201));
-        start->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/image/\345\274\200\345\247\213.png);"));
+        start->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/start.png);"));
         config = new QLabel(CBejeweledDlg);
         config->setObjectName(QStringLiteral("config"));
         config->setGeometry(QRect(100, 300, 201, 191));
-        config->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/image/\350\256\276\347\275\256.png);"));
+        config->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/config.png);"));
         score = new QLabel(CBejeweledDlg);
         score->setObjectName(QStringLiteral("score"));
         score->setGeometry(QRect(660, 310, 201, 191));
-        score->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/image/\350\256\260\345\275\225.png);"));
+        score->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/score.png);"));
         label_2->raise();
         label->raise();
         start->raise();

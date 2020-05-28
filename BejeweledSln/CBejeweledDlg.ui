@@ -58,7 +58,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/prefix1/image/开始.png);</string>
+    <string notr="true">image: url(:/new/prefix1/image/start.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -74,7 +74,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/prefix1/image/设置.png);</string>
+    <string notr="true">image: url(:/new/prefix1/image/config.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -90,7 +90,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/prefix1/image/记录.png);</string>
+    <string notr="true">image: url(:/new/prefix1/image/score.png);</string>
    </property>
    <property name="text">
     <string/>
