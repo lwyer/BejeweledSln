@@ -2,8 +2,16 @@
 <ui version="4.0">
  <class>CBejeweledDlg</class>
  <widget class="QDialog" name="CBejeweledDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>929</width>
+    <height>649</height>
+   </rect>
+  </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Bejeweed3</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -25,6 +33,14 @@
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>929</width>
+     <height>649</height>
+    </rect>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-image: url(:/new/prefix1/image/timg.jpg);</string>
    </property>
@@ -68,7 +84,7 @@
    <property name="geometry">
     <rect>
      <x>660</x>
-     <y>310</y>
+     <y>300</y>
      <width>201</width>
      <height>191</height>
     </rect>
@@ -80,12 +96,109 @@
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>340</y>
+     <width>121</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>设置</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>340</y>
+     <width>121</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>开始</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>340</y>
+     <width>121</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>记录</string>
+   </property>
+  </widget>
   <zorder>label_2</zorder>
   <zorder>label</zorder>
   <zorder>start</zorder>
   <zorder>config</zorder>
   <zorder>score</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>pushButton_3</zorder>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>CBejeweledDlg</receiver>
+   <slot>config()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>196</x>
+     <y>369</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>175</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CBejeweledDlg</receiver>
+   <slot>start()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>461</x>
+     <y>411</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>441</x>
+     <y>276</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>config()</slot>
+  <slot>start()</slot>
+ </slots>
 </ui>

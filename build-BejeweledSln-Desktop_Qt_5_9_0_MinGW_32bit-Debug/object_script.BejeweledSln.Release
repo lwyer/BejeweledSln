@@ -4,7 +4,6 @@ INPUT(
 ./release\CConfig.o
 ./release\CConfigDao.o
 ./release\CConfigLogic.o
-./release\CGameDlg.o
 ./release\CGameLogic.o
 ./release\CMenuDlg.o
 ./release\CMusicPlayer.o
@@ -13,6 +12,7 @@ INPUT(
 ./release\CRankDlg.o
 ./release\CRankLogic.o
 ./release\CSetDlg.o
+./release\MyPushButton.o
 ./release\main.o
 ./release\CBejeweledDlg.o
 ./release\CNameDlg.o
@@ -20,9 +20,11 @@ INPUT(
 ./release\CMusicDlg.o
 ./release\CHelpDlg.o
 ./release\qrc_image.o
+./release\qrc_res.o
 ./release\moc_CBejeweledDlg.o
 ./release\moc_CNameDlg.o
 ./release\moc_CThemeDlg.o
 ./release\moc_CMusicDlg.o
 ./release\moc_CHelpDlg.o
+./release\moc_MyPushButton.o
 );
