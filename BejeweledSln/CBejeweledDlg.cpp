@@ -30,3 +30,10 @@ void CBejeweledDlg::score()
 {
 
 }
+
+void CBejeweledDlg::help()
+{
+    CHelpDlg w;
+    w.show();
+    w.exec();
+}

@@ -85,7 +85,7 @@ public:
         save->setGeometry(QRect(80, 270, 93, 28));
         cancel = new QPushButton(CMusicDlg);
         cancel->setObjectName(QStringLiteral("cancel"));
-        cancel->setGeometry(QRect(230, 260, 93, 28));
+        cancel->setGeometry(QRect(230, 270, 93, 28));
 
         retranslateUi(CMusicDlg);
 
