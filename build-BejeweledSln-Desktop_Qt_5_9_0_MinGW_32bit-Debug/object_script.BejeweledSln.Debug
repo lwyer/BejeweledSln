@@ -4,7 +4,6 @@ INPUT(
 ./debug\CConfig.o
 ./debug\CConfigDao.o
 ./debug\CConfigLogic.o
-./debug\CGameDlg.o
 ./debug\CGameLogic.o
 ./debug\CMenuDlg.o
 ./debug\CMusicPlayer.o
@@ -22,7 +21,6 @@ INPUT(
 ./debug\CHelpDlg.o
 ./debug\qrc_image.o
 ./debug\qrc_res.o
-./debug\moc_CGameDlg.o
 ./debug\moc_CBejeweledDlg.o
 ./debug\moc_CNameDlg.o
 ./debug\moc_CThemeDlg.o
