@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "CMusicDlg.h"
 #include "CHelpDlg.h"
+#include "CGameDlg.h"
 
 namespace Ui {
 class CBejeweledDlg;
