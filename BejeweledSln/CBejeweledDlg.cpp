@@ -8,6 +8,7 @@ CBejeweledDlg::CBejeweledDlg(QWidget *parent) :
     ui->setupUi(this);
 }
 
+
 CBejeweledDlg::~CBejeweledDlg()
 {
     delete ui;
