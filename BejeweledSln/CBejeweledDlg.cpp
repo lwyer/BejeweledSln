@@ -26,6 +26,12 @@ void CBejeweledDlg::config()
     w.exec();
 }
 
+void CBejeweledDlg::help()
+{
+    CHelpDlg w;
+    w.show();
+    w.exec();
+}
 void CBejeweledDlg::score()
 {
 
