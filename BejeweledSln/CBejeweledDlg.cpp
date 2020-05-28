@@ -14,25 +14,3 @@ CBejeweledDlg::~CBejeweledDlg()
     delete ui;
 }
 
-//void CBejeweledDlg::start()
-//{
-
-//}
-
-//void CBejeweledDlg::config()
-//{
-//    CMusicDlg w;
-//    w.show();
-//    w.exec();
-//}
-
-//void CBejeweledDlg::help()
-//{
-//    CHelpDlg w;
-//    w.show();
-//    w.exec();
-//}
-//void CBejeweledDlg::score()
-//{
-
-//}
