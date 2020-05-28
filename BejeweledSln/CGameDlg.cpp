@@ -38,10 +38,10 @@ CGameDlg::CGameDlg(QWidget *parent) :
             //绘制图片
             QPixmap pixmap = QPixmap(":/res/layer.jpg");
             QLabel *label = new QLabel;
-            label->setGeometry(0,0,pixmap.width(),pixmap.height());
+            label->setGeometry(0,0,50,50);
             label->setPixmap(pixmap);
             label->setParent(this);
-            label->move(60+i*pixmap.width(),150+j*pixmap.height());
+            label->move(60+i*50,100+j*50);
         }
 
     }
@@ -51,7 +51,7 @@ void CGameDlg::paintEvent(QPaintEvent *){
     QPainter painter(this);
     QPixmap pix;
     pix.load(":/res/background.jpg");
-    painter.drawPixmap(0,0,pix.width(),pix.height(),pix);
+    painter.drawPixmap(0,0,600,600,pix);
 
 }
 
