@@ -15,9 +15,12 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
+<<<<<<< HEAD
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
+=======
+>>>>>>> master
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,18 +31,24 @@ public:
     QAction *actionRemind;
     QAction *actionQuit;
     QWidget *centralwidget;
+<<<<<<< HEAD
     QMenuBar *menubar;
     QMenu *menumenu;
     QStatusBar *statusbar;
+=======
+>>>>>>> master
 
     void setupUi(QMainWindow *CGameDlg)
     {
         if (CGameDlg->objectName().isEmpty())
             CGameDlg->setObjectName(QStringLiteral("CGameDlg"));
         CGameDlg->resize(800, 600);
+<<<<<<< HEAD
         QIcon icon;
         icon.addFile(QStringLiteral(":/res/blue.png"), QSize(), QIcon::Normal, QIcon::Off);
         CGameDlg->setWindowIcon(icon);
+=======
+>>>>>>> master
         actionRemind = new QAction(CGameDlg);
         actionRemind->setObjectName(QStringLiteral("actionRemind"));
         actionQuit = new QAction(CGameDlg);
@@ -47,6 +56,7 @@ public:
         centralwidget = new QWidget(CGameDlg);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         CGameDlg->setCentralWidget(centralwidget);
+<<<<<<< HEAD
         menubar = new QMenuBar(CGameDlg);
         menubar->setObjectName(QStringLiteral("menubar"));
         menubar->setGeometry(QRect(0, 0, 800, 22));
@@ -60,6 +70,8 @@ public:
         menubar->addAction(menumenu->menuAction());
         menumenu->addAction(actionRemind);
         menumenu->addAction(actionQuit);
+=======
+>>>>>>> master
 
         retranslateUi(CGameDlg);
 
@@ -71,7 +83,10 @@ public:
         CGameDlg->setWindowTitle(QApplication::translate("CGameDlg", "MainWindow", Q_NULLPTR));
         actionRemind->setText(QApplication::translate("CGameDlg", "\346\217\220\347\244\272", Q_NULLPTR));
         actionQuit->setText(QApplication::translate("CGameDlg", "\351\200\200\345\207\272", Q_NULLPTR));
+<<<<<<< HEAD
         menumenu->setTitle(QApplication::translate("CGameDlg", "\350\217\234\345\215\225", Q_NULLPTR));
+=======
+>>>>>>> master
     } // retranslateUi
 
 };
