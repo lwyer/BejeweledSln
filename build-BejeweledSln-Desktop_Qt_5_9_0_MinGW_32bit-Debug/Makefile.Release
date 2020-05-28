@@ -180,8 +180,11 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_image.cpp
 release/qrc_image.cpp: ../BejeweledSln/image.qrc \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/rcc.exe \
+		../BejeweledSln/image/start.png \
 		../BejeweledSln/image/timg.jpg \
 		../BejeweledSln/image/baoshimizhen.png \
+		../BejeweledSln/image/score.png \
+		../BejeweledSln/image/config.png \
 		../BejeweledSln/image/HelpDlg.png
 	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\rcc.exe -name image ..\BejeweledSln\image.qrc -o release\qrc_image.cpp
 
@@ -1304,7 +1307,53 @@ release/CThemeDlg.o: ../BejeweledSln/CThemeDlg.cpp ../BejeweledSln/CThemeDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfiledevice.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qvector2d.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtouchdevice.h \
-		ui_CThemeDlg.h
+		ui_CThemeDlg.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qaction.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qicon.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QApplication \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qapplication.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qcoreapplication.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qeventloop.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QHeaderView \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qheaderview.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qframe.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstyleoption.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qvalidator.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qregularexpression.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qslider.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractslider.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstyle.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtabbar.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtabwidget.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qrubberband.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QLabel \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qlabel.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QPushButton \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qpushbutton.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QRadioButton \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qradiobutton.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QTextEdit \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextdocument.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextoption.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\CThemeDlg.o ..\BejeweledSln\CThemeDlg.cpp
 
 release/CMusicDlg.o: ../BejeweledSln/CMusicDlg.cpp ../BejeweledSln/CMusicDlg.h \
@@ -1409,7 +1458,55 @@ release/CMusicDlg.o: ../BejeweledSln/CMusicDlg.cpp ../BejeweledSln/CMusicDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfiledevice.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qvector2d.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtouchdevice.h \
-		ui_CMusicDlg.h
+		ui_CMusicDlg.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qaction.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qicon.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QApplication \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qapplication.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qcoreapplication.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qeventloop.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QCheckBox \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qcheckbox.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QHeaderView \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qheaderview.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qframe.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstyleoption.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qvalidator.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qregularexpression.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qslider.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractslider.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstyle.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtabbar.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtabwidget.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qrubberband.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QLabel \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qlabel.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QPushButton \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qpushbutton.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QRadioButton \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qradiobutton.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QTextEdit \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextdocument.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextoption.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\CMusicDlg.o ..\BejeweledSln\CMusicDlg.cpp
 
 release/CHelpDlg.o: ../BejeweledSln/CHelpDlg.cpp ../BejeweledSln/CHelpDlg.h \
@@ -1514,7 +1611,41 @@ release/CHelpDlg.o: ../BejeweledSln/CHelpDlg.cpp ../BejeweledSln/CHelpDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfiledevice.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qvector2d.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtouchdevice.h \
-		ui_CHelpDlg.h
+		ui_CHelpDlg.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qaction.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qicon.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QApplication \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qapplication.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qcoreapplication.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qeventloop.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QHeaderView \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qheaderview.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qframe.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstyleoption.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qvalidator.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qregularexpression.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qslider.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractslider.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstyle.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtabbar.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtabwidget.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qrubberband.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QLabel \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qlabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\CHelpDlg.o ..\BejeweledSln\CHelpDlg.cpp
 
 release/qrc_image.o: release/qrc_image.cpp 
