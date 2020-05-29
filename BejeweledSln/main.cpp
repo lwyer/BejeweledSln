@@ -1,5 +1,4 @@
 #include "CBejeweledDlg.h"
-#include "CGameDlg.h"
 
 #include <QApplication>
 

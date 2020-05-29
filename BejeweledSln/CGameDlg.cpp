@@ -17,7 +17,6 @@ CGameDlg::CGameDlg(QWidget *parent) :
     //提示按钮
     //connect();
 
-
     //开始按钮
     MyPushButton * startBtn = new MyPushButton(":/res/start.jpg");
     startBtn->setParent(this);

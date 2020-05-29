@@ -4,6 +4,7 @@ INPUT(
 ./release\CConfig.o
 ./release\CConfigDao.o
 ./release\CConfigLogic.o
+./release\CGameDlg.o
 ./release\CGameLogic.o
 ./release\CMenuDlg.o
 ./release\CMusicPlayer.o
@@ -21,6 +22,7 @@ INPUT(
 ./release\CHelpDlg.o
 ./release\qrc_image.o
 ./release\qrc_res.o
+./release\moc_CGameDlg.o
 ./release\moc_CBejeweledDlg.o
 ./release\moc_CNameDlg.o
 ./release\moc_CThemeDlg.o
