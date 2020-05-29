@@ -1,30 +1,22 @@
 #include "CGameDlg.h"
 #include "ui_CGameDlg.h"
-#include <QPainter>
 #include "MyPushButton.h"
 #include <QLabel>
+#include <QPainter>
 CGameDlg::CGameDlg(QWidget *parent) :
-    QMainWindow(parent),
+    QDialog(parent),
     ui(new Ui::CGameDlg)
 {
     ui->setupUi(this);
 
-<<<<<<< Updated upstream
-    //配置游戏场景
-    setFixedSize(600,600);
-=======
     //设置窗口大小
     setFixedSize(700,700);
->>>>>>> Stashed changes
     setWindowIcon(QIcon(":/res/red.png"));
     setWindowTitle("BeJeweled");
 
-    //提示
+    //提示按钮
     //connect();
-    //退出
-    connect(ui->actionQuit,&QAction::trigger,[=](){
-        this->close();
-    });
+
 
     //开始按钮
     MyPushButton * startBtn = new MyPushButton(":/res/start.jpg");
@@ -47,14 +39,9 @@ CGameDlg::CGameDlg(QWidget *parent) :
     });
 
 
-    //显示宝石背景图
+    //宝石底层图片
     for (int i = 0; i < 8; i++) {
-<<<<<<< Updated upstream
-        for (int j = 0; j<4; j++) {
-            //绘制图片
-=======
         for (int j = 0; j<8; j++) {
->>>>>>> Stashed changes
             QPixmap pixmap = QPixmap(":/res/layer.jpg");
             QLabel *label = new QLabel;
             label->setGeometry(0,0,50,50);
@@ -66,7 +53,7 @@ CGameDlg::CGameDlg(QWidget *parent) :
     }
 }
 void CGameDlg::paintEvent(QPaintEvent *){
-    //设置背景图
+    //背景图片
     QPainter painter(this);
     QPixmap pix;
     pix.load(":/res/background.jpg");
