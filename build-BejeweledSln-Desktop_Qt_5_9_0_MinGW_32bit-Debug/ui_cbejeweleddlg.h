@@ -100,6 +100,7 @@ public:
         retranslateUi(CBejeweledDlg);
         QObject::connect(pushButton, SIGNAL(clicked()), CBejeweledDlg, SLOT(config()));
         QObject::connect(pushButton_4, SIGNAL(clicked()), CBejeweledDlg, SLOT(help()));
+        QObject::connect(pushButton_2, SIGNAL(clicked()), CBejeweledDlg, SLOT(start()));
 
         QMetaObject::connectSlotsByName(CBejeweledDlg);
     } // setupUi

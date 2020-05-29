@@ -12,10 +12,8 @@ class CGameDlg : public QDialog
     Q_OBJECT
 
 public:
-    explicit CGameDlg(QWidget *parent = nullptr);
+    explicit CGameDlg(QWidget *parent = 0);
     ~CGameDlg();
-
-    void paintEvent(QPaintEvent *);
 
 private:
     Ui::CGameDlg *ui;
