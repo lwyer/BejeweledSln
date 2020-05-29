@@ -16,7 +16,7 @@ MyPushButton::MyPushButton(QString normalImg, QString pressImg){
     this->setFixedSize(pix.width(),pix.height());
     this->setStyleSheet("QPushButton{border:0px}");//无边框
     this->setIcon(pix);
-    this->setIconSize(QSize(pix.width(),pix.height()));
+    this->setIconSize(QSize(50,50));
 
 
 }
