@@ -2,9 +2,10 @@
 #define CBEJEWELEDDLG_H
 
 #include <QDialog>
-#include "CMusicDlg.h"
+#include "CSetDlg.h"
 #include "CHelpDlg.h"
 #include "CGameDlg.h"
+#include <QSettings>
 
 namespace Ui {
 class CBejeweledDlg;

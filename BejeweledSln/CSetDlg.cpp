@@ -1,4 +1,17 @@
-#ifndef CSETDLG_H
-#define CSETDLG_H
+#include "CSetDlg.h"
+#include "ui_CSetDlg.h"
 
-#endif // CSETDLG_H
+CSetDlg::CSetDlg(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::CSetDlg)
+{
+    ui->setupUi(this);
+    QSettings *configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
+    ui->nameEdit->setText(configIni->value("Name/Name").toString());
+    delete configIni;
+}
+
+CSetDlg::~CSetDlg()
+{
+    delete ui;
+}

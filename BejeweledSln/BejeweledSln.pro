@@ -27,16 +27,13 @@ SOURCES += \
     CMusicPlayer.cpp \
     CPathTool.cpp \
     CRankDao.cpp \
-    CRankDlg.cpp \
     CRankLogic.cpp \
-    CSetDlg.cpp \
     MyPushButton.cpp \
     main.cpp \
     CBejeweledDlg.cpp \
-    CNameDlg.cpp \
-    CThemeDlg.cpp \
-    CMusicDlg.cpp \
-    CHelpDlg.cpp
+    CHelpDlg.cpp \
+    CRankDlg.cpp \
+    CSetDlg.cpp
 
 HEADERS += \
     CAboutDlg.h \
@@ -50,23 +47,19 @@ HEADERS += \
     CMusicPlayer.h \
     CPathTool.h \
     CRankDao.h \
-    CRankDlg.h \
     CRankLogic.h \
-    CSetDlg.h \
     CBejeweledDlg.h \
-    CNameDlg.h \
-    CThemeDlg.h \
-    CMusicDlg.h \
     CHelpDlg.h \
-    MyPushButton.h
+    MyPushButton.h \
+    CRankDlg.h \
+    CSetDlg.h
 
 FORMS += \
     CGameDlg.ui \
-    CNameDlg.ui \
-    CThemeDlg.ui \
-    CMusicDlg.ui \
     CBejeweledDlg.ui \
-    CHelpDlg.ui
+    CHelpDlg.ui \
+    CRankDlg.ui \
+    CSetDlg.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

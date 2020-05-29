@@ -99,6 +99,8 @@ public:
         cancel->setGeometry(QRect(220, 300, 93, 28));
 
         retranslateUi(CThemeDlg);
+        QObject::connect(pushButton, SIGNAL(clicked()), CThemeDlg, SLOT(music()));
+        QObject::connect(pushButton_3, SIGNAL(clicked()), CThemeDlg, SLOT(name()));
 
         QMetaObject::connectSlotsByName(CThemeDlg);
     } // setupUi

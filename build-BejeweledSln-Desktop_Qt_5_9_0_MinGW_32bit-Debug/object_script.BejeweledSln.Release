@@ -10,9 +10,7 @@ INPUT(
 ./release\CMusicPlayer.o
 ./release\CPathTool.o
 ./release\CRankDao.o
-./release\CRankDlg.o
 ./release\CRankLogic.o
-./release\CSetDlg.o
 ./release\MyPushButton.o
 ./release\main.o
 ./release\CBejeweledDlg.o
@@ -20,6 +18,8 @@ INPUT(
 ./release\CThemeDlg.o
 ./release\CMusicDlg.o
 ./release\CHelpDlg.o
+./release\CRankDlg.o
+./release\CSetDlg.o
 ./release\qrc_image.o
 ./release\qrc_res.o
 ./release\moc_CGameDlg.o
@@ -29,4 +29,6 @@ INPUT(
 ./release\moc_CMusicDlg.o
 ./release\moc_CHelpDlg.o
 ./release\moc_MyPushButton.o
+./release\moc_CRankDlg.o
+./release\moc_CSetDlg.o
 );

@@ -25,7 +25,7 @@ void CBejeweledDlg::start()
 
 void CBejeweledDlg::config()
 {
-    CMusicDlg w;
+    CSetDlg w;
     w.show();
     w.exec();
 }
