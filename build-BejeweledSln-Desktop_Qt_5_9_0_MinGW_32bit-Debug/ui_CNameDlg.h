@@ -66,6 +66,8 @@ public:
 
         retranslateUi(CNameDlg);
         QObject::connect(save, SIGNAL(clicked()), CNameDlg, SLOT(newName()));
+        QObject::connect(pushButton, SIGNAL(clicked()), CNameDlg, SLOT(music()));
+        QObject::connect(pushButton_2, SIGNAL(clicked()), CNameDlg, SLOT(theme()));
 
         QMetaObject::connectSlotsByName(CNameDlg);
     } // setupUi
