@@ -63,7 +63,7 @@ void CGameDlg::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
 }
 
 const QMetaObject CGameDlg::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_CGameDlg.data,
+    { &QDialog::staticMetaObject, qt_meta_stringdata_CGameDlg.data,
       qt_meta_data_CGameDlg,  qt_static_metacall, nullptr, nullptr}
 };
 
@@ -78,12 +78,12 @@ void *CGameDlg::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_CGameDlg.stringdata0))
         return static_cast<void*>(const_cast< CGameDlg*>(this));
-    return QMainWindow::qt_metacast(_clname);
+    return QDialog::qt_metacast(_clname);
 }
 
 int CGameDlg::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = QDialog::qt_metacall(_c, _id, _a);
     return _id;
 }
 QT_WARNING_POP
