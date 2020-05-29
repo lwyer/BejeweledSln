@@ -21,7 +21,6 @@ SOURCES += \
     CConfig.cpp \
     CConfigDao.cpp \
     CConfigLogic.cpp \
-    CGameDlg.cpp \
     CGameLogic.cpp \
     CMenuDlg.cpp \
     CMusicPlayer.cpp \
@@ -33,7 +32,8 @@ SOURCES += \
     CBejeweledDlg.cpp \
     CHelpDlg.cpp \
     CRankDlg.cpp \
-    CSetDlg.cpp
+    CSetDlg.cpp \
+    CGameDlg.cpp
 
 HEADERS += \
     CAboutDlg.h \
@@ -41,7 +41,6 @@ HEADERS += \
     CConfig.h \
     CConfigDao.h \
     CConfigLogic.h \
-    CGameDlg.h \
     CGameLogic.h \
     CMenuDlg.h \
     CMusicPlayer.h \
@@ -52,14 +51,15 @@ HEADERS += \
     CHelpDlg.h \
     MyPushButton.h \
     CRankDlg.h \
-    CSetDlg.h
+    CSetDlg.h \
+    CGameDlg.h
 
 FORMS += \
-    CGameDlg.ui \
     CBejeweledDlg.ui \
     CHelpDlg.ui \
     CRankDlg.ui \
-    CSetDlg.ui
+    CSetDlg.ui \
+    CGameDlg.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -67,8 +67,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    image.qrc \
-    res.qrc \
-    res.qrc \
-    res.qrc \
-    res.qrc
+    image.qrc
