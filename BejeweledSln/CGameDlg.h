@@ -2,6 +2,9 @@
 #define CGAMEDLG_H
 
 #include <QDialog>
+#include "CMenuDlg.h"
+#include <QWidget>
+#include <QKeyEvent>
 
 namespace Ui {
 class CGameDlg;
@@ -17,6 +20,13 @@ public:
 
 private:
     Ui::CGameDlg *ui;
+
+protected:
+    virtual void keyPressEvent(QKeyEvent *ev);
+    virtual void keyReleaseEvent(QKeyEvent *ev);
+
+private slots:
+    void menu();
 };
 
 #endif // CGAMEDLG_H

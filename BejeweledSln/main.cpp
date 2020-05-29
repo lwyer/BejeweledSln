@@ -1,6 +1,4 @@
 #include "CBejeweledDlg.h"
-#include "CGameDlg.h"
-
 #include <QApplication>
 
 int main(int argc, char *argv[])

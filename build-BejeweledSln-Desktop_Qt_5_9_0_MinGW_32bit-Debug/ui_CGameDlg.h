@@ -28,7 +28,7 @@ public:
     QLabel *background;
     QLabel *gamepanel;
     QProgressBar *progressBar;
-    QPushButton *pushButton;
+    QPushButton *menu;
     QTextBrowser *scoreshow;
 
     void setupUi(QDialog *CGameDlg)
@@ -47,9 +47,9 @@ public:
         progressBar->setObjectName(QStringLiteral("progressBar"));
         progressBar->setGeometry(QRect(50, 440, 631, 23));
         progressBar->setValue(24);
-        pushButton = new QPushButton(CGameDlg);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(530, 340, 93, 28));
+        menu = new QPushButton(CGameDlg);
+        menu->setObjectName(QStringLiteral("menu"));
+        menu->setGeometry(QRect(530, 340, 93, 28));
         scoreshow = new QTextBrowser(CGameDlg);
         scoreshow->setObjectName(QStringLiteral("scoreshow"));
         scoreshow->setGeometry(QRect(530, 50, 91, 51));
@@ -59,16 +59,17 @@ public:
         scoreshow->setFont(font);
 
         retranslateUi(CGameDlg);
+        QObject::connect(menu, SIGNAL(clicked()), CGameDlg, SLOT(menu()));
 
         QMetaObject::connectSlotsByName(CGameDlg);
     } // setupUi
 
     void retranslateUi(QDialog *CGameDlg)
     {
-        CGameDlg->setWindowTitle(QApplication::translate("CGameDlg", "Dialog", Q_NULLPTR));
+        CGameDlg->setWindowTitle(QApplication::translate("CGameDlg", "Bejeweled3", Q_NULLPTR));
         background->setText(QString());
         gamepanel->setText(QString());
-        pushButton->setText(QApplication::translate("CGameDlg", "\350\217\234\345\215\225", Q_NULLPTR));
+        menu->setText(QApplication::translate("CGameDlg", "\350\217\234\345\215\225", Q_NULLPTR));
     } // retranslateUi
 
 };

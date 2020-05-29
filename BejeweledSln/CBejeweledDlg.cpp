@@ -21,7 +21,6 @@ void CBejeweledDlg::start()
 {
     CGameDlg w;
     this->close();
- //   w.setWindowModality(Qt::ApplicationModal);
     w.show();
     w.exec();
 }
@@ -36,7 +35,10 @@ void CBejeweledDlg::config()
 
 void CBejeweledDlg::score()
 {
-
+    CRankDlg w;
+    w.setWindowModality(Qt::ApplicationModal);
+    w.show();
+    w.exec();
 }
 
 void CBejeweledDlg::help()

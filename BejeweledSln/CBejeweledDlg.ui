@@ -252,10 +252,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>CBejeweledDlg</receiver>
+   <slot>score()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>766</x>
+     <y>367</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>806</x>
+     <y>819</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>config()</slot>
   <slot>help()</slot>
   <slot>start()</slot>
+  <slot>score()</slot>
  </slots>
 </ui>
