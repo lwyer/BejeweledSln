@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "CThemeDlg.h"
 #include "CMusicDlg.h"
+#include <QSettings>
 
 namespace Ui {
 class CNameDlg;
@@ -22,6 +23,7 @@ private:
 private slots:
     void music();
     void theme();
+    void newName();
 };
 
 #endif // CNAMEDLG_H

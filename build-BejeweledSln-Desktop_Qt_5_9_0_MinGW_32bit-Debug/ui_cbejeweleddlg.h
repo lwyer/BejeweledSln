@@ -32,6 +32,7 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
+    QLabel *welcome;
 
     void setupUi(QDialog *CBejeweledDlg)
     {
@@ -78,6 +79,13 @@ public:
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(780, 550, 121, 71));
         pushButton_4->setFont(font);
+        welcome = new QLabel(CBejeweledDlg);
+        welcome->setObjectName(QStringLiteral("welcome"));
+        welcome->setGeometry(QRect(10, 10, 851, 31));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("\351\273\221\344\275\223"));
+        font1.setPointSize(12);
+        welcome->setFont(font1);
         label_2->raise();
         label->raise();
         start->raise();
@@ -87,6 +95,7 @@ public:
         pushButton_2->raise();
         pushButton_3->raise();
         pushButton_4->raise();
+        welcome->raise();
 
         retranslateUi(CBejeweledDlg);
         QObject::connect(pushButton, SIGNAL(clicked()), CBejeweledDlg, SLOT(config()));
@@ -97,7 +106,7 @@ public:
 
     void retranslateUi(QDialog *CBejeweledDlg)
     {
-        CBejeweledDlg->setWindowTitle(QApplication::translate("CBejeweledDlg", "Dialog", Q_NULLPTR));
+        CBejeweledDlg->setWindowTitle(QApplication::translate("CBejeweledDlg", "Bejeweled3", Q_NULLPTR));
         label->setText(QString());
         label_2->setText(QString());
         start->setText(QString());
@@ -107,6 +116,7 @@ public:
         pushButton_2->setText(QApplication::translate("CBejeweledDlg", "\345\274\200\345\247\213", Q_NULLPTR));
         pushButton_3->setText(QApplication::translate("CBejeweledDlg", "\350\256\260\345\275\225", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("CBejeweledDlg", "\345\270\256\345\212\251", Q_NULLPTR));
+        welcome->setText(QApplication::translate("CBejeweledDlg", "Welcome back!", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -65,6 +65,7 @@ public:
         cancel->setGeometry(QRect(230, 200, 93, 28));
 
         retranslateUi(CNameDlg);
+        QObject::connect(save, SIGNAL(clicked()), CNameDlg, SLOT(newName()));
 
         QMetaObject::connectSlotsByName(CNameDlg);
     } // setupUi
