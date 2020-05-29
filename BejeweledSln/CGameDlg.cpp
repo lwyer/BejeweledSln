@@ -9,13 +9,9 @@ CGameDlg::CGameDlg(QWidget *parent) :
 {
     ui->setupUi(this);
 
-<<<<<<< Updated upstream
-    //配置游戏场景
-    setFixedSize(600,600);
-=======
+
     //设置窗口大小
     setFixedSize(700,700);
->>>>>>> Stashed changes
     setWindowIcon(QIcon(":/res/red.png"));
     setWindowTitle("BeJeweled");
 
@@ -49,12 +45,8 @@ CGameDlg::CGameDlg(QWidget *parent) :
 
     //显示宝石背景图
     for (int i = 0; i < 8; i++) {
-<<<<<<< Updated upstream
-        for (int j = 0; j<4; j++) {
-            //绘制图片
-=======
         for (int j = 0; j<8; j++) {
->>>>>>> Stashed changes
+
             QPixmap pixmap = QPixmap(":/res/layer.jpg");
             QLabel *label = new QLabel;
             label->setGeometry(0,0,50,50);

@@ -38,6 +38,8 @@ SOURCES += \
     CHelpDlg.cpp
 
 HEADERS += \
+    ../../../新建文件夹 (3)/BejeweledSln/BejeweledSln/CGameDlg.h \
+    ../../../新建文件夹 (3)/BejeweledSln/BejeweledSln/CGameDlg.h \
     CAboutDlg.h \
     CBejeweledApp.h \
     CConfig.h \
