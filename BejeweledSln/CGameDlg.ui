@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Bejeweled3</string>
   </property>
   <widget class="QLabel" name="background">
    <property name="geometry">
@@ -55,7 +55,7 @@
     <number>24</number>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="menu">
    <property name="geometry">
     <rect>
      <x>530</x>
@@ -86,5 +86,25 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>menu</sender>
+   <signal>clicked()</signal>
+   <receiver>CGameDlg</receiver>
+   <slot>menu()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>583</x>
+     <y>352</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>575</x>
+     <y>597</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>menu()</slot>
+ </slots>
 </ui>

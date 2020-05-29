@@ -5,7 +5,6 @@ INPUT(
 ./debug\CConfigDao.o
 ./debug\CConfigLogic.o
 ./debug\CGameLogic.o
-./debug\CMenuDlg.o
 ./debug\CMusicPlayer.o
 ./debug\CPathTool.o
 ./debug\CRankDao.o
@@ -17,6 +16,7 @@ INPUT(
 ./debug\CRankDlg.o
 ./debug\CSetDlg.o
 ./debug\CGameDlg.o
+./debug\CMenuDlg.o
 ./debug\qrc_image.o
 ./debug\moc_CBejeweledDlg.o
 ./debug\moc_CHelpDlg.o
@@ -24,4 +24,5 @@ INPUT(
 ./debug\moc_CRankDlg.o
 ./debug\moc_CSetDlg.o
 ./debug\moc_CGameDlg.o
+./debug\moc_CMenuDlg.o
 );
