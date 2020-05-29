@@ -40,5 +40,4 @@ void CNameDlg::newName()
     configIni->setValue("Name/Name", qv);
     delete configIni;
     this->close();
-    update();
 }
