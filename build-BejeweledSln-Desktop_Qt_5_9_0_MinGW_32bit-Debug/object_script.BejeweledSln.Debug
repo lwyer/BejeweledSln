@@ -10,7 +10,6 @@ INPUT(
 ./debug\CMusicPlayer.o
 ./debug\CPathTool.o
 ./debug\CRankDao.o
-./debug\CRankDlg.o
 ./debug\CRankLogic.o
 ./debug\CSetDlg.o
 ./debug\MyPushButton.o
@@ -20,6 +19,7 @@ INPUT(
 ./debug\CThemeDlg.o
 ./debug\CMusicDlg.o
 ./debug\CHelpDlg.o
+./debug\CRankDlg.o
 ./debug\qrc_image.o
 ./debug\qrc_res.o
 ./debug\moc_CGameDlg.o
@@ -29,4 +29,5 @@ INPUT(
 ./debug\moc_CMusicDlg.o
 ./debug\moc_CHelpDlg.o
 ./debug\moc_MyPushButton.o
+./debug\moc_CRankDlg.o
 );
