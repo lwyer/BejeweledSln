@@ -9,7 +9,6 @@ INPUT(
 ./debug\CPathTool.o
 ./debug\CRankDao.o
 ./debug\CRankLogic.o
-./debug\MyPushButton.o
 ./debug\main.o
 ./debug\CBejeweledDlg.o
 ./debug\CHelpDlg.o
@@ -20,7 +19,6 @@ INPUT(
 ./debug\qrc_image.o
 ./debug\moc_CBejeweledDlg.o
 ./debug\moc_CHelpDlg.o
-./debug\moc_MyPushButton.o
 ./debug\moc_CRankDlg.o
 ./debug\moc_CSetDlg.o
 ./debug\moc_CGameDlg.o

@@ -9,7 +9,6 @@ INPUT(
 ./release\CPathTool.o
 ./release\CRankDao.o
 ./release\CRankLogic.o
-./release\MyPushButton.o
 ./release\main.o
 ./release\CBejeweledDlg.o
 ./release\CHelpDlg.o
@@ -20,7 +19,6 @@ INPUT(
 ./release\qrc_image.o
 ./release\moc_CBejeweledDlg.o
 ./release\moc_CHelpDlg.o
-./release\moc_MyPushButton.o
 ./release\moc_CRankDlg.o
 ./release\moc_CSetDlg.o
 ./release\moc_CGameDlg.o

@@ -26,7 +26,6 @@ SOURCES += \
     CPathTool.cpp \
     CRankDao.cpp \
     CRankLogic.cpp \
-    MyPushButton.cpp \
     main.cpp \
     CBejeweledDlg.cpp \
     CHelpDlg.cpp \
@@ -48,7 +47,6 @@ HEADERS += \
     CRankLogic.h \
     CBejeweledDlg.h \
     CHelpDlg.h \
-    MyPushButton.h \
     CRankDlg.h \
     CSetDlg.h \
     CGameDlg.h \
