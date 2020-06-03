@@ -5,6 +5,7 @@
 #include "CMenuDlg.h"
 #include <QWidget>
 #include <QKeyEvent>
+#include "CGameLogic.h"
 
 namespace Ui {
 class CGameDlg;
