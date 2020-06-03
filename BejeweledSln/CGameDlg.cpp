@@ -10,6 +10,15 @@ CGameDlg::CGameDlg(QWidget *parent) :
     ui->background->setScaledContents(true);
     ui->scoreshow->setText("0");
     ui->menu->setFocusPolicy(Qt::NoFocus);
+    int matrix[8][8];
+    CGameLogic gamelogic;
+    gamelogic.init(matrix);
+    for(int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+        }
+    }
 }
 
 

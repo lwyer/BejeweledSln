@@ -308,6 +308,7 @@ release/moc_CBejeweledDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfactoryinterface.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QWidget \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/QKeyEvent \
+		../BejeweledSln/CGameLogic.h \
 		../BejeweledSln/CRankDlg.h \
 		../BejeweledSln/CBejeweledDlg.h \
 		release/moc_predefs.h \
@@ -749,6 +750,7 @@ release/moc_CGameDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDia
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfactoryinterface.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QWidget \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/QKeyEvent \
+		../BejeweledSln/CGameLogic.h \
 		../BejeweledSln/CGameDlg.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
@@ -1065,6 +1067,7 @@ release/main.o: ../BejeweledSln/main.cpp ../BejeweledSln/CBejeweledDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfactoryinterface.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QWidget \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/QKeyEvent \
+		../BejeweledSln/CGameLogic.h \
 		../BejeweledSln/CRankDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QApplication \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qapplication.h \
@@ -1194,6 +1197,7 @@ release/CBejeweledDlg.o: ../BejeweledSln/CBejeweledDlg.cpp ../BejeweledSln/CBeje
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfactoryinterface.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QWidget \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/QKeyEvent \
+		../BejeweledSln/CGameLogic.h \
 		../BejeweledSln/CRankDlg.h \
 		ui_cbejeweleddlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
@@ -1786,6 +1790,7 @@ release/CGameDlg.o: ../BejeweledSln/CGameDlg.cpp ../BejeweledSln/CGameDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfactoryinterface.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QWidget \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/QKeyEvent \
+		../BejeweledSln/CGameLogic.h \
 		ui_CGameDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
