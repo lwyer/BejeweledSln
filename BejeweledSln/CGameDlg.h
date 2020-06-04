@@ -7,6 +7,8 @@
 #include <QKeyEvent>
 #include "CGameLogic.h"
 #include "mylabel.h"
+#include <QTime>
+
 
 namespace Ui {
 class CGameDlg;
@@ -17,21 +19,18 @@ class CGameDlg : public QDialog
     Q_OBJECT
 
 public:
-    struct jewelnode
-    {
-        int x;
-        int y;
-        int xpos;
-        int ypos;
-    };
 
     explicit CGameDlg(QWidget *parent = 0);
     ~CGameDlg();
     bool eventFilter(QObject*obj,QEvent* e);
     Mylabel* jewel[8][8];
-    jewelnode jewel1;
-    jewelnode jewel2;
-
+    int jewel1I;
+    int jewel1J;
+    CGameLogic* gamelogic;
+    QLabel* kuang;
+    int matrix[8][8];
+    int score;
+    void drawJewel();
 private:
     Ui::CGameDlg *ui;
     bool isPause;
