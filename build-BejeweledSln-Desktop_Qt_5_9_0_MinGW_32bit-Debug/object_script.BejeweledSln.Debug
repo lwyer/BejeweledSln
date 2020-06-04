@@ -16,6 +16,7 @@ INPUT(
 ./debug\CSetDlg.o
 ./debug\CGameDlg.o
 ./debug\CMenuDlg.o
+./debug\mylabel.o
 ./debug\qrc_image.o
 ./debug\moc_CBejeweledDlg.o
 ./debug\moc_CHelpDlg.o
@@ -23,4 +24,5 @@ INPUT(
 ./debug\moc_CSetDlg.o
 ./debug\moc_CGameDlg.o
 ./debug\moc_CMenuDlg.o
+./debug\moc_mylabel.o
 );

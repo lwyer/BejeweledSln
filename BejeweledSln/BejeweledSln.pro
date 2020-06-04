@@ -32,7 +32,8 @@ SOURCES += \
     CRankDlg.cpp \
     CSetDlg.cpp \
     CGameDlg.cpp \
-    CMenuDlg.cpp
+    CMenuDlg.cpp \
+    mylabel.cpp
 
 HEADERS += \
     CAboutDlg.h \
@@ -50,7 +51,8 @@ HEADERS += \
     CRankDlg.h \
     CSetDlg.h \
     CGameDlg.h \
-    CMenuDlg.h
+    CMenuDlg.h \
+    mylabel.h
 
 FORMS += \
     CBejeweledDlg.ui \

@@ -4,7 +4,11 @@ CGameLogic::CGameLogic(){
 
 }
 
-bool CGameLogic::xiaoqu1(int num[][8]) {//用于判断是否有可消去的位置 并不真的消去 返回false为无可消去的
+CGameLogic::CGameLogic(int kindd){
+    this->kind=kindd;
+}
+
+bool CGameLogic::xiaoqu1(int num[][8]) {//鐢ㄤ簬鍒ゆ柇鏄惁鏈夊彲娑堝幓鐨勪綅缃?骞朵笉鐪熺殑娑堝幓 杩斿洖false涓烘棤鍙秷鍘荤殑
     int i,j;
     int result=false;
     for(i=0; i<8; i++) {
@@ -36,11 +40,11 @@ bool CGameLogic::xiaoqu1(int num[][8]) {//用于判断是否有可消去的位�
     return result;
 }
 
-bool CGameLogic::xiaoqu2(int num[][8]) {//用于交换后消去宝石
-    srand((int)time(NULL));//定义种子 有的地方需要重新生成宝石
+bool CGameLogic::xiaoqu2(int num[][8]) {//鐢ㄤ簬浜ゆ崲鍚庢秷鍘诲疂鐭?
+    srand((int)time(NULL));//瀹氫箟绉嶅瓙 鏈夌殑鍦版柟闇€瑕侀噸鏂扮敓鎴愬疂鐭?
     int n=0;
     int i,j,m;
-    Z z[64];//存储需要消去的宝石的位置
+    Z z[64];//瀛樺偍闇€瑕佹秷鍘荤殑瀹濈煶鐨勪綅缃?
     int result=false;
     for(i=0; i<8; i++) {
         for(j=0; j<8; j++) {
@@ -84,12 +88,12 @@ bool CGameLogic::xiaoqu2(int num[][8]) {//用于交换后消去宝石
     }
     if(result) {
         int u,v;
-        for(u=0; u<n; u++) {//先将消去位置类型更改为0
+        for(u=0; u<n; u++) {//鍏堝皢娑堝幓浣嶇疆绫诲瀷鏇存敼涓?
             num[z[u].x][z[u].y]=0;
         }
         for(i=7; i>=0; i--) {
             for(j=0; j<8; j++) {
-                if(num[i][j]==0) {//再将0的位置向上寻找补齐
+                if(num[i][j]==0) {//鍐嶅皢0鐨勪綅缃悜涓婂鎵捐ˉ榻?
                     v=i;
                     while(num[v][j]==0&&v>0) {
                         v--;
@@ -99,10 +103,10 @@ bool CGameLogic::xiaoqu2(int num[][8]) {//用于交换后消去宝石
                 }
             }
         }
-        for(i=0; i<8; i++) {//还是0的位置随机生成新的宝石类型
+        for(i=0; i<8; i++) {//杩樻槸0鐨勪綅缃殢鏈虹敓鎴愭柊鐨勫疂鐭崇被鍨?
             for(j=0; j<8; j++) {
                 if(num[i][j]==0) {
-                    num[i][j]=rand()%6+1;
+                    num[i][j]=rand()%this->kind+1;
                 }
             }
         }
@@ -111,7 +115,7 @@ bool CGameLogic::xiaoqu2(int num[][8]) {//用于交换后消去宝石
     return result;
 }
 
-bool CGameLogic::jiaohuan1(int num[][8],Z z1,Z z2) {//交换宝石位置 真的交换
+bool CGameLogic::jiaohuan1(int num[][8],Z z1,Z z2) {//浜ゆ崲瀹濈煶浣嶇疆 鐪熺殑浜ゆ崲
     bool result=false;
     if(((z1.x==z2.x+1||z1.x==z2.x-1)&&(z1.y==z2.y))
             ||((z1.y==z2.y-1||z1.y==z2.y+1)&&(z1.x==z2.x))) {
@@ -133,7 +137,7 @@ bool CGameLogic::jiaohuan1(int num[][8],Z z1,Z z2) {//交换宝石位置 真的�
     return result;
 }
 
-bool CGameLogic::jiaohuan2(int num[][8],Z z1,Z z2) {//用于判断是否完全无法交换 并不是真的交换
+bool CGameLogic::jiaohuan2(int num[][8],Z z1,Z z2) {//鐢ㄤ簬鍒ゆ柇鏄惁瀹屽叏鏃犳硶浜ゆ崲 骞朵笉鏄湡鐨勪氦鎹?
     bool result=false;
     if(((z1.x==z2.x+1||z1.x==z2.x-1)&&(z1.y==z2.y))
             ||((z1.y==z2.y-1||z1.y==z2.y+1)&&(z1.x==z2.x))) {
@@ -146,7 +150,7 @@ bool CGameLogic::jiaohuan2(int num[][8],Z z1,Z z2) {//用于判断是否完全�
         } else {
             result=false;
         }
-        n=num[z1.x][z1.y];//换回原来的位置
+        n=num[z1.x][z1.y];//鎹㈠洖鍘熸潵鐨勪綅缃?
         num[z1.x][z1.y]=num[z2.x][z2.y];
         num[z2.x][z2.y]=n;
     } else {
@@ -155,24 +159,24 @@ bool CGameLogic::jiaohuan2(int num[][8],Z z1,Z z2) {//用于判断是否完全�
     return result;
 }
 
-void CGameLogic::init(int num[][8]) {//初始化
-    srand((int)time(NULL));  // 产生随机种子
+void CGameLogic::init(int num[][8]) {//鍒濆鍖?
+    srand((int)time(NULL));  // 浜х敓闅忔満绉嶅瓙
     int i,j;
     for (i = 0; i < 8; i++) {
         for(j=0; j<8; j++) {
-            num[i][j]=rand()%6+1;
+            num[i][j]=rand()%this->kind+1;
         }
     }
-    while(xiaoqu1(num)) {//直到生成没有是三个连续的
+    while(xiaoqu1(num)) {//鐩村埌鐢熸垚娌℃湁鏄笁涓繛缁殑
         for (i = 0; i < 8; i++) {
             for(j=0; j<8; j++) {
-                num[i][j]=rand()%6+1;
+                num[i][j]=rand()%this->kind+1;
             }
         }
     }
 }
 
-bool CGameLogic::all_cannot(int num[][8]) {//判断任何交换都无法进行 false为有交换可进行 true为无交换可进行
+bool CGameLogic::all_cannot(int num[][8]) {//鍒ゆ柇浠讳綍浜ゆ崲閮芥棤娉曡繘琛?false涓烘湁浜ゆ崲鍙繘琛?true涓烘棤浜ゆ崲鍙繘琛?
     int i,j;
     bool result=true;
     for(i=0; i<7; i++) {

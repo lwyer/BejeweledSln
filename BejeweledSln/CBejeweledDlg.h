@@ -19,7 +19,6 @@ class CBejeweledDlg : public QDialog
 public:
     explicit CBejeweledDlg(QWidget *parent = 0);
     ~CBejeweledDlg();
-
 private:
     Ui::CBejeweledDlg *ui;
 private slots:

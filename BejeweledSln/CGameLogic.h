@@ -13,10 +13,13 @@ typedef struct zuobiao {
 
 class CGameLogic{
 public:
-    CGameLogic();
+    int kind;
 
-    static bool xiaoqu1(int num[][8]);
-    static bool xiaoqu2(int num[][8]);
+    CGameLogic();
+    CGameLogic(int kindd);
+
+    bool xiaoqu1(int num[][8]);
+    bool xiaoqu2(int num[][8]);
     bool jiaohuan1(int num[][8],Z z1,Z z2);
     bool jiaohuan2(int num[][8],Z z1,Z z2);
     void init(int num[][8]);
