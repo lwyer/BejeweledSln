@@ -7,5 +7,6 @@
         <file>image/start.png</file>
         <file>image/timg.jpg</file>
         <file>image/gamepanel.png</file>
+        <file>image/pause.png</file>
     </qresource>
 </RCC>

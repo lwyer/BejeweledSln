@@ -29,6 +29,7 @@ public:
     QLabel *gamepanel;
     QProgressBar *progressBar;
     QPushButton *menu;
+    QLabel *pause;
     QTextBrowser *scoreshow;
 
     void setupUi(QDialog *CGameDlg)
@@ -41,7 +42,7 @@ public:
         background->setGeometry(QRect(0, 0, 720, 480));
         gamepanel = new QLabel(CGameDlg);
         gamepanel->setObjectName(QStringLiteral("gamepanel"));
-        gamepanel->setGeometry(QRect(40, 20, 400, 400));
+        gamepanel->setGeometry(QRect(29, 9, 441, 431));
         gamepanel->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/gamepanel.png);"));
         progressBar = new QProgressBar(CGameDlg);
         progressBar->setObjectName(QStringLiteral("progressBar"));
@@ -50,9 +51,13 @@ public:
         menu = new QPushButton(CGameDlg);
         menu->setObjectName(QStringLiteral("menu"));
         menu->setGeometry(QRect(530, 340, 93, 28));
+        pause = new QLabel(CGameDlg);
+        pause->setObjectName(QStringLiteral("pause"));
+        pause->setGeometry(QRect(50, 20, 400, 400));
+        pause->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/pause.png);"));
         scoreshow = new QTextBrowser(CGameDlg);
         scoreshow->setObjectName(QStringLiteral("scoreshow"));
-        scoreshow->setGeometry(QRect(530, 50, 91, 51));
+        scoreshow->setGeometry(QRect(550, 60, 91, 51));
         QFont font;
         font.setFamily(QStringLiteral("Adobe Devanagari"));
         font.setPointSize(16);
@@ -70,6 +75,7 @@ public:
         background->setText(QString());
         gamepanel->setText(QString());
         menu->setText(QApplication::translate("CGameDlg", "\350\217\234\345\215\225", Q_NULLPTR));
+        pause->setText(QString());
     } // retranslateUi
 
 };
