@@ -10,6 +10,7 @@
 #include <QTime>
 #include <QTimer>
 #include <QPropertyAnimation>
+#include <QSettings>
 
 
 namespace Ui {
@@ -35,6 +36,8 @@ public:
     void drawJewel();
     QTimer* timer;
     void sleep(unsigned int msec);
+    QSettings *configIni;
+    QString style;
 private:
     Ui::CGameDlg *ui;
     bool isPause;

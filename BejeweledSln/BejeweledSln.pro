@@ -33,7 +33,8 @@ SOURCES += \
     CSetDlg.cpp \
     CGameDlg.cpp \
     CMenuDlg.cpp \
-    mylabel.cpp
+    mylabel.cpp \
+    CGameMode.cpp
 
 HEADERS += \
     CAboutDlg.h \
@@ -52,7 +53,8 @@ HEADERS += \
     CSetDlg.h \
     CGameDlg.h \
     CMenuDlg.h \
-    mylabel.h
+    mylabel.h \
+    CGameMode.h
 
 FORMS += \
     CBejeweledDlg.ui \
@@ -60,7 +62,8 @@ FORMS += \
     CRankDlg.ui \
     CSetDlg.ui \
     CGameDlg.ui \
-    CMenuDlg.ui
+    CMenuDlg.ui \
+    CGameMode.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
