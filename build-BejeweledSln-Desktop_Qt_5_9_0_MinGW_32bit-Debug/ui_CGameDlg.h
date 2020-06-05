@@ -31,6 +31,8 @@ public:
     QPushButton *menu;
     QLabel *pause;
     QTextBrowser *scoreshow;
+    QLabel *timeout;
+    QLabel *allcannot;
 
     void setupUi(QDialog *CGameDlg)
     {
@@ -62,6 +64,14 @@ public:
         font.setFamily(QStringLiteral("Adobe Devanagari"));
         font.setPointSize(16);
         scoreshow->setFont(font);
+        timeout = new QLabel(CGameDlg);
+        timeout->setObjectName(QStringLiteral("timeout"));
+        timeout->setGeometry(QRect(50, 20, 400, 400));
+        timeout->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/timeout.png);"));
+        allcannot = new QLabel(CGameDlg);
+        allcannot->setObjectName(QStringLiteral("allcannot"));
+        allcannot->setGeometry(QRect(50, 20, 400, 400));
+        allcannot->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/allcannot.png);"));
 
         retranslateUi(CGameDlg);
         QObject::connect(menu, SIGNAL(clicked()), CGameDlg, SLOT(menu()));
@@ -76,6 +86,8 @@ public:
         gamepanel->setText(QString());
         menu->setText(QApplication::translate("CGameDlg", "\350\217\234\345\215\225", Q_NULLPTR));
         pause->setText(QString());
+        timeout->setText(QString());
+        allcannot->setText(QString());
     } // retranslateUi
 
 };

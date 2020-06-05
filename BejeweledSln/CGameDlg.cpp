@@ -35,6 +35,7 @@ CGameDlg::CGameDlg(QWidget *parent) :
             }
             QPixmap pix(path.c_str());
             jewel[i][j]->setPixmap(pix);
+            jewel[i][j]->path = path;
             jewel[i][j]->setScaledContents(true);
             jewel[i][j]->setGeometry(x[j], y[i], 50, 50);
             jewel[i][j]->installEventFilter(this);
@@ -43,11 +44,20 @@ CGameDlg::CGameDlg(QWidget *parent) :
     }
 
     ui->pause->hide();
+    ui->timeout->hide();
+    ui->allcannot->hide();
     isPause = false;
     clickflag = 0;
     kuang = new QLabel(this);
     kuang->hide();
     score = 0;
+
+    ui->progressBar->setRange(0, 60);
+    ui->progressBar->setValue(60);
+    timer = new QTimer(this);
+    timer->setInterval(1000);
+    connect(timer, SIGNAL(timeout()), this, SLOT(updateProgress()));
+    timer->start();
 }
 
 
@@ -58,11 +68,13 @@ void CGameDlg::keyPressEvent(QKeyEvent *ev)
        ui->pause->show();
        ui->pause->raise();
        isPause = true;
+       timer->stop();
        return;
     }else if(ev->key() == Qt::Key_B && isPause)
     {
         ui->pause->hide();
         isPause = false;
+        timer->start();
         return;
     }
 
@@ -89,7 +101,19 @@ void CGameDlg::menu()
     ui->pause->show();
 }
 
-void sleep(unsigned int msec){
+void CGameDlg::updateProgress()
+{
+    int nCurrentValue = ui->progressBar->value();
+    nCurrentValue--;
+    if(nCurrentValue <= 0){
+        timer->stop();
+        ui->timeout->raise();
+        ui->timeout->show();
+    }
+    ui->progressBar->setValue(nCurrentValue);
+}
+
+void CGameDlg::sleep(unsigned int msec){
     QTime reachTime=QTime::currentTime().addMSecs(msec);
     while(QTime::currentTime()<reachTime){
         QCoreApplication::processEvents(QEventLoop::AllEvents,100);
@@ -121,6 +145,7 @@ void CGameDlg::drawJewel()
             }
             QPixmap pix(path.c_str());
             jewel[i][j]->setPixmap(pix);
+            jewel[i][j]->path = path;
             jewel[i][j]->setScaledContents(true);
             jewel[i][j]->setGeometry(x[j], y[i], 50, 50);
             jewel[i][j]->installEventFilter(this);
@@ -161,10 +186,27 @@ bool CGameDlg::eventFilter(QObject*obj,QEvent* e)
                 {
                     if(obj == jewel[i][j])
                     {
+
                         kuang->hide();
                         if((i == jewel1I-1 && j == jewel1J)|| (i == jewel1I+1 && j == jewel1J)
                                 || (j == jewel1J -1 && i == jewel1I) || (j == jewel1J+1 && i == jewel1I))
                         {
+                            //two jewel switch animation
+                            int xpos1 = jewel[jewel1I][jewel1J]->xpos;
+                            int ypos1 = jewel[jewel1I][jewel1J]->ypos;
+                            int xpos2 = jewel[i][j]->xpos;
+                            int ypos2 = jewel[i][j]->ypos;
+                            QPropertyAnimation* animation1 = new QPropertyAnimation(jewel[jewel1I][jewel1J], "pos");
+                            QPropertyAnimation* animation2 = new QPropertyAnimation(jewel[i][j], "pos");
+                            animation1->setDuration(500);
+                            animation2->setDuration(500);
+                            animation1->setStartValue(QPoint(xpos1, ypos1));
+                            animation1->setEndValue(QPoint(xpos2, ypos2));
+                            animation2->setStartValue(QPoint(xpos2, ypos2));
+                            animation2->setEndValue(QPoint(xpos1, ypos1));
+                            animation1->start();
+                            animation2->start();
+                            sleep(1000);
                             Z z1, z2;
                             z1.x = jewel[jewel1I][jewel1J]->x+1;
                             z1.y = jewel[jewel1I][jewel1J]->y+1;
@@ -172,20 +214,31 @@ bool CGameDlg::eventFilter(QObject*obj,QEvent* e)
                             z2.y = jewel[i][j]->y+1;
                             if(!gamelogic->jiaohuan1(matrix, z1, z2))
                             {
+                                animation1->setDuration(500);
+                                animation2->setDuration(500);
+                                animation1->setStartValue(QPoint(xpos2, ypos2));
+                                animation1->setEndValue(QPoint(xpos1, ypos1));
+                                animation2->setStartValue(QPoint(xpos1, ypos1));
+                                animation2->setEndValue(QPoint(xpos2, ypos2));
+                                animation1->start();
+                                animation2->start();
+                                sleep(500);
                                 clickflag = 0;
                                 return false;
                             }else
                             {
                                 do{
-                                    sleep(1000);
                                     drawJewel();
                                     score += 100;
                                     ui->scoreshow->setText(QString::number(score));
+                                    sleep(1000);
                                 }while(gamelogic->xiaoqu2(matrix));
                             }
                             if(gamelogic->all_cannot(matrix))
                             {
-
+                                timer->stop();
+                                ui->allcannot->show();
+                                ui->allcannot->raise();
                             }
                         }
                         clickflag = 0;
