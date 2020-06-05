@@ -19,7 +19,7 @@ CBejeweledDlg::~CBejeweledDlg()
 
 void CBejeweledDlg::start()
 {
-    CGameDlg w;
+    CGameMode w;
     this->close();
     w.show();
     w.exec();

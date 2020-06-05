@@ -4,7 +4,7 @@
 #include <QDialog>
 #include "CSetDlg.h"
 #include "CHelpDlg.h"
-#include "CGameDlg.h"
+#include "CGameMode.h"
 #include "CRankDlg.h"
 #include <QSettings>
 

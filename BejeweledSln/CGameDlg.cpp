@@ -19,6 +19,11 @@ CGameDlg::CGameDlg(QWidget *parent) :
     int x[8] = {50, 100, 150, 200, 250, 300, 350, 400};
     int y[8] = {20, 70, 120, 170, 220, 270, 320, 370};
 
+    configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
+    style = configIni->value("Picture/Style").toString();
+    qDebug() << style;
+    delete configIni;
+
     for(int i = 0; i < 8; i++)
     {
         for (int j = 0; j < 8; j++)
@@ -83,8 +88,6 @@ void CGameDlg::keyPressEvent(QKeyEvent *ev)
 
 void CGameDlg::keyReleaseEvent(QKeyEvent *ev)
 {
-
-
     QWidget::keyReleaseEvent(ev);
 }
 
