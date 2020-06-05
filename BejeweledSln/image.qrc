@@ -1,10 +1,12 @@
 <RCC>
     <qresource prefix="/new/prefix1">
         <file>image/baoshimizhen.png</file>
-        <file>image/timg.jpg</file>
-        <file>image/开始.png</file>
-        <file>image/记录.png</file>
-        <file>image/设置.png</file>
+        <file>image/config.png</file>
         <file>image/HelpDlg.png</file>
+        <file>image/score.png</file>
+        <file>image/start.png</file>
+        <file>image/timg.jpg</file>
+        <file>image/gamepanel.png</file>
+        <file>image/pause.png</file>
     </qresource>
 </RCC>

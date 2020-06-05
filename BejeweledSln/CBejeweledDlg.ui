@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Bejeweled3</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -58,7 +58,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/prefix1/image/开始.png);</string>
+    <string notr="true">image: url(:/new/prefix1/image/start.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -74,7 +74,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/prefix1/image/设置.png);</string>
+    <string notr="true">image: url(:/new/prefix1/image/config.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -84,16 +84,111 @@
    <property name="geometry">
     <rect>
      <x>660</x>
-     <y>310</y>
+     <y>300</y>
      <width>201</width>
      <height>191</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">image: url(:/new/prefix1/image/记录.png);</string>
+    <string notr="true">image: url(:/new/prefix1/image/score.png);</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>350</y>
+     <width>121</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>设置</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>350</y>
+     <width>121</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>开始</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>350</y>
+     <width>121</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>记录</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>780</x>
+     <y>550</y>
+     <width>121</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>帮助</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="welcome">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>851</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>黑体</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Welcome back!</string>
    </property>
   </widget>
   <zorder>label_2</zorder>
@@ -101,7 +196,83 @@
   <zorder>start</zorder>
   <zorder>config</zorder>
   <zorder>score</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>pushButton_4</zorder>
+  <zorder>welcome</zorder>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>CBejeweledDlg</receiver>
+   <slot>config()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>203</x>
+     <y>402</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>275</x>
+     <y>663</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>CBejeweledDlg</receiver>
+   <slot>help()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>866</x>
+     <y>585</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>869</x>
+     <y>740</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CBejeweledDlg</receiver>
+   <slot>start()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>455</x>
+     <y>367</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>506</x>
+     <y>707</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>CBejeweledDlg</receiver>
+   <slot>score()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>766</x>
+     <y>367</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>806</x>
+     <y>819</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>config()</slot>
+  <slot>help()</slot>
+  <slot>start()</slot>
+  <slot>score()</slot>
+ </slots>
 </ui>

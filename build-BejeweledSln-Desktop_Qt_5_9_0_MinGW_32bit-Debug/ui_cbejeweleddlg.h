@@ -1,5 +1,5 @@
 /********************************************************************************
-** Form generated from reading UI file 'cbejeweleddlg.ui'
+** Form generated from reading UI file 'CBejeweledDlg.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.9.0
 **
@@ -16,6 +16,7 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,6 +28,11 @@ public:
     QLabel *start;
     QLabel *config;
     QLabel *score;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
+    QLabel *welcome;
 
     void setupUi(QDialog *CBejeweledDlg)
     {
@@ -45,34 +51,74 @@ public:
         start = new QLabel(CBejeweledDlg);
         start->setObjectName(QStringLiteral("start"));
         start->setGeometry(QRect(360, 300, 201, 201));
-        start->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/image/\345\274\200\345\247\213.png);"));
+        start->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/start.png);"));
         config = new QLabel(CBejeweledDlg);
         config->setObjectName(QStringLiteral("config"));
         config->setGeometry(QRect(100, 300, 201, 191));
-        config->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/image/\350\256\276\347\275\256.png);"));
+        config->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/config.png);"));
         score = new QLabel(CBejeweledDlg);
         score->setObjectName(QStringLiteral("score"));
-        score->setGeometry(QRect(660, 310, 201, 191));
-        score->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/image/\350\256\260\345\275\225.png);"));
+        score->setGeometry(QRect(660, 300, 201, 191));
+        score->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/score.png);"));
+        pushButton = new QPushButton(CBejeweledDlg);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(140, 350, 121, 71));
+        QFont font;
+        font.setFamily(QStringLiteral("Adobe Devanagari"));
+        font.setPointSize(18);
+        pushButton->setFont(font);
+        pushButton_2 = new QPushButton(CBejeweledDlg);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(400, 350, 121, 71));
+        pushButton_2->setFont(font);
+        pushButton_3 = new QPushButton(CBejeweledDlg);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(700, 350, 121, 71));
+        pushButton_3->setFont(font);
+        pushButton_4 = new QPushButton(CBejeweledDlg);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(780, 550, 121, 71));
+        pushButton_4->setFont(font);
+        welcome = new QLabel(CBejeweledDlg);
+        welcome->setObjectName(QStringLiteral("welcome"));
+        welcome->setGeometry(QRect(10, 10, 851, 31));
+        QFont font1;
+        font1.setFamily(QString::fromUtf8("\351\273\221\344\275\223"));
+        font1.setPointSize(12);
+        welcome->setFont(font1);
         label_2->raise();
         label->raise();
         start->raise();
         config->raise();
         score->raise();
+        pushButton->raise();
+        pushButton_2->raise();
+        pushButton_3->raise();
+        pushButton_4->raise();
+        welcome->raise();
 
         retranslateUi(CBejeweledDlg);
+        QObject::connect(pushButton, SIGNAL(clicked()), CBejeweledDlg, SLOT(config()));
+        QObject::connect(pushButton_4, SIGNAL(clicked()), CBejeweledDlg, SLOT(help()));
+        QObject::connect(pushButton_2, SIGNAL(clicked()), CBejeweledDlg, SLOT(start()));
+        QObject::connect(pushButton_3, SIGNAL(clicked()), CBejeweledDlg, SLOT(score()));
 
         QMetaObject::connectSlotsByName(CBejeweledDlg);
     } // setupUi
 
     void retranslateUi(QDialog *CBejeweledDlg)
     {
-        CBejeweledDlg->setWindowTitle(QApplication::translate("CBejeweledDlg", "Dialog", Q_NULLPTR));
+        CBejeweledDlg->setWindowTitle(QApplication::translate("CBejeweledDlg", "Bejeweled3", Q_NULLPTR));
         label->setText(QString());
         label_2->setText(QString());
         start->setText(QString());
         config->setText(QString());
         score->setText(QString());
+        pushButton->setText(QApplication::translate("CBejeweledDlg", "\350\256\276\347\275\256", Q_NULLPTR));
+        pushButton_2->setText(QApplication::translate("CBejeweledDlg", "\345\274\200\345\247\213", Q_NULLPTR));
+        pushButton_3->setText(QApplication::translate("CBejeweledDlg", "\350\256\260\345\275\225", Q_NULLPTR));
+        pushButton_4->setText(QApplication::translate("CBejeweledDlg", "\345\270\256\345\212\251", Q_NULLPTR));
+        welcome->setText(QApplication::translate("CBejeweledDlg", "Welcome back!", Q_NULLPTR));
     } // retranslateUi
 
 };

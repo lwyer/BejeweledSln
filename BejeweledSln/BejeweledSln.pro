@@ -21,21 +21,19 @@ SOURCES += \
     CConfig.cpp \
     CConfigDao.cpp \
     CConfigLogic.cpp \
-    CGameDlg.cpp \
     CGameLogic.cpp \
-    CMenuDlg.cpp \
     CMusicPlayer.cpp \
     CPathTool.cpp \
     CRankDao.cpp \
-    CRankDlg.cpp \
     CRankLogic.cpp \
-    CSetDlg.cpp \
     main.cpp \
     CBejeweledDlg.cpp \
-    CNameDlg.cpp \
-    CThemeDlg.cpp \
-    CMusicDlg.cpp \
-    CHelpDlg.cpp
+    CHelpDlg.cpp \
+    CRankDlg.cpp \
+    CSetDlg.cpp \
+    CGameDlg.cpp \
+    CMenuDlg.cpp \
+    mylabel.cpp
 
 HEADERS += \
     CAboutDlg.h \
@@ -43,27 +41,26 @@ HEADERS += \
     CConfig.h \
     CConfigDao.h \
     CConfigLogic.h \
-    CGameDlg.h \
     CGameLogic.h \
-    CMenuDlg.h \
     CMusicPlayer.h \
     CPathTool.h \
     CRankDao.h \
-    CRankDlg.h \
     CRankLogic.h \
-    CSetDlg.h \
     CBejeweledDlg.h \
-    CNameDlg.h \
-    CThemeDlg.h \
-    CMusicDlg.h \
-    CHelpDlg.h
+    CHelpDlg.h \
+    CRankDlg.h \
+    CSetDlg.h \
+    CGameDlg.h \
+    CMenuDlg.h \
+    mylabel.h
 
 FORMS += \
-    CNameDlg.ui \
-    CThemeDlg.ui \
-    CMusicDlg.ui \
     CBejeweledDlg.ui \
-    CHelpDlg.ui
+    CHelpDlg.ui \
+    CRankDlg.ui \
+    CSetDlg.ui \
+    CGameDlg.ui \
+    CMenuDlg.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -1,4 +1,14 @@
-#ifndef CRANKDLG_H
-#define CRANKDLG_H
+#include "CRankDlg.h"
+#include "ui_CRankDlg.h"
 
-#endif // CRANKDLG_H
+CRankDlg::CRankDlg(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::CRankDlg)
+{
+    ui->setupUi(this);
+}
+
+CRankDlg::~CRankDlg()
+{
+    delete ui;
+}

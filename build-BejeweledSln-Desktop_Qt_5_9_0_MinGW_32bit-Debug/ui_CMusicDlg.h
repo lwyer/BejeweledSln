@@ -85,9 +85,11 @@ public:
         save->setGeometry(QRect(80, 270, 93, 28));
         cancel = new QPushButton(CMusicDlg);
         cancel->setObjectName(QStringLiteral("cancel"));
-        cancel->setGeometry(QRect(230, 260, 93, 28));
+        cancel->setGeometry(QRect(230, 270, 93, 28));
 
         retranslateUi(CMusicDlg);
+        QObject::connect(pushButton_2, SIGNAL(clicked()), CMusicDlg, SLOT(theme()));
+        QObject::connect(pushButton_3, SIGNAL(clicked()), CMusicDlg, SLOT(name()));
 
         QMetaObject::connectSlotsByName(CMusicDlg);
     } // setupUi
