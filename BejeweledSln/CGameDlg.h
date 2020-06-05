@@ -8,6 +8,8 @@
 #include "CGameLogic.h"
 #include "mylabel.h"
 #include <QTime>
+#include <QTimer>
+#include <QPropertyAnimation>
 
 
 namespace Ui {
@@ -25,12 +27,14 @@ public:
     bool eventFilter(QObject*obj,QEvent* e);
     Mylabel* jewel[8][8];
     int jewel1I;
-    int jewel1J;
+    int jewel1J;            //switch jewel
     CGameLogic* gamelogic;
     QLabel* kuang;
     int matrix[8][8];
     int score;
     void drawJewel();
+    QTimer* timer;
+    void sleep(unsigned int msec);
 private:
     Ui::CGameDlg *ui;
     bool isPause;
@@ -42,6 +46,7 @@ protected:
 
 private slots:
     void menu();
+    void updateProgress();
 };
 
 #endif // CGAMEDLG_H

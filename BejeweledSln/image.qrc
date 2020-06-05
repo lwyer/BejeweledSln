@@ -8,5 +8,7 @@
         <file>image/timg.jpg</file>
         <file>image/gamepanel.png</file>
         <file>image/pause.png</file>
+        <file>image/timeout.png</file>
+        <file>image/allcannot.png</file>
     </qresource>
 </RCC>
