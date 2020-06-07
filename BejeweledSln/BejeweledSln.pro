@@ -16,7 +16,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    CAboutDlg.cpp \
     CBejeweledApp.cpp \
     CConfig.cpp \
     CConfigDao.cpp \
@@ -37,7 +36,6 @@ SOURCES += \
     CGameMode.cpp
 
 HEADERS += \
-    CAboutDlg.h \
     CBejeweledApp.h \
     CConfig.h \
     CConfigDao.h \

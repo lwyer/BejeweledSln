@@ -1,5 +1,4 @@
 INPUT(
-./debug\CAboutDlg.o
 ./debug\CBejeweledApp.o
 ./debug\CConfig.o
 ./debug\CConfigDao.o
