@@ -1,5 +1,4 @@
 INPUT(
-./release\CAboutDlg.o
 ./release\CBejeweledApp.o
 ./release\CConfig.o
 ./release\CConfigDao.o

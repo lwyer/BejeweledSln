@@ -21,7 +21,6 @@ CGameDlg::CGameDlg(QWidget *parent) :
 
     configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
     style = configIni->value("Picture/Style").toString();
-    qDebug() << style;
     delete configIni;
 
     for(int i = 0; i < 8; i++)
@@ -29,14 +28,31 @@ CGameDlg::CGameDlg(QWidget *parent) :
         for (int j = 0; j < 8; j++)
         {
             jewel[i][j] = new Mylabel(i, j, x[j], y[i], path, this);
-            switch(matrix[i][j])
+            if(style == "1"){
+                switch(matrix[i][j])
+                {
+                case 1: path = "../BejeweledSln/image/blue.png";break;
+                case 2: path = "../BejeweledSln/image/green.png";break;
+                case 3: path = "../BejeweledSln/image/lightblue.png";break;
+                case 4: path = "../BejeweledSln/image/orange.png";break;
+                case 5: path = "../BejeweledSln/image/purple.png";break;
+                case 6: path = "../BejeweledSln/image/red.png";break;
+                case 7: path = "../BejeweledSln/image/yellow.png";break;
+                case 8: path = "../BejeweledSln/image/white.png";break;
+                }
+            }else
             {
-            case 1: path = "../BejeweledSln/image/blue.png";break;
-            case 2: path = "../BejeweledSln/image/green.png";break;
-            case 3: path = "../BejeweledSln/image/lightblue.png";break;
-            case 4: path = "../BejeweledSln/image/orange.png";break;
-            case 5: path = "../BejeweledSln/image/purple.png";break;
-            case 6: path = "../BejeweledSln/image/red.png";break;
+                switch(matrix[i][j])
+                {
+                case 1: path = "../BejeweledSln/image/blue2.png";break;
+                case 2: path = "../BejeweledSln/image/green2.png";break;
+                case 3: path = "../BejeweledSln/image/deepgreen2.png";break;
+                case 4: path = "../BejeweledSln/image/orange2.png";break;
+                case 5: path = "../BejeweledSln/image/purple2.png";break;
+                case 6: path = "../BejeweledSln/image/red2.png";break;
+                case 7: path = "../BejeweledSln/image/yellow2.png";break;
+                case 8: path = "../BejeweledSln/image/sliver2.png";break;
+                }
             }
             QPixmap pix(path.c_str());
             jewel[i][j]->setPixmap(pix);
@@ -137,14 +153,31 @@ void CGameDlg::drawJewel()
         for (int j = 0; j < 8; j++)
         {
             jewel[i][j] = new Mylabel(i, j, x[j], y[i], path, this);
-            switch(matrix[i][j])
+            if(style == "1"){
+                switch(matrix[i][j])
+                {
+                case 1: path = "../BejeweledSln/image/blue.png";break;
+                case 2: path = "../BejeweledSln/image/green.png";break;
+                case 3: path = "../BejeweledSln/image/lightblue.png";break;
+                case 4: path = "../BejeweledSln/image/orange.png";break;
+                case 5: path = "../BejeweledSln/image/purple.png";break;
+                case 6: path = "../BejeweledSln/image/red.png";break;
+                case 7: path = "../BejeweledSln/image/yellow.png";break;
+                case 8: path = "../BejeweledSln/image/white.png";break;
+                }
+            }else
             {
-            case 1: path = "../BejeweledSln/image/blue.png";break;
-            case 2: path = "../BejeweledSln/image/green.png";break;
-            case 3: path = "../BejeweledSln/image/lightblue.png";break;
-            case 4: path = "../BejeweledSln/image/orange.png";break;
-            case 5: path = "../BejeweledSln/image/purple.png";break;
-            case 6: path = "../BejeweledSln/image/red.png";break;
+                switch(matrix[i][j])
+                {
+                case 1: path = "../BejeweledSln/image/blue2.png";break;
+                case 2: path = "../BejeweledSln/image/green2.png";break;
+                case 3: path = "../BejeweledSln/image/deepgreen2.png";break;
+                case 4: path = "../BejeweledSln/image/orange2.png";break;
+                case 5: path = "../BejeweledSln/image/purple2.png";break;
+                case 6: path = "../BejeweledSln/image/red2.png";break;
+                case 7: path = "../BejeweledSln/image/yellow2.png";break;
+                case 8: path = "../BejeweledSln/image/sliver2.png";break;
+                }
             }
             QPixmap pix(path.c_str());
             jewel[i][j]->setPixmap(pix);
