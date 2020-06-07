@@ -10,5 +10,5 @@ CHelpDlg::CHelpDlg(QWidget *parent) :
 
 CHelpDlg::~CHelpDlg()
 {
-    delete ui;
+  //  delete ui;
 }

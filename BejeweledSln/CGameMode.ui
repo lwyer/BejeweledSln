@@ -201,9 +201,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>CGameMode</receiver>
+   <slot>classic()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>280</x>
+     <y>140</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>-36</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>lightning()</slot>
   <slot>back()</slot>
+  <slot>classic()</slot>
  </slots>
 </ui>

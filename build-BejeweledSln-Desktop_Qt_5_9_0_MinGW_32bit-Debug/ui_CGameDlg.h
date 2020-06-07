@@ -33,6 +33,8 @@ public:
     QTextBrowser *scoreshow;
     QLabel *timeout;
     QLabel *allcannot;
+    QPushButton *pauseorcontinue;
+    QPushButton *pauseorcontinue_2;
 
     void setupUi(QDialog *CGameDlg)
     {
@@ -59,7 +61,7 @@ public:
         pause->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/pause.png);"));
         scoreshow = new QTextBrowser(CGameDlg);
         scoreshow->setObjectName(QStringLiteral("scoreshow"));
-        scoreshow->setGeometry(QRect(550, 60, 91, 51));
+        scoreshow->setGeometry(QRect(530, 60, 91, 51));
         QFont font;
         font.setFamily(QStringLiteral("Adobe Devanagari"));
         font.setPointSize(16);
@@ -72,9 +74,16 @@ public:
         allcannot->setObjectName(QStringLiteral("allcannot"));
         allcannot->setGeometry(QRect(50, 20, 400, 400));
         allcannot->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/allcannot.png);"));
+        pauseorcontinue = new QPushButton(CGameDlg);
+        pauseorcontinue->setObjectName(QStringLiteral("pauseorcontinue"));
+        pauseorcontinue->setGeometry(QRect(530, 260, 93, 28));
+        pauseorcontinue_2 = new QPushButton(CGameDlg);
+        pauseorcontinue_2->setObjectName(QStringLiteral("pauseorcontinue_2"));
+        pauseorcontinue_2->setGeometry(QRect(530, 180, 93, 28));
 
         retranslateUi(CGameDlg);
         QObject::connect(menu, SIGNAL(clicked()), CGameDlg, SLOT(menu()));
+        QObject::connect(pauseorcontinue, SIGNAL(clicked()), CGameDlg, SLOT(pauseorcontinue()));
 
         QMetaObject::connectSlotsByName(CGameDlg);
     } // setupUi
@@ -88,6 +97,8 @@ public:
         pause->setText(QString());
         timeout->setText(QString());
         allcannot->setText(QString());
+        pauseorcontinue->setText(QApplication::translate("CGameDlg", "\346\232\202\345\201\234", Q_NULLPTR));
+        pauseorcontinue_2->setText(QApplication::translate("CGameDlg", "\346\217\220\347\244\272", Q_NULLPTR));
     } // retranslateUi
 
 };

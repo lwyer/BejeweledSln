@@ -11,6 +11,7 @@
 #include <QTimer>
 #include <QPropertyAnimation>
 #include <QSettings>
+#include <QMovie>
 
 
 namespace Ui {
@@ -50,6 +51,7 @@ protected:
 private slots:
     void menu();
     void updateProgress();
+    void pauseorcontinue();
 };
 
 #endif // CGAMEDLG_H

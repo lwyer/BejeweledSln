@@ -13,5 +13,5 @@ CSetDlg::CSetDlg(QWidget *parent) :
 
 CSetDlg::~CSetDlg()
 {
-    delete ui;
+  //  delete ui;
 }

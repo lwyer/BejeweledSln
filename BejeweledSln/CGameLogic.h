@@ -19,11 +19,12 @@ public:
     CGameLogic(int kindd);
 
     bool xiaoqu1(int num[][8]);
-    bool xiaoqu2(int num[][8]);
-    bool jiaohuan1(int num[][8],Z z1,Z z2);
+    int xiaoqu2(int num[][8]);
+    int jiaohuan1(int num[][8],Z z1,Z z2);
     bool jiaohuan2(int num[][8],Z z1,Z z2);
     void init(int num[][8]);
     bool all_cannot(int num[][8]);
+    void xiayi(int num[][8]) ;
 
 };
 

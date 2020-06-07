@@ -17,6 +17,7 @@ INPUT(
 ./debug\CMenuDlg.o
 ./debug\mylabel.o
 ./debug\CGameMode.o
+./debug\CGameClassic.o
 ./debug\qrc_image.o
 ./debug\moc_CBejeweledDlg.o
 ./debug\moc_CHelpDlg.o
@@ -26,4 +27,5 @@ INPUT(
 ./debug\moc_CMenuDlg.o
 ./debug\moc_mylabel.o
 ./debug\moc_CGameMode.o
+./debug\moc_CGameClassic.o
 );

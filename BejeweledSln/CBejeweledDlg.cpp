@@ -14,7 +14,7 @@ CBejeweledDlg::CBejeweledDlg(QWidget *parent) :
 
 CBejeweledDlg::~CBejeweledDlg()
 {
-    delete ui;
+  //  delete ui;
 }
 
 void CBejeweledDlg::start()

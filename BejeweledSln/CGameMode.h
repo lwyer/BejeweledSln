@@ -4,6 +4,7 @@
 #include <QDialog>
 #include "CGameDlg.h"
 #include "CBejeweledDlg.h"
+#include "CGameClassic.h"
 
 namespace Ui {
 class CGameMode;
@@ -23,6 +24,7 @@ private:
 private slots:
     void lightning();
     void back();
+    void classic();
 };
 
 #endif // CGAMEMODE_H

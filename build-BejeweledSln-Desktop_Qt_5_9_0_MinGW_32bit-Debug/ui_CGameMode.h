@@ -86,6 +86,7 @@ public:
         retranslateUi(CGameMode);
         QObject::connect(lightning, SIGNAL(clicked()), CGameMode, SLOT(lightning()));
         QObject::connect(pushButton_2, SIGNAL(clicked()), CGameMode, SLOT(back()));
+        QObject::connect(pushButton, SIGNAL(clicked()), CGameMode, SLOT(classic()));
 
         QMetaObject::connectSlotsByName(CGameMode);
     } // setupUi

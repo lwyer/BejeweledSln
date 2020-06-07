@@ -7,7 +7,7 @@ CMenuDlg::CMenuDlg(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->movie->setScaledContents(true);
-    QMovie *movie = new QMovie("../BejeweledSln/image/movie.gif");
+    QMovie *movie = new QMovie("../BejeweledSln/image/boom.gif");
     ui->movie->setMovie(movie);
     movie->start();
 
@@ -38,5 +38,5 @@ void CMenuDlg::keyReleaseEvent(QKeyEvent *ev)
 
 CMenuDlg::~CMenuDlg()
 {
-    delete ui;
+ //   delete ui;
 }

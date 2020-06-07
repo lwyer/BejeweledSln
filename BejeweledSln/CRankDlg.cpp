@@ -10,5 +10,5 @@ CRankDlg::CRankDlg(QWidget *parent) :
 
 CRankDlg::~CRankDlg()
 {
-    delete ui;
+  //  delete ui;
 }
