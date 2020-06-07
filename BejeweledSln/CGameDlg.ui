@@ -87,7 +87,7 @@
   <widget class="QTextBrowser" name="scoreshow">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>530</x>
      <y>60</y>
      <width>91</width>
      <height>51</height>
@@ -132,6 +132,32 @@
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="pauseorcontinue">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>260</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>暂停</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pauseorcontinue_2">
+   <property name="geometry">
+    <rect>
+     <x>530</x>
+     <y>180</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>提示</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
@@ -151,8 +177,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pauseorcontinue</sender>
+   <signal>clicked()</signal>
+   <receiver>CGameDlg</receiver>
+   <slot>pauseorcontinue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>598</x>
+     <y>264</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>862</x>
+     <y>281</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>menu()</slot>
+  <slot>pauseorcontinue()</slot>
  </slots>
 </ui>

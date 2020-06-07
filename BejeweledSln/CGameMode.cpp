@@ -28,3 +28,11 @@ void CGameMode::back()
     w.show();
     w.exec();
 }
+
+void CGameMode::classic()
+{
+    CGameClassic w;
+    this->close();
+    w.show();
+    w.exec();
+}
