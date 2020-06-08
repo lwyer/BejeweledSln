@@ -10,6 +10,7 @@
 #include <QPropertyAnimation>
 #include <QSettings>
 #include <QMovie>
+#include <CGamePass.h>
 
 namespace Ui {
 class CGameClassic;
@@ -41,7 +42,7 @@ private:
     int clickflag;
     int level;
 private slots:
-
+    void tishislot();
 
 };
 

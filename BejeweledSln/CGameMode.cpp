@@ -36,3 +36,11 @@ void CGameMode::classic()
     w.show();
     w.exec();
 }
+
+void CGameMode::jewel2()
+{
+    CGameDlg_2 w;
+    this->close();
+    w.show();
+    w.exec();
+}

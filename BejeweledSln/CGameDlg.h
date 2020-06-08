@@ -14,6 +14,7 @@
 #include <QMovie>
 
 
+
 namespace Ui {
 class CGameDlg;
 }
@@ -52,6 +53,7 @@ private slots:
     void menu();
     void updateProgress();
     void pauseorcontinue();
+    void tishislot();
 };
 
 #endif // CGAMEDLG_H

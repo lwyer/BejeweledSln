@@ -25,6 +25,7 @@ public:
     void init(int num[][8]);
     bool all_cannot(int num[][8]);
     void xiayi(int num[][8]) ;
+    void tishi(int num[][8],Z &zo,Z &zt);
 
 };
 

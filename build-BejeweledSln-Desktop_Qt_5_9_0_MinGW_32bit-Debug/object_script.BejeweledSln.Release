@@ -18,6 +18,9 @@ INPUT(
 ./release\mylabel.o
 ./release\CGameMode.o
 ./release\CGameClassic.o
+./release\CGamePass.o
+./release\CGameLogic_2.o
+./release\CGameDlg_2.o
 ./release\qrc_image.o
 ./release\moc_CBejeweledDlg.o
 ./release\moc_CHelpDlg.o
@@ -28,4 +31,6 @@ INPUT(
 ./release\moc_mylabel.o
 ./release\moc_CGameMode.o
 ./release\moc_CGameClassic.o
+./release\moc_CGamePass.o
+./release\moc_CGameDlg_2.o
 );

@@ -88,6 +88,7 @@ public:
         retranslateUi(CGameDlg);
         QObject::connect(menu, SIGNAL(clicked()), CGameDlg, SLOT(menu()));
         QObject::connect(pauseorcontinue, SIGNAL(clicked()), CGameDlg, SLOT(pauseorcontinue()));
+        QObject::connect(pauseorcontinue_2, SIGNAL(clicked()), CGameDlg, SLOT(tishislot()));
 
         QMetaObject::connectSlotsByName(CGameDlg);
     } // setupUi
