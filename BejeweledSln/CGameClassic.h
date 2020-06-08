@@ -9,7 +9,7 @@
 #include <QTime>
 #include <QPropertyAnimation>
 #include <QSettings>
-
+#include <QMovie>
 
 namespace Ui {
 class CGameClassic;
@@ -39,6 +39,7 @@ private:
     Ui::CGameClassic *ui;
     bool isPause;
     int clickflag;
+    int level;
 private slots:
 
 

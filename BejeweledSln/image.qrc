@@ -10,5 +10,6 @@
         <file>image/pause.png</file>
         <file>image/timeout.png</file>
         <file>image/allcannot.png</file>
+        <file>image/levelcomplete.png</file>
     </qresource>
 </RCC>
