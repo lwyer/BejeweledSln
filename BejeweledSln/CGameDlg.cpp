@@ -140,6 +140,48 @@ void CGameDlg::pauseorcontinue()
     }
 }
 
+
+void CGameDlg::tishislot()
+{
+    Z z1, z2;
+    gamelogic->tishi(matrix, z1, z2);
+
+    int xpos1 = jewel[z1.x-1][z1.y-1]->xpos;
+    int ypos1 = jewel[z1.x-1][z1.y-1]->ypos;
+    int xpos2 = jewel[z2.x-1][z2.y-1]->xpos;
+    int ypos2 = jewel[z2.x-1][z2.y-1]->ypos;
+    QPropertyAnimation* animation1 = new QPropertyAnimation(jewel[z1.x-1][z1.y-1], "pos");
+    QPropertyAnimation* animation2 = new QPropertyAnimation(jewel[z2.x-1][z2.y-1], "pos");
+    animation1->setDuration(500);
+    animation2->setDuration(500);
+    animation1->setStartValue(QPoint(xpos1, ypos1));
+    animation1->setEndValue(QPoint(xpos2, ypos2));
+    animation2->setStartValue(QPoint(xpos2, ypos2));
+    animation2->setEndValue(QPoint(xpos1, ypos1));
+    animation1->start();
+    animation2->start();
+    sleep(700);
+
+    int xiaoqucount = 0;
+    xiaoqucount = gamelogic->jiaohuan1(matrix, z1, z2);
+    do{
+        drawJewel();
+        sleep(700);
+        gamelogic->xiayi(matrix);
+        drawJewel();
+        score -= 20*xiaoqucount;
+        ui->scoreshow->setText(QString::number(score));
+        sleep(1000);
+    }while((xiaoqucount = gamelogic->xiaoqu2(matrix)) != 0);
+    if(gamelogic->all_cannot(matrix))
+    {
+        timer->stop();
+        ui->allcannot->show();
+        ui->allcannot->raise();
+    }
+
+}
+
 void CGameDlg::updateProgress()
 {
     int nCurrentValue = ui->progressBar->value();

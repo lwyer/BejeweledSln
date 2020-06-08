@@ -35,7 +35,10 @@ SOURCES += \
     CMenuDlg.cpp \
     mylabel.cpp \
     CGameMode.cpp \
-    CGameClassic.cpp
+    CGameClassic.cpp \
+    CGamePass.cpp \
+    CGameLogic_2.cpp \
+    CGameDlg_2.cpp
 
 HEADERS += \
     CBejeweledApp.h \
@@ -55,7 +58,10 @@ HEADERS += \
     CMenuDlg.h \
     mylabel.h \
     CGameMode.h \
-    CGameClassic.h
+    CGameClassic.h \
+    CGamePass.h \
+    CGameLogic_2.h \
+    CGameDlg_2.h
 
 FORMS += \
     CBejeweledDlg.ui \
@@ -65,7 +71,9 @@ FORMS += \
     CGameDlg.ui \
     CMenuDlg.ui \
     CGameMode.ui \
-    CGameClassic.ui
+    CGameClassic.ui \
+    CGamePass.ui \
+    CGameDlg_2.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -31,7 +31,6 @@ public:
     QLabel *gamepanel;
     QPushButton *menu;
     QLabel *allcannot;
-    QLabel *pause;
     QPushButton *pauseorcontinue_2;
     QLabel *levelcomplete;
 
@@ -65,10 +64,6 @@ public:
         allcannot->setObjectName(QStringLiteral("allcannot"));
         allcannot->setGeometry(QRect(50, 20, 400, 400));
         allcannot->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/allcannot.png);"));
-        pause = new QLabel(CGameClassic);
-        pause->setObjectName(QStringLiteral("pause"));
-        pause->setGeometry(QRect(50, 20, 400, 400));
-        pause->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/pause.png);"));
         pauseorcontinue_2 = new QPushButton(CGameClassic);
         pauseorcontinue_2->setObjectName(QStringLiteral("pauseorcontinue_2"));
         pauseorcontinue_2->setGeometry(QRect(540, 190, 93, 28));
@@ -77,6 +72,7 @@ public:
         levelcomplete->setGeometry(QRect(180, 180, 361, 91));
 
         retranslateUi(CGameClassic);
+        QObject::connect(pauseorcontinue_2, SIGNAL(clicked()), CGameClassic, SLOT(tishislot()));
 
         QMetaObject::connectSlotsByName(CGameClassic);
     } // setupUi
@@ -88,7 +84,6 @@ public:
         gamepanel->setText(QString());
         menu->setText(QApplication::translate("CGameClassic", "\350\217\234\345\215\225", Q_NULLPTR));
         allcannot->setText(QString());
-        pause->setText(QString());
         pauseorcontinue_2->setText(QApplication::translate("CGameClassic", "\346\217\220\347\244\272", Q_NULLPTR));
         levelcomplete->setText(QString());
     } // retranslateUi

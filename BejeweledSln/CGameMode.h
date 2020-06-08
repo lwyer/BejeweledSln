@@ -5,6 +5,7 @@
 #include "CGameDlg.h"
 #include "CBejeweledDlg.h"
 #include "CGameClassic.h"
+#include "CGameDlg_2.h"
 
 namespace Ui {
 class CGameMode;
@@ -25,6 +26,7 @@ private slots:
     void lightning();
     void back();
     void classic();
+    void jewel2();
 };
 
 #endif // CGAMEMODE_H

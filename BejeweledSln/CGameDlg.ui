@@ -206,9 +206,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pauseorcontinue_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CGameDlg</receiver>
+   <slot>tishislot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>598</x>
+     <y>189</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1067</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>menu()</slot>
   <slot>pauseorcontinue()</slot>
+  <slot>tishislot()</slot>
  </slots>
 </ui>
