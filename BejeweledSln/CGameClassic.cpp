@@ -64,12 +64,16 @@ CGameClassic::CGameClassic(QWidget *parent) :
 
     ui->pause->hide();
     ui->allcannot->hide();
+    ui->levelcomplete->hide();
     isPause = false;
     clickflag = 0;
     kuang = new QLabel(this);
     kuang->hide();
     score = 0;
+    level = 1;
 
+    ui->scorebar->setRange(0, 1200);
+    ui->scorebar->setValue(0);
 
 }
 
@@ -162,6 +166,7 @@ void CGameClassic::drawJewel()
 bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
 {
     int xiaoqucount = 0;
+    QMovie* movie = new QMovie("../BejeweledSln/image/levelcomplete.gif");
     if(e->type() == QEvent::MouseButtonPress)
     {
         if(clickflag == 0){
@@ -240,9 +245,55 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                                     gamelogic->xiayi(matrix);
                                     drawJewel();
                                     score += 100*xiaoqucount;
+                                    if(score < ui->scorebar->maximum())
+                                        ui->scorebar->setValue(score);
+                                    else
+                                        ui->scorebar->setValue(ui->scorebar->maximum());
                                     ui->scoreshow->setText(QString::number(score));
                                     sleep(1000);
                                 }while((xiaoqucount = gamelogic->xiaoqu2(matrix)) != 0);
+                                if(score >= 1200 && level == 1)
+                                {
+                                    ui->levelcomplete->setMovie(movie);
+                                    ui->levelcomplete->show();
+                                    ui->levelcomplete->raise();
+                                    movie->start();
+                                    sleep(2000);
+                                    ui->levelcomplete->close();
+                                    level++;
+                                    gamelogic = new CGameLogic(7);
+                                    gamelogic->init(matrix);
+                                    drawJewel();
+                                    ui->scorebar->setRange(0, 2400);
+                                    ui->scorebar->setValue(0);
+                                    score = 0;
+                                    ui->scoreshow->setText("0");
+                                }else if(score >= 2400 && level == 2)
+                                {
+                                    ui->levelcomplete->setMovie(movie);
+                                    ui->levelcomplete->show();
+                                    ui->levelcomplete->raise();
+                                    movie->start();
+                                    sleep(2000);
+                                    ui->levelcomplete->close();
+                                    level++;
+                                    gamelogic = new CGameLogic(8);
+                                    gamelogic->init(matrix);
+                                    drawJewel();
+                                    ui->scorebar->setRange(0, 3000);
+                                    ui->scorebar->setValue(0);
+                                    score = 0;
+                                    ui->scoreshow->setText("0");
+                                }else if(score >= 3000 && level == 3)
+                                {
+                                    ui->levelcomplete->setMovie(movie);
+                                    ui->levelcomplete->show();
+                                    ui->levelcomplete->raise();
+                                    movie->start();
+                                    sleep(2000);
+                                    ui->levelcomplete->close();
+                                    level++;
+                                }
                             }
                             if(gamelogic->all_cannot(matrix))
                             {

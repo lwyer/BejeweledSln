@@ -58,8 +58,8 @@
   <widget class="QLabel" name="gamepanel">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>0</y>
+     <x>29</x>
+     <y>9</y>
      <width>441</width>
      <height>431</height>
     </rect>
@@ -87,8 +87,8 @@
   <widget class="QLabel" name="allcannot">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>10</y>
+     <x>50</x>
+     <y>20</y>
      <width>400</width>
      <height>400</height>
     </rect>
@@ -103,8 +103,8 @@
   <widget class="QLabel" name="pause">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>10</y>
+     <x>50</x>
+     <y>20</y>
      <width>400</width>
      <height>400</height>
     </rect>
@@ -127,6 +127,19 @@
    </property>
    <property name="text">
     <string>提示</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="levelcomplete">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>180</y>
+     <width>361</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
  </widget>

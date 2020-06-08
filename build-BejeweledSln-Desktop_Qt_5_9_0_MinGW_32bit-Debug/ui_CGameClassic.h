@@ -33,6 +33,7 @@ public:
     QLabel *allcannot;
     QLabel *pause;
     QPushButton *pauseorcontinue_2;
+    QLabel *levelcomplete;
 
     void setupUi(QDialog *CGameClassic)
     {
@@ -55,22 +56,25 @@ public:
         scorebar->setValue(24);
         gamepanel = new QLabel(CGameClassic);
         gamepanel->setObjectName(QStringLiteral("gamepanel"));
-        gamepanel->setGeometry(QRect(20, 0, 441, 431));
+        gamepanel->setGeometry(QRect(29, 9, 441, 431));
         gamepanel->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/gamepanel.png);"));
         menu = new QPushButton(CGameClassic);
         menu->setObjectName(QStringLiteral("menu"));
         menu->setGeometry(QRect(540, 350, 93, 28));
         allcannot = new QLabel(CGameClassic);
         allcannot->setObjectName(QStringLiteral("allcannot"));
-        allcannot->setGeometry(QRect(40, 10, 400, 400));
+        allcannot->setGeometry(QRect(50, 20, 400, 400));
         allcannot->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/allcannot.png);"));
         pause = new QLabel(CGameClassic);
         pause->setObjectName(QStringLiteral("pause"));
-        pause->setGeometry(QRect(40, 10, 400, 400));
+        pause->setGeometry(QRect(50, 20, 400, 400));
         pause->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/pause.png);"));
         pauseorcontinue_2 = new QPushButton(CGameClassic);
         pauseorcontinue_2->setObjectName(QStringLiteral("pauseorcontinue_2"));
         pauseorcontinue_2->setGeometry(QRect(540, 190, 93, 28));
+        levelcomplete = new QLabel(CGameClassic);
+        levelcomplete->setObjectName(QStringLiteral("levelcomplete"));
+        levelcomplete->setGeometry(QRect(180, 180, 361, 91));
 
         retranslateUi(CGameClassic);
 
@@ -86,6 +90,7 @@ public:
         allcannot->setText(QString());
         pause->setText(QString());
         pauseorcontinue_2->setText(QApplication::translate("CGameClassic", "\346\217\220\347\244\272", Q_NULLPTR));
+        levelcomplete->setText(QString());
     } // retranslateUi
 
 };

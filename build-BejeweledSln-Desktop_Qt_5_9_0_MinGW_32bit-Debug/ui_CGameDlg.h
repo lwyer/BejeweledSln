@@ -35,6 +35,7 @@ public:
     QLabel *allcannot;
     QPushButton *pauseorcontinue;
     QPushButton *pauseorcontinue_2;
+    QLabel *label;
 
     void setupUi(QDialog *CGameDlg)
     {
@@ -80,6 +81,9 @@ public:
         pauseorcontinue_2 = new QPushButton(CGameDlg);
         pauseorcontinue_2->setObjectName(QStringLiteral("pauseorcontinue_2"));
         pauseorcontinue_2->setGeometry(QRect(530, 180, 93, 28));
+        label = new QLabel(CGameDlg);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(210, 180, 361, 91));
 
         retranslateUi(CGameDlg);
         QObject::connect(menu, SIGNAL(clicked()), CGameDlg, SLOT(menu()));
@@ -99,6 +103,7 @@ public:
         allcannot->setText(QString());
         pauseorcontinue->setText(QApplication::translate("CGameDlg", "\346\232\202\345\201\234", Q_NULLPTR));
         pauseorcontinue_2->setText(QApplication::translate("CGameDlg", "\346\217\220\347\244\272", Q_NULLPTR));
+        label->setText(QString());
     } // retranslateUi
 
 };
