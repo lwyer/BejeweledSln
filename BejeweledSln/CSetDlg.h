@@ -3,6 +3,10 @@
 
 #include <QDialog>
 #include <QSettings>
+#include <QSound>
+#include <QDebug>
+#include <QFileDialog>
+#include <QButtonGroup>
 
 namespace Ui {
 class CSetDlg;
@@ -15,23 +19,14 @@ class CSetDlg : public QDialog
 public:
     explicit CSetDlg(QWidget *parent = 0);
     ~CSetDlg();
+    QSettings* configini;
+    QButtonGroup* musicradio;
+    QButtonGroup* themeradio;
+    QButtonGroup* styleradio;
 
 private slots:
-    void on_checkBox_toggled(bool checked);
-
-    void on_pushButton_5_clicked(bool checked);
-
-    void on_radioButton_3_toggled(bool checked);
-
-    void on_pushButton_4_clicked(bool checked);
-
-    void on_radioButton_6_toggled(bool checked);
-
-    void on_radioButton_4_toggled(bool checked);
-
-    void on_pushButton_6_clicked(bool checked);
-
-    void on_pushButton_2_clicked(bool checked);
+    void cancel();
+    void save();
 
 private:
     Ui::CSetDlg *ui;

@@ -1,4 +1,5 @@
 INPUT(
+./debug\qrc_image.o
 ./debug\CBejeweledApp.o
 ./debug\CConfig.o
 ./debug\CConfigDao.o
@@ -21,7 +22,6 @@ INPUT(
 ./debug\CGamePass.o
 ./debug\CGameLogic_2.o
 ./debug\CGameDlg_2.o
-./debug\qrc_image.o
 ./debug\moc_CBejeweledDlg.o
 ./debug\moc_CHelpDlg.o
 ./debug\moc_CRankDlg.o

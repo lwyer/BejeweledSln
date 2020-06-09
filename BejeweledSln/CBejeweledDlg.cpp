@@ -6,9 +6,6 @@ CBejeweledDlg::CBejeweledDlg(QWidget *parent) :
     ui(new Ui::CBejeweledDlg)
 {
     ui->setupUi(this);
-    QSettings *configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
-    ui->welcome->setText("Welcome Back! "+configIni->value("Name/Name").toString());
-    delete configIni;
 }
 
 

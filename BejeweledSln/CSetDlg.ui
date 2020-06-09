@@ -23,13 +23,13 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
      <string>音效设置</string>
     </attribute>
-    <widget class="QRadioButton" name="radioButton_2">
+    <widget class="QRadioButton" name="diy1">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -42,7 +42,7 @@
       <string>自定义</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="checkBox">
+    <widget class="QCheckBox" name="bgmusicswitch">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -54,8 +54,14 @@
      <property name="text">
       <string>背景音乐</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+     <property name="tristate">
+      <bool>false</bool>
+     </property>
     </widget>
-    <widget class="QCheckBox" name="checkBox_2">
+    <widget class="QCheckBox" name="soundswitch">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -66,6 +72,9 @@
      </property>
      <property name="text">
       <string>音效</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
      </property>
     </widget>
     <widget class="QLabel" name="label">
@@ -81,7 +90,7 @@
       <string>音效设置</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton">
+    <widget class="QRadioButton" name="default1">
      <property name="geometry">
       <rect>
        <x>100</x>
@@ -93,8 +102,14 @@
      <property name="text">
       <string>默认</string>
      </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit">
+    <widget class="QTextEdit" name="bgmusicpath">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>40</x>
@@ -103,21 +118,27 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="readOnly">
+      <bool>false</bool>
+     </property>
     </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>20</x>
        <y>110</y>
-       <width>111</width>
+       <width>141</width>
        <height>16</height>
       </rect>
      </property>
      <property name="text">
-      <string>背景音乐设置</string>
+      <string> 游戏背景音乐设置</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_5">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>300</x>
@@ -148,30 +169,7 @@
       <string>宝石图片</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_2">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>170</y>
-       <width>161</width>
-       <height>31</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>40</x>
-       <y>180</y>
-       <width>72</width>
-       <height>15</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>暂停图片</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_3">
+    <widget class="QRadioButton" name="default2">
      <property name="geometry">
       <rect>
        <x>60</x>
@@ -183,21 +181,14 @@
      <property name="text">
       <string>默认</string>
      </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_4">
-     <property name="geometry">
-      <rect>
-       <x>220</x>
-       <y>140</y>
-       <width>71</width>
-       <height>19</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>风格2</string>
+     <property name="checked">
+      <bool>true</bool>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_3">
+    <widget class="QTextEdit" name="bgpicpath">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>120</x>
@@ -207,20 +198,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
-     <property name="geometry">
-      <rect>
-       <x>290</x>
-       <y>170</y>
-       <width>71</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>浏览...</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_5">
+    <widget class="QRadioButton" name="diy2">
      <property name="geometry">
       <rect>
        <x>180</x>
@@ -247,6 +225,9 @@
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_4">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>290</x>
@@ -259,18 +240,53 @@
       <string>浏览...</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_6">
+    <widget class="QGroupBox" name="groupBox">
      <property name="geometry">
       <rect>
-       <x>120</x>
-       <y>140</y>
-       <width>71</width>
-       <height>19</height>
+       <x>110</x>
+       <y>130</y>
+       <width>191</width>
+       <height>41</height>
       </rect>
      </property>
-     <property name="text">
-      <string>风格1</string>
+     <property name="title">
+      <string/>
      </property>
+     <widget class="QRadioButton" name="style2">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>10</y>
+        <width>71</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>风格2</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="style1">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>风格1</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_3">
@@ -336,5 +352,42 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CSetDlg</receiver>
+   <slot>cancel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>364</x>
+     <y>337</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>575</x>
+     <y>345</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>CSetDlg</receiver>
+   <slot>save()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>351</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>265</x>
+     <y>520</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>cancel()</slot>
+  <slot>save()</slot>
+ </slots>
 </ui>

@@ -11,13 +11,13 @@ MAKEFILE      = Makefile.Release
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DUNICODE -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
+DEFINES       = -DUNICODE -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_NO_DEBUG -DQT_MULTIMEDIA_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_SQL_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -pipe -O2 -Wextra -Wall -W $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -pipe -O2 -std=gnu++11 -Wextra -Wall -W -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I..\BejeweledSln -I. -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtWidgets -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtGui -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtANGLE -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtSql -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtCore -Irelease -I. -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\win32-g++ 
+INCPATH       = -I..\BejeweledSln -I. -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtMultimedia -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtWidgets -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtGui -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtANGLE -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtNetwork -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtSql -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\include\QtCore -Irelease -I. -I..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
-LIBS        =        -lmingw32 -LD:\Qt\Qt5.9.0\5.9\mingw53_32\lib D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libqtmain.a -LC:\utils\my_sql\my_sql\lib -LC:\utils\postgresql\pgsql\lib -lshell32 D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Widgets.a D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Gui.a D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Sql.a D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Core.a 
+LIBS        =        -lmingw32 -LD:\Qt\Qt5.9.0\5.9\mingw53_32\lib D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libqtmain.a -LC:\utils\my_sql\my_sql\lib -LC:\utils\postgresql\pgsql\lib -lshell32 D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Multimedia.a D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Widgets.a D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Gui.a D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Network.a D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Sql.a D:\Qt\Qt5.9.0\5.9\mingw53_32\lib\libQt5Core.a 
 QMAKE         = D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\qmake.exe
 IDC           = idc
 IDL           = midl
@@ -67,8 +67,7 @@ SOURCES       = ..\BejeweledSln\CBejeweledApp.cpp \
 		..\BejeweledSln\CGameClassic.cpp \
 		..\BejeweledSln\CGamePass.cpp \
 		..\BejeweledSln\CGameLogic_2.cpp \
-		..\BejeweledSln\CGameDlg_2.cpp release\qrc_image.cpp \
-		release\moc_CBejeweledDlg.cpp \
+		..\BejeweledSln\CGameDlg_2.cpp release\moc_CBejeweledDlg.cpp \
 		release\moc_CHelpDlg.cpp \
 		release\moc_CRankDlg.cpp \
 		release\moc_CSetDlg.cpp \
@@ -79,7 +78,8 @@ SOURCES       = ..\BejeweledSln\CBejeweledApp.cpp \
 		release\moc_CGameClassic.cpp \
 		release\moc_CGamePass.cpp \
 		release\moc_CGameDlg_2.cpp
-OBJECTS       = release/CBejeweledApp.o \
+OBJECTS       = release/qrc_image.o \
+		release/CBejeweledApp.o \
 		release/CConfig.o \
 		release/CConfigDao.o \
 		release/CConfigLogic.o \
@@ -101,7 +101,6 @@ OBJECTS       = release/CBejeweledApp.o \
 		release/CGamePass.o \
 		release/CGameLogic_2.o \
 		release/CGameDlg_2.o \
-		release/qrc_image.o \
 		release/moc_CBejeweledDlg.o \
 		release/moc_CHelpDlg.o \
 		release/moc_CRankDlg.o \
@@ -175,10 +174,10 @@ qmake: FORCE
 qmake_all: FORCE
 
 dist:
-	$(ZIP) BejeweledSln.zip $(SOURCES) $(DIST) ..\BejeweledSln\BejeweledSln.pro ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\spec_pre.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\qdevice.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\device_config.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\common\g++-base.conf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\common\angle.conf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\common\sanitize.conf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\common\gcc-base.conf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\qconfig.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3danimation.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dcore.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dextras.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dinput.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dlogic.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquick.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3drender.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3drender_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axbase.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axbase_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axcontainer.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axserver.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axserver_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_bluetooth.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_charts.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_charts_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_concurrent.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_core.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_core_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_datavisualization.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_datavisualization_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_dbus.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_dbus_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_designer.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_designer_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_gamepad.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_gui.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_gui_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_help.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_help_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_location.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_location_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_multimedia.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_network.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_network_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_networkauth.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_networkauth_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_nfc.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_nfc_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_opengl.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_opengl_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_openglextensions.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_positioning.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_positioning_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_printsupport.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_purchasing.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_purchasing_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qml.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qml_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qmltest.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quick.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quick_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_remoteobjects.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_remoteobjects_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_repparser.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_repparser_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_script.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_script_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_scripttools.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_scripttools_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_scxml.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_scxml_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_sensors.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_sensors_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_serialbus.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_serialport.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_serialport_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_sql.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_sql_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_svg.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_svg_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_testlib.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_testlib_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_texttospeech.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_uiplugin.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_uitools.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_uitools_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_webchannel.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_websockets.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_websockets_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_widgets.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_widgets_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_winextras.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_winextras_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_xml.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_xml_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\qt_functions.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\qt_config.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\win32-g++\qmake.conf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\spec_post.prf .qmake.stash ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\exclusive_builds.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\toolchain.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\default_pre.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\win32\default_pre.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\resolve_config.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\exclusive_builds_post.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\default_post.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\build_pass.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\qml_debug.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\precompile_header.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\warn_on.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\qt.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\resources.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\moc.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\win32\opengl.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\uic.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\qmake_use.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\file_copies.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\win32\windows.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\testcase_targets.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\exceptions.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\yacc.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\lex.prf ..\BejeweledSln\BejeweledSln.pro ..\BejeweledSln\image.qrc ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\qtmain.prl ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\Qt5Widgets.prl ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\Qt5Gui.prl ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\Qt5Sql.prl ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\Qt5Core.prl   ..\BejeweledSln\image.qrc ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\data\dummy.cpp ..\BejeweledSln\CBejeweledApp.h ..\BejeweledSln\CConfig.h ..\BejeweledSln\CConfigDao.h ..\BejeweledSln\CConfigLogic.h ..\BejeweledSln\CGameLogic.h ..\BejeweledSln\CMusicPlayer.h ..\BejeweledSln\CPathTool.h ..\BejeweledSln\CRankDao.h ..\BejeweledSln\CRankLogic.h ..\BejeweledSln\CBejeweledDlg.h ..\BejeweledSln\CHelpDlg.h ..\BejeweledSln\CRankDlg.h ..\BejeweledSln\CSetDlg.h ..\BejeweledSln\CGameDlg.h ..\BejeweledSln\CMenuDlg.h ..\BejeweledSln\mylabel.h ..\BejeweledSln\CGameMode.h ..\BejeweledSln\CGameClassic.h ..\BejeweledSln\CGamePass.h ..\BejeweledSln\CGameLogic_2.h ..\BejeweledSln\CGameDlg_2.h ..\BejeweledSln\CBejeweledApp.cpp ..\BejeweledSln\CConfig.cpp ..\BejeweledSln\CConfigDao.cpp ..\BejeweledSln\CConfigLogic.cpp ..\BejeweledSln\CGameLogic.cpp ..\BejeweledSln\CMusicPlayer.cpp ..\BejeweledSln\CPathTool.cpp ..\BejeweledSln\CRankDao.cpp ..\BejeweledSln\CRankLogic.cpp ..\BejeweledSln\main.cpp ..\BejeweledSln\CBejeweledDlg.cpp ..\BejeweledSln\CHelpDlg.cpp ..\BejeweledSln\CRankDlg.cpp ..\BejeweledSln\CSetDlg.cpp ..\BejeweledSln\CGameDlg.cpp ..\BejeweledSln\CMenuDlg.cpp ..\BejeweledSln\mylabel.cpp ..\BejeweledSln\CGameMode.cpp ..\BejeweledSln\CGameClassic.cpp ..\BejeweledSln\CGamePass.cpp ..\BejeweledSln\CGameLogic_2.cpp ..\BejeweledSln\CGameDlg_2.cpp ..\BejeweledSln\CBejeweledDlg.ui ..\BejeweledSln\CHelpDlg.ui ..\BejeweledSln\CRankDlg.ui ..\BejeweledSln\CSetDlg.ui ..\BejeweledSln\CGameDlg.ui ..\BejeweledSln\CMenuDlg.ui ..\BejeweledSln\CGameMode.ui ..\BejeweledSln\CGameClassic.ui ..\BejeweledSln\CGamePass.ui ..\BejeweledSln\CGameDlg_2.ui    
+	$(ZIP) BejeweledSln.zip $(SOURCES) $(DIST) ..\BejeweledSln\BejeweledSln.pro ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\spec_pre.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\qdevice.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\device_config.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\common\g++-base.conf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\common\angle.conf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\common\sanitize.conf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\common\gcc-base.conf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\qconfig.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3danimation.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3danimation_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dcore.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dcore_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dextras.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dextras_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dinput.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dinput_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dlogic.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dlogic_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquick.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquick_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickanimation_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickextras.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickextras_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickinput.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickinput_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickrender.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickrender_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3dquickscene2d_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3drender.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_3drender_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_accessibility_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axbase.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axbase_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axcontainer.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axcontainer_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axserver.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_axserver_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_bluetooth.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_bluetooth_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_bootstrap_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_charts.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_charts_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_concurrent.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_concurrent_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_core.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_core_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_datavisualization.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_datavisualization_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_dbus.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_dbus_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_designer.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_designer_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_designercomponents_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_devicediscovery_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_egl_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_fb_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_fontdatabase_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_gamepad.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_gamepad_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_gui.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_gui_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_help.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_help_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_location.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_location_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_multimedia.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_multimedia_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_network.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_network_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_networkauth.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_networkauth_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_nfc.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_nfc_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_opengl.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_opengl_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_openglextensions.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_openglextensions_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_packetprotocol_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_platformcompositor_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_positioning.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_positioning_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_printsupport.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_printsupport_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_purchasing.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_purchasing_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qml.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qml_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qmldebug_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qmldevtools_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qmltest.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qmltest_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quick.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quick_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quickcontrols2_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quickparticles_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quicktemplates2_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quickwidgets.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_quickwidgets_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_remoteobjects.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_remoteobjects_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_repparser.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_repparser_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_script.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_script_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_scripttools.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_scripttools_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_scxml.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_scxml_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_sensors.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_sensors_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_serialbus.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_serialbus_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_serialport.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_serialport_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_sql.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_sql_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_svg.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_svg_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_testlib.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_testlib_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_texttospeech.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_texttospeech_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_theme_support_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_uiplugin.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_uitools.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_uitools_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_webchannel.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_webchannel_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_websockets.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_websockets_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_widgets.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_widgets_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_winextras.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_winextras_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_xml.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_xml_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\qt_functions.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\qt_config.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\win32-g++\qmake.conf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\spec_post.prf .qmake.stash ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\exclusive_builds.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\toolchain.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\default_pre.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\win32\default_pre.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\resolve_config.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\exclusive_builds_post.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\default_post.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\build_pass.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\qml_debug.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\precompile_header.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\warn_on.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\qt.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\resources.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\moc.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\win32\opengl.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\uic.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\qmake_use.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\file_copies.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\win32\windows.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\testcase_targets.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\exceptions.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\yacc.prf ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\lex.prf ..\BejeweledSln\BejeweledSln.pro ..\BejeweledSln\image.qrc ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\qtmain.prl ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\Qt5Multimedia.prl ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\Qt5Widgets.prl ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\Qt5Gui.prl ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\Qt5Network.prl ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\Qt5Sql.prl ..\..\Qt\Qt5.9.0\5.9\mingw53_32\lib\Qt5Core.prl   ..\BejeweledSln\image.qrc ..\..\Qt\Qt5.9.0\5.9\mingw53_32\mkspecs\features\data\dummy.cpp ..\BejeweledSln\CBejeweledApp.h ..\BejeweledSln\CConfig.h ..\BejeweledSln\CConfigDao.h ..\BejeweledSln\CConfigLogic.h ..\BejeweledSln\CGameLogic.h ..\BejeweledSln\CMusicPlayer.h ..\BejeweledSln\CPathTool.h ..\BejeweledSln\CRankDao.h ..\BejeweledSln\CRankLogic.h ..\BejeweledSln\CBejeweledDlg.h ..\BejeweledSln\CHelpDlg.h ..\BejeweledSln\CRankDlg.h ..\BejeweledSln\CSetDlg.h ..\BejeweledSln\CGameDlg.h ..\BejeweledSln\CMenuDlg.h ..\BejeweledSln\mylabel.h ..\BejeweledSln\CGameMode.h ..\BejeweledSln\CGameClassic.h ..\BejeweledSln\CGamePass.h ..\BejeweledSln\CGameLogic_2.h ..\BejeweledSln\CGameDlg_2.h ..\BejeweledSln\CBejeweledApp.cpp ..\BejeweledSln\CConfig.cpp ..\BejeweledSln\CConfigDao.cpp ..\BejeweledSln\CConfigLogic.cpp ..\BejeweledSln\CGameLogic.cpp ..\BejeweledSln\CMusicPlayer.cpp ..\BejeweledSln\CPathTool.cpp ..\BejeweledSln\CRankDao.cpp ..\BejeweledSln\CRankLogic.cpp ..\BejeweledSln\main.cpp ..\BejeweledSln\CBejeweledDlg.cpp ..\BejeweledSln\CHelpDlg.cpp ..\BejeweledSln\CRankDlg.cpp ..\BejeweledSln\CSetDlg.cpp ..\BejeweledSln\CGameDlg.cpp ..\BejeweledSln\CMenuDlg.cpp ..\BejeweledSln\mylabel.cpp ..\BejeweledSln\CGameMode.cpp ..\BejeweledSln\CGameClassic.cpp ..\BejeweledSln\CGamePass.cpp ..\BejeweledSln\CGameLogic_2.cpp ..\BejeweledSln\CGameDlg_2.cpp ..\BejeweledSln\CBejeweledDlg.ui ..\BejeweledSln\CHelpDlg.ui ..\BejeweledSln\CRankDlg.ui ..\BejeweledSln\CSetDlg.ui ..\BejeweledSln\CGameDlg.ui ..\BejeweledSln\CMenuDlg.ui ..\BejeweledSln\CGameMode.ui ..\BejeweledSln\CGameClassic.ui ..\BejeweledSln\CGamePass.ui ..\BejeweledSln\CGameDlg_2.ui    
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\CBejeweledApp.o release\CConfig.o release\CConfigDao.o release\CConfigLogic.o release\CGameLogic.o release\CMusicPlayer.o release\CPathTool.o release\CRankDao.o release\CRankLogic.o release\main.o release\CBejeweledDlg.o release\CHelpDlg.o release\CRankDlg.o release\CSetDlg.o release\CGameDlg.o release\CMenuDlg.o release\mylabel.o release\CGameMode.o release\CGameClassic.o release\CGamePass.o release\CGameLogic_2.o release\CGameDlg_2.o release\qrc_image.o release\moc_CBejeweledDlg.o release\moc_CHelpDlg.o release\moc_CRankDlg.o release\moc_CSetDlg.o release\moc_CGameDlg.o release\moc_CMenuDlg.o release\moc_mylabel.o release\moc_CGameMode.o release\moc_CGameClassic.o release\moc_CGamePass.o release\moc_CGameDlg_2.o
+	-$(DEL_FILE) release\qrc_image.o release\CBejeweledApp.o release\CConfig.o release\CConfigDao.o release\CConfigLogic.o release\CGameLogic.o release\CMusicPlayer.o release\CPathTool.o release\CRankDao.o release\CRankLogic.o release\main.o release\CBejeweledDlg.o release\CHelpDlg.o release\CRankDlg.o release\CSetDlg.o release\CGameDlg.o release\CMenuDlg.o release\mylabel.o release\CGameMode.o release\CGameClassic.o release\CGamePass.o release\CGameLogic_2.o release\CGameDlg_2.o release\moc_CBejeweledDlg.o release\moc_CHelpDlg.o release\moc_CRankDlg.o release\moc_CSetDlg.o release\moc_CGameDlg.o release\moc_CMenuDlg.o release\moc_mylabel.o release\moc_CGameMode.o release\moc_CGameClassic.o release\moc_CGamePass.o release\moc_CGameDlg_2.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -195,10 +194,10 @@ benchmark: first
 
 compiler_no_pch_compiler_make_all:
 compiler_no_pch_compiler_clean:
-compiler_rcc_make_all: release/qrc_image.cpp
+compiler_rcc_make_all: release/qrc_image.o
 compiler_rcc_clean:
-	-$(DEL_FILE) release\qrc_image.cpp
-release/qrc_image.cpp: ../BejeweledSln/image.qrc \
+	-$(DEL_FILE) release\qrc_image.cpp release\qrc_image.tmp.o
+release/qrc_image.o: ../BejeweledSln/image.qrc \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/rcc.exe \
 		../BejeweledSln/image/allcannot.png \
 		../BejeweledSln/image/timeout.png \
@@ -211,7 +210,9 @@ release/qrc_image.cpp: ../BejeweledSln/image.qrc \
 		../BejeweledSln/image/config.png \
 		../BejeweledSln/image/pause.png \
 		../BejeweledSln/image/HelpDlg.png
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\rcc.exe -name image ..\BejeweledSln\image.qrc -o release\qrc_image.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\rcc.exe -name image ..\BejeweledSln\image.qrc -pass 1 -o release/qrc_image.cpp 
+	 g++ $(CXXFLAGS) -c release/qrc_image.cpp -o release/qrc_image.tmp.o 
+	 D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\rcc.exe -name image ..\BejeweledSln\image.qrc -pass 2 -temp release/qrc_image.tmp.o -o release\qrc_image.o
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
 compiler_moc_predefs_clean:
@@ -326,6 +327,15 @@ release/moc_CBejeweledDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets
 		../BejeweledSln/CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
@@ -362,10 +372,12 @@ release/moc_CBejeweledDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets
 		../BejeweledSln/CRankDlg.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGamePass.h \
+		../BejeweledSln/CGameDlg_2.h \
+		../BejeweledSln/CGameLogic_2.h \
 		../BejeweledSln/CBejeweledDlg.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CBejeweledDlg.h -o release\moc_CBejeweledDlg.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CBejeweledDlg.h -o release\moc_CBejeweledDlg.cpp
 
 release/moc_CHelpDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
@@ -471,7 +483,7 @@ release/moc_CHelpDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDia
 		../BejeweledSln/CHelpDlg.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CHelpDlg.h -o release\moc_CHelpDlg.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CHelpDlg.h -o release\moc_CHelpDlg.cpp
 
 release/moc_CRankDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
@@ -577,7 +589,7 @@ release/moc_CRankDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDia
 		../BejeweledSln/CRankDlg.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CRankDlg.h -o release\moc_CRankDlg.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CRankDlg.h -o release\moc_CRankDlg.cpp
 
 release/moc_CSetDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
@@ -682,10 +694,19 @@ release/moc_CSetDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDial
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtouchdevice.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CSetDlg.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CSetDlg.h -o release\moc_CSetDlg.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CSetDlg.h -o release\moc_CSetDlg.cpp
 
 release/moc_CGameDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
@@ -822,7 +843,7 @@ release/moc_CGameDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDia
 		../BejeweledSln/CGameDlg.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CGameDlg.h -o release\moc_CGameDlg.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CGameDlg.h -o release\moc_CGameDlg.cpp
 
 release/moc_CMenuDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
@@ -941,7 +962,7 @@ release/moc_CMenuDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDia
 		../BejeweledSln/CMenuDlg.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CMenuDlg.h -o release\moc_CMenuDlg.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CMenuDlg.h -o release\moc_CMenuDlg.cpp
 
 release/moc_mylabel.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QLabel \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qlabel.h \
@@ -1048,7 +1069,7 @@ release/moc_mylabel.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QLabe
 		../BejeweledSln/mylabel.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\mylabel.h -o release\moc_mylabel.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\mylabel.h -o release\moc_mylabel.cpp
 
 release/moc_CGameMode.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
@@ -1185,15 +1206,26 @@ release/moc_CGameMode.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDi
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
 		../BejeweledSln/CBejeweledDlg.h \
 		../BejeweledSln/CSetDlg.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGamePass.h \
+		../BejeweledSln/CGameDlg_2.h \
+		../BejeweledSln/CGameLogic_2.h \
 		../BejeweledSln/CRankDlg.h \
 		../BejeweledSln/CGameMode.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CGameMode.h -o release\moc_CGameMode.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CGameMode.h -o release\moc_CGameMode.cpp
 
 release/moc_CGameClassic.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
@@ -1327,6 +1359,15 @@ release/moc_CGameClassic.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/
 		../BejeweledSln/CGamePass.h \
 		../BejeweledSln/CBejeweledDlg.h \
 		../BejeweledSln/CSetDlg.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
@@ -1334,11 +1375,13 @@ release/moc_CGameClassic.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qtimer.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qbasictimer.h \
 		../BejeweledSln/CGameClassic.h \
+		../BejeweledSln/CGameDlg_2.h \
+		../BejeweledSln/CGameLogic_2.h \
 		../BejeweledSln/CRankDlg.h \
 		../BejeweledSln/CGameClassic.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CGameClassic.h -o release\moc_CGameClassic.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CGameClassic.h -o release\moc_CGameClassic.cpp
 
 release/moc_CGamePass.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
@@ -1445,6 +1488,15 @@ release/moc_CGamePass.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDi
 		../BejeweledSln/CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
@@ -1479,11 +1531,13 @@ release/moc_CGamePass.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDi
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGamePass.h \
+		../BejeweledSln/CGameDlg_2.h \
+		../BejeweledSln/CGameLogic_2.h \
 		../BejeweledSln/CRankDlg.h \
 		../BejeweledSln/CGamePass.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CGamePass.h -o release\moc_CGamePass.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CGamePass.h -o release\moc_CGamePass.cpp
 
 release/moc_CGameDlg_2.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDialog \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdialog.h \
@@ -1601,6 +1655,7 @@ release/moc_CGameDlg_2.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QD
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QWidget \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/QKeyEvent \
 		../BejeweledSln/CGameLogic_2.h \
+		../BejeweledSln/CGameLogic.h \
 		../BejeweledSln/mylabel.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QLabel \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qlabel.h \
@@ -1617,19 +1672,28 @@ release/moc_CGameDlg_2.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QD
 		../BejeweledSln/CGamePass.h \
 		../BejeweledSln/CBejeweledDlg.h \
 		../BejeweledSln/CSetDlg.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
-		../BejeweledSln/CGameLogic.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QTimer \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qtimer.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qbasictimer.h \
 		../BejeweledSln/CGameClassic.h \
+		../BejeweledSln/CGameDlg_2.h \
 		../BejeweledSln/CRankDlg.h \
 		../BejeweledSln/CGameDlg_2.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
-	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CGameDlg_2.h -o release\moc_CGameDlg_2.cpp
+	D:\Qt\Qt5.9.0\5.9\mingw53_32\bin\moc.exe $(DEFINES) --include release/moc_predefs.h -ID:/Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/win32-g++ -ID:/BejeweledSln/BejeweledSln -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtANGLE -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtSql -ID:/Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore -I. -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++ -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -ID:/Qt/Qt5.9.0/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\BejeweledSln\CGameDlg_2.h -o release\moc_CGameDlg_2.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -1820,6 +1884,15 @@ release/main.o: ../BejeweledSln/main.cpp ../BejeweledSln/CBejeweledDlg.h \
 		../BejeweledSln/CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
@@ -1854,6 +1927,8 @@ release/main.o: ../BejeweledSln/main.cpp ../BejeweledSln/CBejeweledDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGamePass.h \
+		../BejeweledSln/CGameDlg_2.h \
+		../BejeweledSln/CGameLogic_2.h \
 		../BejeweledSln/CRankDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QApplication \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qapplication.h \
@@ -1967,6 +2042,15 @@ release/CBejeweledDlg.o: ../BejeweledSln/CBejeweledDlg.cpp ../BejeweledSln/CBeje
 		../BejeweledSln/CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
@@ -2001,6 +2085,8 @@ release/CBejeweledDlg.o: ../BejeweledSln/CBejeweledDlg.cpp ../BejeweledSln/CBeje
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGamePass.h \
+		../BejeweledSln/CGameDlg_2.h \
+		../BejeweledSln/CGameLogic_2.h \
 		../BejeweledSln/CRankDlg.h \
 		ui_cbejeweleddlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
@@ -2421,6 +2507,15 @@ release/CSetDlg.o: ../BejeweledSln/CSetDlg.cpp ../BejeweledSln/CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtouchdevice.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		ui_CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
@@ -3047,10 +3142,21 @@ release/CGameMode.o: ../BejeweledSln/CGameMode.cpp ../BejeweledSln/CGameMode.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
 		../BejeweledSln/CBejeweledDlg.h \
 		../BejeweledSln/CSetDlg.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CRankDlg.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGamePass.h \
+		../BejeweledSln/CGameDlg_2.h \
+		../BejeweledSln/CGameLogic_2.h \
 		ui_CGameMode.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
@@ -3219,12 +3325,23 @@ release/CGameClassic.o: ../BejeweledSln/CGameClassic.cpp ../BejeweledSln/CGameCl
 		../BejeweledSln/CGamePass.h \
 		../BejeweledSln/CBejeweledDlg.h \
 		../BejeweledSln/CSetDlg.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QTimer \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qtimer.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qbasictimer.h \
+		../BejeweledSln/CGameDlg_2.h \
+		../BejeweledSln/CGameLogic_2.h \
 		../BejeweledSln/CRankDlg.h \
 		ui_CGameClassic.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
@@ -3377,6 +3494,15 @@ release/CGamePass.o: ../BejeweledSln/CGamePass.cpp ../BejeweledSln/CGamePass.h \
 		../BejeweledSln/CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
@@ -3410,6 +3536,8 @@ release/CGamePass.o: ../BejeweledSln/CGamePass.cpp ../BejeweledSln/CGamePass.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qeasingcurve.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
 		../BejeweledSln/CGameClassic.h \
+		../BejeweledSln/CGameDlg_2.h \
+		../BejeweledSln/CGameLogic_2.h \
 		../BejeweledSln/CRankDlg.h \
 		ui_CGamePass.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
@@ -3446,7 +3574,8 @@ release/CGamePass.o: ../BejeweledSln/CGamePass.cpp ../BejeweledSln/CGamePass.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\CGamePass.o ..\BejeweledSln\CGamePass.cpp
 
-release/CGameLogic_2.o: ../BejeweledSln/CGameLogic_2.cpp ../BejeweledSln/CGameLogic_2.h
+release/CGameLogic_2.o: ../BejeweledSln/CGameLogic_2.cpp ../BejeweledSln/CGameLogic_2.h \
+		../BejeweledSln/CGameLogic.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\CGameLogic_2.o ..\BejeweledSln\CGameLogic_2.cpp
 
 release/CGameDlg_2.o: ../BejeweledSln/CGameDlg_2.cpp ../BejeweledSln/CGameDlg_2.h \
@@ -3566,6 +3695,7 @@ release/CGameDlg_2.o: ../BejeweledSln/CGameDlg_2.cpp ../BejeweledSln/CGameDlg_2.
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QWidget \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/QKeyEvent \
 		../BejeweledSln/CGameLogic_2.h \
+		../BejeweledSln/CGameLogic.h \
 		../BejeweledSln/mylabel.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QLabel \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qlabel.h \
@@ -3582,20 +3712,67 @@ release/CGameDlg_2.o: ../BejeweledSln/CGameDlg_2.cpp ../BejeweledSln/CGameDlg_2.
 		../BejeweledSln/CGamePass.h \
 		../BejeweledSln/CBejeweledDlg.h \
 		../BejeweledSln/CSetDlg.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
-		../BejeweledSln/CGameLogic.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QTimer \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qtimer.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qbasictimer.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CRankDlg.h \
-		ui_CGameDlg_2.h
+		ui_CGameDlg_2.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qaction.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qicon.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qactiongroup.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QApplication \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qapplication.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QHeaderView \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qheaderview.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qitemselectionmodel.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstyleoption.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractspinbox.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qvalidator.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qregularexpression.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qslider.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractslider.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qstyle.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtabbar.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtabwidget.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qrubberband.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QProgressBar \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qprogressbar.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QPushButton \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qpushbutton.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QTextBrowser \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtextbrowser.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qtextedit.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextdocument.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextoption.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextcursor.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qtextformat.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\CGameDlg_2.o ..\BejeweledSln\CGameDlg_2.cpp
-
-release/qrc_image.o: release/qrc_image.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\qrc_image.o release\qrc_image.cpp
 
 release/moc_CBejeweledDlg.o: release/moc_CBejeweledDlg.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\moc_CBejeweledDlg.o release\moc_CBejeweledDlg.cpp
