@@ -27,6 +27,12 @@ public:
 private slots:
     void cancel();
     void save();
+    void default1();
+    void default2();
+    void diy1();
+    void diy2();
+    void browser1();
+    void browser2();
 
 private:
     Ui::CSetDlg *ui;

@@ -336,6 +336,8 @@ release/moc_CBejeweledDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
@@ -368,6 +370,23 @@ release/moc_CBejeweledDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qvariantanimation.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qeasingcurve.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CBejeweledDlg.h \
 		../BejeweledSln/CRankDlg.h \
 		../BejeweledSln/CGameClassic.h \
@@ -703,6 +722,8 @@ release/moc_CSetDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDial
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CSetDlg.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
@@ -840,6 +861,25 @@ release/moc_CGameDlg.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDia
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CGameDlg.h \
 		release/moc_predefs.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/bin/moc.exe
@@ -1204,17 +1244,36 @@ release/moc_CGameMode.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDi
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CBejeweledDlg.h \
 		../BejeweledSln/CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameClassic.h \
@@ -1368,12 +1427,31 @@ release/moc_CGameClassic.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QTimer \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qtimer.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGameDlg_2.h \
 		../BejeweledSln/CGameLogic_2.h \
@@ -1497,6 +1575,8 @@ release/moc_CGamePass.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDi
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
@@ -1529,6 +1609,23 @@ release/moc_CGamePass.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QDi
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qvariantanimation.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qeasingcurve.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGamePass.h \
 		../BejeweledSln/CGameDlg_2.h \
@@ -1681,12 +1778,31 @@ release/moc_CGameDlg_2.cpp: ../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QD
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QTimer \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qtimer.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGameDlg_2.h \
 		../BejeweledSln/CRankDlg.h \
@@ -1893,6 +2009,8 @@ release/main.o: ../BejeweledSln/main.cpp ../BejeweledSln/CBejeweledDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
@@ -1925,6 +2043,23 @@ release/main.o: ../BejeweledSln/main.cpp ../BejeweledSln/CBejeweledDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qvariantanimation.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qeasingcurve.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGamePass.h \
 		../BejeweledSln/CGameDlg_2.h \
@@ -2051,6 +2186,8 @@ release/CBejeweledDlg.o: ../BejeweledSln/CBejeweledDlg.cpp ../BejeweledSln/CBeje
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
@@ -2083,13 +2220,29 @@ release/CBejeweledDlg.o: ../BejeweledSln/CBejeweledDlg.cpp ../BejeweledSln/CBeje
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qvariantanimation.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qeasingcurve.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGamePass.h \
 		../BejeweledSln/CGameDlg_2.h \
 		../BejeweledSln/CGameLogic_2.h \
 		../BejeweledSln/CRankDlg.h \
 		ui_cbejeweleddlg.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qaction.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qicon.h \
@@ -2099,8 +2252,6 @@ release/CBejeweledDlg.o: ../BejeweledSln/CBejeweledDlg.cpp ../BejeweledSln/CBeje
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QHeaderView \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qheaderview.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
@@ -2516,6 +2667,8 @@ release/CSetDlg.o: ../BejeweledSln/CSetDlg.cpp ../BejeweledSln/CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		ui_CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
@@ -2529,16 +2682,16 @@ release/CSetDlg.o: ../BejeweledSln/CSetDlg.cpp ../BejeweledSln/CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QCheckBox \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qcheckbox.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractbutton.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QGroupBox \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qgroupbox.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qframe.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QHeaderView \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qheaderview.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qframe.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractitemmodel.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qitemselectionmodel.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemdelegate.h \
@@ -2702,8 +2855,26 @@ release/CGameDlg.o: ../BejeweledSln/CGameDlg.cpp ../BejeweledSln/CGameDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
-		ui_CGameDlg.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
+		ui_CGameDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qaction.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qicon.h \
@@ -3140,17 +3311,36 @@ release/CGameMode.o: ../BejeweledSln/CGameMode.cpp ../BejeweledSln/CGameMode.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSettings \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qsettings.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CBejeweledDlg.h \
 		../BejeweledSln/CSetDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QSound \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qsound.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimediaglobal.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qtmultimedia-config.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QDebug \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QFileDialog \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CRankDlg.h \
 		../BejeweledSln/CGameClassic.h \
@@ -3158,7 +3348,6 @@ release/CGameMode.o: ../BejeweledSln/CGameMode.cpp ../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg_2.h \
 		../BejeweledSln/CGameLogic_2.h \
 		ui_CGameMode.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qaction.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qicon.h \
@@ -3168,8 +3357,6 @@ release/CGameMode.o: ../BejeweledSln/CGameMode.cpp ../BejeweledSln/CGameMode.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QHeaderView \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qheaderview.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
@@ -3334,17 +3521,35 @@ release/CGameClassic.o: ../BejeweledSln/CGameClassic.cpp ../BejeweledSln/CGameCl
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QTimer \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qtimer.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CGameDlg_2.h \
 		../BejeweledSln/CGameLogic_2.h \
 		../BejeweledSln/CRankDlg.h \
 		ui_CGameClassic.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qaction.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qicon.h \
@@ -3354,8 +3559,6 @@ release/CGameClassic.o: ../BejeweledSln/CGameClassic.cpp ../BejeweledSln/CGameCl
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QHeaderView \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qheaderview.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
@@ -3503,6 +3706,8 @@ release/CGamePass.o: ../BejeweledSln/CGamePass.cpp ../BejeweledSln/CGamePass.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
@@ -3535,12 +3740,28 @@ release/CGamePass.o: ../BejeweledSln/CGamePass.cpp ../BejeweledSln/CGamePass.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qvariantanimation.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qeasingcurve.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qabstractanimation.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CGameDlg_2.h \
 		../BejeweledSln/CGameLogic_2.h \
 		../BejeweledSln/CRankDlg.h \
 		ui_CGamePass.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qaction.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qicon.h \
@@ -3550,8 +3771,6 @@ release/CGamePass.o: ../BejeweledSln/CGamePass.cpp ../BejeweledSln/CGamePass.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QHeaderView \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qheaderview.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemview.h \
@@ -3721,16 +3940,34 @@ release/CGameDlg_2.o: ../BejeweledSln/CGameDlg_2.cpp ../BejeweledSln/CGameDlg_2.
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qfiledialog.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qdir.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qfileinfo.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../BejeweledSln/CHelpDlg.h \
 		../BejeweledSln/CGameMode.h \
 		../BejeweledSln/CGameDlg.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QTimer \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qtimer.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qbasictimer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/QMediaPlayer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaplayer.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmultimedia.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediacontent.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaresource.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkrequest.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QSharedDataPointer \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QString \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QUrl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qmediaenumdebug.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/qmetaobject.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtMultimedia/qaudio.h \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtNetwork/qnetworkconfiguration.h \
 		../BejeweledSln/CGameClassic.h \
 		../BejeweledSln/CRankDlg.h \
 		ui_CGameDlg_2.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtCore/QVariant \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QAction \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qaction.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qicon.h \
@@ -3740,8 +3977,6 @@ release/CGameDlg_2.o: ../BejeweledSln/CGameDlg_2.cpp ../BejeweledSln/CGameDlg_2.
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qdesktopwidget.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qguiapplication.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtGui/qinputmethod.h \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QButtonGroup \
-		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qbuttongroup.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/QHeaderView \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qheaderview.h \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/include/QtWidgets/qabstractitemview.h \

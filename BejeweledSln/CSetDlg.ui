@@ -118,6 +118,15 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="lineWrapMode">
+      <enum>QTextEdit::NoWrap</enum>
+     </property>
      <property name="readOnly">
       <bool>false</bool>
      </property>
@@ -135,7 +144,7 @@
       <string> 游戏背景音乐设置</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="browser1">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -197,6 +206,21 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="acceptDrops">
+      <bool>true</bool>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="lineWrapMode">
+      <enum>QTextEdit::NoWrap</enum>
+     </property>
+     <property name="acceptRichText">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QRadioButton" name="diy2">
      <property name="geometry">
@@ -224,7 +248,7 @@
       <string>背景图片</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_4">
+    <widget class="QPushButton" name="browser2">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -385,9 +409,43 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>browser1</sender>
+   <signal>clicked()</signal>
+   <receiver>CSetDlg</receiver>
+   <slot>browser1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>358</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>499</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>browser2</sender>
+   <signal>clicked()</signal>
+   <receiver>CSetDlg</receiver>
+   <slot>browser2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>353</x>
+     <y>128</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>499</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>cancel()</slot>
   <slot>save()</slot>
+  <slot>browser1()</slot>
+  <slot>browser2()</slot>
  </slots>
 </ui>
