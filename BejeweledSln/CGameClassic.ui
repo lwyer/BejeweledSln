@@ -100,22 +100,6 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="pause">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>20</y>
-     <width>400</width>
-     <height>400</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">image: url(:/new/prefix1/image/pause.png);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pauseorcontinue_2">
    <property name="geometry">
     <rect>
@@ -144,8 +128,26 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pauseorcontinue_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CGameClassic</receiver>
+   <slot>tishislot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>615</x>
+     <y>204</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>960</x>
+     <y>238</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <slots>
   <slot>pauseorcontinue()</slot>
+  <slot>tishislot()</slot>
  </slots>
 </ui>

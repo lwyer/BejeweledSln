@@ -18,6 +18,9 @@ INPUT(
 ./debug\mylabel.o
 ./debug\CGameMode.o
 ./debug\CGameClassic.o
+./debug\CGamePass.o
+./debug\CGameLogic_2.o
+./debug\CGameDlg_2.o
 ./debug\qrc_image.o
 ./debug\moc_CBejeweledDlg.o
 ./debug\moc_CHelpDlg.o
@@ -28,4 +31,6 @@ INPUT(
 ./debug\moc_mylabel.o
 ./debug\moc_CGameMode.o
 ./debug\moc_CGameClassic.o
+./debug\moc_CGamePass.o
+./debug\moc_CGameDlg_2.o
 );

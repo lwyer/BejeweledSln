@@ -163,25 +163,25 @@ int CGameLogic::jiaohuan1(int num[][8],Z z1,Z z2) {
 }
 
 bool CGameLogic::jiaohuan2(int num[][8],Z z1,Z z2) {
-    bool result=false;
-    if(((z1.x==z2.x+1||z1.x==z2.x-1)&&(z1.y==z2.y))
-            ||((z1.y==z2.y-1||z1.y==z2.y+1)&&(z1.x==z2.x))) {
-        int n;
-        n=num[z1.x][z1.y];
-        num[z1.x][z1.y]=num[z2.x][z2.y];
-        num[z2.x][z2.y]=n;
-        if(xiaoqu1(num)) {
-            result=true;
-        } else {
-            result=false;
-        }
-        n=num[z1.x][z1.y];
-        num[z1.x][z1.y]=num[z2.x][z2.y];
-        num[z2.x][z2.y]=n;
-    } else {
-        result=false;
-    }
-    return result;
+ bool result=false;
+ if(((z1.x==z2.x+1||z1.x==z2.x-1)&&(z1.y==z2.y))
+         ||((z1.y==z2.y-1||z1.y==z2.y+1)&&(z1.x==z2.x))) {
+  int n;
+  n=num[z1.x-1][z1.y-1];
+  num[z1.x-1][z1.y-1]=num[z2.x-1][z2.y-1];
+  num[z2.x-1][z2.y-1]=n;
+  if(xiaoqu1(num)) {
+   result=true;
+  } else {
+   result=false;
+  }
+  n=num[z1.x-1][z1.y-1];
+  num[z1.x-1][z1.y-1]=num[z2.x-1][z2.y-1];
+  num[z2.x-1][z2.y-1]=n;
+ } else {
+  result=false;
+ }
+ return result;
 }
 
 void CGameLogic::init(int num[][8]) {
@@ -204,8 +204,8 @@ void CGameLogic::init(int num[][8]) {
 bool CGameLogic::all_cannot(int num[][8]) {
     int i,j;
     bool result=true;
-    for(i=0; i<7; i++) {
-        for(j=0; j<7; j++) {
+    for(i=1; i<9; i++) {
+        for(j=1; j<9; j++) {
             Z z1,z2,z3;
             z1.x=i;
             z1.y=j;
@@ -219,4 +219,28 @@ bool CGameLogic::all_cannot(int num[][8]) {
         }
     }
     return result;
+}
+
+void CGameLogic::tishi(int num[][8],Z &zo,Z &zt) {
+ int i,j;
+ for(i=1; i<8; i++) {
+  for(j=1; j<8; j++) {
+   Z z1,z2,z3;
+   z1.x=i;
+   z1.y=j;
+   z2.x=i;
+   z2.y=j+1;
+   z3.x=i+1;
+   z3.y=j;
+   if(jiaohuan2(num,z1,z2)) {
+    zo=z1;
+    zt=z2;
+    return;
+   }else if(jiaohuan2(num,z1,z3)){
+    zo=z1;
+    zt=z3;
+    return;
+   }
+  }
+ }
 }
