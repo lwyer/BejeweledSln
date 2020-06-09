@@ -1,7 +1,15 @@
 #ifndef CMUSICPLAYER_H
 #define CMUSICPLAYER_H
-/*
+
+#endif // CMUSICPLAYER_H
+
+
+
+
+
+
 #include <QWidget>
+#include <QMediaPlayer>
 
 class VolumeButton;
 
@@ -73,5 +81,5 @@ private:
     QPoint offset;
     QString fileName;
 };
-*/
+
 #endif // MUSICPLAYER_H
