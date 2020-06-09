@@ -236,8 +236,10 @@ Makefile: ../BejeweledSln/BejeweledSln.pro ../../Qt/Qt5.9.0/5.9/mingw53_32/mkspe
 		../../Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/features/lex.prf \
 		../BejeweledSln/BejeweledSln.pro \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/lib/qtmaind.prl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Multimedia.prl \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Widgets.prl \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Gui.prl \
+		../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Network.prl \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Sql.prl \
 		../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ..\BejeweledSln\BejeweledSln.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
@@ -415,8 +417,10 @@ Makefile: ../BejeweledSln/BejeweledSln.pro ../../Qt/Qt5.9.0/5.9/mingw53_32/mkspe
 ../../Qt/Qt5.9.0/5.9/mingw53_32/mkspecs/features/lex.prf:
 ../BejeweledSln/BejeweledSln.pro:
 ../../Qt/Qt5.9.0/5.9/mingw53_32/lib/qtmaind.prl:
+../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Multimedia.prl:
 ../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Widgets.prl:
 ../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Gui.prl:
+../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Network.prl:
 ../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Sql.prl:
 ../../Qt/Qt5.9.0/5.9/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE

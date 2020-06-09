@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
@@ -30,26 +31,24 @@ class Ui_CSetDlg
 public:
     QTabWidget *tabWidget;
     QWidget *tab;
-    QRadioButton *radioButton_2;
-    QCheckBox *checkBox;
-    QCheckBox *checkBox_2;
+    QRadioButton *diy1;
+    QCheckBox *bgmusicswitch;
+    QCheckBox *soundswitch;
     QLabel *label;
-    QRadioButton *radioButton;
-    QTextEdit *textEdit;
+    QRadioButton *default1;
+    QTextEdit *bgmusicpath;
     QLabel *label_2;
     QPushButton *pushButton_5;
     QWidget *tab_2;
     QLabel *label_3;
-    QTextEdit *textEdit_2;
-    QLabel *label_4;
-    QRadioButton *radioButton_3;
-    QRadioButton *radioButton_4;
-    QTextEdit *textEdit_3;
-    QPushButton *pushButton_6;
-    QRadioButton *radioButton_5;
+    QRadioButton *default2;
+    QTextEdit *bgpicpath;
+    QRadioButton *diy2;
     QLabel *label_5;
     QPushButton *pushButton_4;
-    QRadioButton *radioButton_6;
+    QGroupBox *groupBox;
+    QRadioButton *style2;
+    QRadioButton *style1;
     QWidget *tab_3;
     QTextEdit *nameEdit;
     QLabel *label_6;
@@ -66,29 +65,36 @@ public:
         tabWidget->setGeometry(QRect(10, 10, 391, 301));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
-        radioButton_2 = new QRadioButton(tab);
-        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
-        radioButton_2->setGeometry(QRect(190, 140, 81, 19));
-        checkBox = new QCheckBox(tab);
-        checkBox->setObjectName(QStringLiteral("checkBox"));
-        checkBox->setGeometry(QRect(70, 80, 91, 19));
-        checkBox_2 = new QCheckBox(tab);
-        checkBox_2->setObjectName(QStringLiteral("checkBox_2"));
-        checkBox_2->setGeometry(QRect(190, 80, 91, 19));
+        diy1 = new QRadioButton(tab);
+        diy1->setObjectName(QStringLiteral("diy1"));
+        diy1->setGeometry(QRect(190, 140, 81, 19));
+        bgmusicswitch = new QCheckBox(tab);
+        bgmusicswitch->setObjectName(QStringLiteral("bgmusicswitch"));
+        bgmusicswitch->setGeometry(QRect(70, 80, 91, 19));
+        bgmusicswitch->setChecked(true);
+        bgmusicswitch->setTristate(false);
+        soundswitch = new QCheckBox(tab);
+        soundswitch->setObjectName(QStringLiteral("soundswitch"));
+        soundswitch->setGeometry(QRect(190, 80, 91, 19));
+        soundswitch->setChecked(true);
         label = new QLabel(tab);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(30, 50, 72, 15));
-        radioButton = new QRadioButton(tab);
-        radioButton->setObjectName(QStringLiteral("radioButton"));
-        radioButton->setGeometry(QRect(100, 140, 71, 19));
-        textEdit = new QTextEdit(tab);
-        textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(40, 170, 241, 31));
+        default1 = new QRadioButton(tab);
+        default1->setObjectName(QStringLiteral("default1"));
+        default1->setGeometry(QRect(100, 140, 71, 19));
+        default1->setChecked(true);
+        bgmusicpath = new QTextEdit(tab);
+        bgmusicpath->setObjectName(QStringLiteral("bgmusicpath"));
+        bgmusicpath->setEnabled(false);
+        bgmusicpath->setGeometry(QRect(40, 170, 241, 31));
+        bgmusicpath->setReadOnly(false);
         label_2 = new QLabel(tab);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(30, 110, 111, 16));
+        label_2->setGeometry(QRect(20, 110, 141, 16));
         pushButton_5 = new QPushButton(tab);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setEnabled(false);
         pushButton_5->setGeometry(QRect(300, 170, 71, 28));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
@@ -96,36 +102,36 @@ public:
         label_3 = new QLabel(tab_2);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(40, 140, 72, 15));
-        textEdit_2 = new QTextEdit(tab_2);
-        textEdit_2->setObjectName(QStringLiteral("textEdit_2"));
-        textEdit_2->setGeometry(QRect(120, 170, 161, 31));
-        label_4 = new QLabel(tab_2);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(40, 180, 72, 15));
-        radioButton_3 = new QRadioButton(tab_2);
-        radioButton_3->setObjectName(QStringLiteral("radioButton_3"));
-        radioButton_3->setGeometry(QRect(60, 50, 61, 19));
-        radioButton_4 = new QRadioButton(tab_2);
-        radioButton_4->setObjectName(QStringLiteral("radioButton_4"));
-        radioButton_4->setGeometry(QRect(220, 140, 71, 19));
-        textEdit_3 = new QTextEdit(tab_2);
-        textEdit_3->setObjectName(QStringLiteral("textEdit_3"));
-        textEdit_3->setGeometry(QRect(120, 90, 161, 31));
-        pushButton_6 = new QPushButton(tab_2);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(290, 170, 71, 28));
-        radioButton_5 = new QRadioButton(tab_2);
-        radioButton_5->setObjectName(QStringLiteral("radioButton_5"));
-        radioButton_5->setGeometry(QRect(180, 50, 81, 19));
+        default2 = new QRadioButton(tab_2);
+        default2->setObjectName(QStringLiteral("default2"));
+        default2->setGeometry(QRect(60, 50, 61, 19));
+        default2->setChecked(true);
+        bgpicpath = new QTextEdit(tab_2);
+        bgpicpath->setObjectName(QStringLiteral("bgpicpath"));
+        bgpicpath->setEnabled(false);
+        bgpicpath->setGeometry(QRect(120, 90, 161, 31));
+        diy2 = new QRadioButton(tab_2);
+        diy2->setObjectName(QStringLiteral("diy2"));
+        diy2->setGeometry(QRect(180, 50, 81, 19));
         label_5 = new QLabel(tab_2);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(40, 100, 72, 15));
         pushButton_4 = new QPushButton(tab_2);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setEnabled(false);
         pushButton_4->setGeometry(QRect(290, 90, 71, 28));
-        radioButton_6 = new QRadioButton(tab_2);
-        radioButton_6->setObjectName(QStringLiteral("radioButton_6"));
-        radioButton_6->setGeometry(QRect(120, 140, 71, 19));
+        groupBox = new QGroupBox(tab_2);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setGeometry(QRect(110, 130, 191, 41));
+        style2 = new QRadioButton(groupBox);
+        style2->setObjectName(QStringLiteral("style2"));
+        style2->setEnabled(true);
+        style2->setGeometry(QRect(100, 10, 71, 19));
+        style1 = new QRadioButton(groupBox);
+        style1->setObjectName(QStringLiteral("style1"));
+        style1->setEnabled(true);
+        style1->setGeometry(QRect(10, 10, 71, 19));
+        style1->setChecked(true);
         tabWidget->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
@@ -148,8 +154,10 @@ public:
         pushButton_2->setGeometry(QRect(300, 330, 93, 28));
 
         retranslateUi(CSetDlg);
+        QObject::connect(pushButton_2, SIGNAL(clicked()), CSetDlg, SLOT(cancel()));
+        QObject::connect(pushButton, SIGNAL(clicked()), CSetDlg, SLOT(save()));
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(CSetDlg);
@@ -158,23 +166,22 @@ public:
     void retranslateUi(QDialog *CSetDlg)
     {
         CSetDlg->setWindowTitle(QApplication::translate("CSetDlg", "Dialog", Q_NULLPTR));
-        radioButton_2->setText(QApplication::translate("CSetDlg", "\350\207\252\345\256\232\344\271\211", Q_NULLPTR));
-        checkBox->setText(QApplication::translate("CSetDlg", "\350\203\214\346\231\257\351\237\263\344\271\220", Q_NULLPTR));
-        checkBox_2->setText(QApplication::translate("CSetDlg", "\351\237\263\346\225\210", Q_NULLPTR));
+        diy1->setText(QApplication::translate("CSetDlg", "\350\207\252\345\256\232\344\271\211", Q_NULLPTR));
+        bgmusicswitch->setText(QApplication::translate("CSetDlg", "\350\203\214\346\231\257\351\237\263\344\271\220", Q_NULLPTR));
+        soundswitch->setText(QApplication::translate("CSetDlg", "\351\237\263\346\225\210", Q_NULLPTR));
         label->setText(QApplication::translate("CSetDlg", "\351\237\263\346\225\210\350\256\276\347\275\256", Q_NULLPTR));
-        radioButton->setText(QApplication::translate("CSetDlg", "\351\273\230\350\256\244", Q_NULLPTR));
-        label_2->setText(QApplication::translate("CSetDlg", "\350\203\214\346\231\257\351\237\263\344\271\220\350\256\276\347\275\256", Q_NULLPTR));
+        default1->setText(QApplication::translate("CSetDlg", "\351\273\230\350\256\244", Q_NULLPTR));
+        label_2->setText(QApplication::translate("CSetDlg", " \346\270\270\346\210\217\350\203\214\346\231\257\351\237\263\344\271\220\350\256\276\347\275\256", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("CSetDlg", "\346\265\217\350\247\210...", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("CSetDlg", "\351\237\263\346\225\210\350\256\276\347\275\256", Q_NULLPTR));
         label_3->setText(QApplication::translate("CSetDlg", "\345\256\235\347\237\263\345\233\276\347\211\207", Q_NULLPTR));
-        label_4->setText(QApplication::translate("CSetDlg", "\346\232\202\345\201\234\345\233\276\347\211\207", Q_NULLPTR));
-        radioButton_3->setText(QApplication::translate("CSetDlg", "\351\273\230\350\256\244", Q_NULLPTR));
-        radioButton_4->setText(QApplication::translate("CSetDlg", "\351\243\216\346\240\2742", Q_NULLPTR));
-        pushButton_6->setText(QApplication::translate("CSetDlg", "\346\265\217\350\247\210...", Q_NULLPTR));
-        radioButton_5->setText(QApplication::translate("CSetDlg", "\350\207\252\345\256\232\344\271\211", Q_NULLPTR));
+        default2->setText(QApplication::translate("CSetDlg", "\351\273\230\350\256\244", Q_NULLPTR));
+        diy2->setText(QApplication::translate("CSetDlg", "\350\207\252\345\256\232\344\271\211", Q_NULLPTR));
         label_5->setText(QApplication::translate("CSetDlg", "\350\203\214\346\231\257\345\233\276\347\211\207", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("CSetDlg", "\346\265\217\350\247\210...", Q_NULLPTR));
-        radioButton_6->setText(QApplication::translate("CSetDlg", "\351\243\216\346\240\2741", Q_NULLPTR));
+        groupBox->setTitle(QString());
+        style2->setText(QApplication::translate("CSetDlg", "\351\243\216\346\240\2742", Q_NULLPTR));
+        style1->setText(QApplication::translate("CSetDlg", "\351\243\216\346\240\2741", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("CSetDlg", "\344\270\273\351\242\230\350\256\276\347\275\256", Q_NULLPTR));
         label_6->setText(QApplication::translate("CSetDlg", "\350\257\267\350\276\223\345\205\245\346\202\250\347\232\204\346\270\270\346\210\217\346\230\265\347\247\260\357\274\232", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("CSetDlg", "\345\247\223\345\220\215\350\256\276\347\275\256", Q_NULLPTR));

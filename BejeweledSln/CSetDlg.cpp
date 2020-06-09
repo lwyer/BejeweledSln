@@ -1,112 +1,60 @@
 #include "CSetDlg.h"
 #include "ui_CSetDlg.h"
-#include <QSound>
-#include <QDebug>
-#include <QFileDialog>
+
 CSetDlg::CSetDlg(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CSetDlg)
 {
     ui->setupUi(this);
+    configini = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
+    ui->nameEdit->setText(configini->value("Name/Name").toString());
+    ui->bgmusicpath->setText(configini->value("Music/BgMusicPath").toString());
+    ui->bgpicpath->setText(configini->value("Picture/BgPic").toString());
+    musicradio = new QButtonGroup(this);
+    themeradio = new QButtonGroup(this);
+    styleradio = new QButtonGroup(this);
+
+    musicradio->addButton(ui->default1, 0);
+    musicradio->addButton(ui->diy1, 1);
+    themeradio->addButton(ui->default2, 0);
+    themeradio->addButton(ui->diy2, 1);
+    styleradio->addButton(ui->style1, 0);
+    styleradio->addButton(ui->style2, 1);
 
 
-//    QString path1 = ui->textEdit_3->toHtml();
-//    QString path2 = ui->textEdit_2->toHtml();
-    QSettings * configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
-    ui->nameEdit->setText(configIni->value("Name/Name").toString());
-//    configIni->setValue("Music/BgMusicPath",path);
-//    configIni->setValue("Picture/Style","0/1");
-//    configIni->setValue("Picture/BgPic",path1);
-//    configIni->setValue("Picture/Element","1/2");
-//    configIni->setValue("Picture/Mask",path2);
-
-    delete configIni;
 }
 
 
 
 CSetDlg::~CSetDlg()
 {
-    delete ui;
+ //   delete ui;
 }
 
-
-
-void CSetDlg::on_checkBox_toggled(bool checked)
-{
-    QSound * bell = new QSound(":/backgroundMusic/backgroundMusic.wav",this);
-    if(ui->radioButton->isChecked() == true){
-    if(checked == true){
-            bell->play();
-         }
-    }
-}
-
-void CSetDlg::on_pushButton_5_clicked(bool checked)
-{
-    if(ui->checkBox->isChecked() == true){
-        if(ui->radioButton_2->isChecked() == true){
-
-           QString path = QFileDialog::getOpenFileName(this,"打开文件","C:/Users/hdx/Desktop");
-           ui->textEdit->setText(path);
-           QString Rpath = ui->textEdit->toPlainText();
-           QString curPath = QDir::currentPath();
-           QString relPath = Rpath.mid(curPath.length()+1);
-           qDebug() << Rpath;
-           qDebug() << curPath;
-           qDebug() << relPath;
-           QSettings * configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
-           configIni->setValue("Music/BgMusicPath",Rpath);
-
-           QSound * bell1 = new QSound(path);
-           bell1->play();
-         }
-        }
-}
-
-void CSetDlg::on_radioButton_3_toggled(bool checked)
-{
-    QSettings * configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
-    configIni->setValue("Picture/Style","0");
-}
-
-void CSetDlg::on_pushButton_4_clicked(bool checked)
-{
-    QString path = QFileDialog::getOpenFileName(this,"打开文件","C:/Users/hdx/Desktop");
-    QSettings * configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
-    ui->textEdit_3->setText(path);
-    QString Rpath = ui->textEdit_3->toPlainText();
-    QString curPath = QDir::currentPath();
-    QString relPath = Rpath.mid(curPath.length()+1);
-    configIni->setValue("Picture/BgPic",Rpath);
-    configIni->setValue("Picture/Style","1");
-}
-
-void CSetDlg::on_radioButton_6_toggled(bool checked)
-{
-    QSettings * configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
-    configIni->setValue("Picture/Element","1");
-}
-
-void CSetDlg::on_radioButton_4_toggled(bool checked)
-{
-    QSettings * configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
-    configIni->setValue("Picture/Element","2");
-}
-
-void CSetDlg::on_pushButton_6_clicked(bool checked)
-{
-    QString path = QFileDialog::getOpenFileName(this,"打开文件","C:/Users/hdx/Desktop");
-    QSettings * configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
-    ui->textEdit_2->setText(path);
-    QString Rpath = ui->textEdit_2->toPlainText();
-    QString curPath = QDir::currentPath();
-    QString relPath = Rpath.mid(curPath.length()+1);
-    configIni->setValue("Picture/Mask",Rpath);
-}
-
-void CSetDlg::on_pushButton_2_clicked(bool checked)
+void CSetDlg::cancel()
 {
     this->close();
-
 }
+
+void CSetDlg::save()
+{
+    switch (musicradio->checkedId())
+    {
+    case 0: configini->setValue("Music/BgMusicPath", "../BejeweledSln/backgroundMusic/lightning.mp3");break;
+    case 1: configini->setValue("Music/BgMusicPath", ui->bgmusicpath->toPlainText());break;
+    }
+    switch(themeradio->checkedId())
+    {
+    case 0: configini->setValue("Picture/BgPic", "../BejeweledSln/image/background1.jpg");break;
+    case 1: configini->setValue("Picture/BgPic", ui->bgpicpath->toPlainText());break;
+    }
+    switch (styleradio->checkedId()) {
+    case 0: configini->setValue("Picture/Style", 1);break;
+    case 1: configini->setValue("Picture/Style", 0);break;
+    }
+    configini->setValue("Name/Name", ui->nameEdit->toPlainText());
+
+    this->close();
+}
+
+
