@@ -16,11 +16,12 @@ class CGameMode : public QDialog
     Q_OBJECT
 
 public:
-    explicit CGameMode(QWidget *parent = 0);
+    explicit CGameMode(QMediaPlayer* player, QWidget *parent = 0);
     ~CGameMode();
 
 private:
     Ui::CGameMode *ui;
+    QMediaPlayer* player;
 
 private slots:
     void lightning();

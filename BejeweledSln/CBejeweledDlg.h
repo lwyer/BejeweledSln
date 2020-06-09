@@ -8,6 +8,7 @@
 #include "CRankDlg.h"
 #include <QSettings>
 #include <QMediaPlayer>
+#include <QSound>
 
 namespace Ui {
 class CBejeweledDlg;
@@ -22,6 +23,7 @@ public:
     ~CBejeweledDlg();
 private:
     Ui::CBejeweledDlg *ui;
+    QMediaPlayer* player;
 private slots:
     void start();
     void config();

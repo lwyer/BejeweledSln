@@ -7,7 +7,15 @@ CGameDlg::CGameDlg(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGameDlg)
 {
+    clickjewel = new QSound("../BejeweledSln/sound/clickjewel.wav");
+    xiaoqu = new QSound("../BejeweledSln/sound/xiaoqu.wav");
+
     configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
+    player = new QMediaPlayer;
+    player->setMedia(QUrl::fromLocalFile("../BejeweledSln/backgroundMusic/lightning.mp3"));
+    player->setVolume(configIni->value("Music/volume").toInt());
+    player->play();
+
     style = configIni->value("Picture/Style").toString();
     ui->setupUi(this);
     ui->background->setPixmap(QPixmap(configIni->value("Picture/BgPic").toString()));
@@ -288,6 +296,7 @@ bool CGameDlg::eventFilter(QObject*obj,QEvent* e)
                 {
                     if(obj == jewel[i][j])
                     {
+                        clickjewel->play();
                         jewel1I = i;
                         jewel1J = j;
                         clickflag = 1;
@@ -309,11 +318,12 @@ bool CGameDlg::eventFilter(QObject*obj,QEvent* e)
                 {
                     if(obj == jewel[i][j])
                     {
-
+                        clickjewel->play();
                         kuang->hide();
                         if((i == jewel1I-1 && j == jewel1J)|| (i == jewel1I+1 && j == jewel1J)
                                 || (j == jewel1J -1 && i == jewel1I) || (j == jewel1J+1 && i == jewel1I))
                         {
+
                             //two jewel switch animation
                             int xpos1 = jewel[jewel1I][jewel1J]->xpos;
                             int ypos1 = jewel[jewel1I][jewel1J]->ypos;
@@ -352,6 +362,7 @@ bool CGameDlg::eventFilter(QObject*obj,QEvent* e)
                             {
 
                                 do{
+                                    xiaoqu->play();
                                     drawJewel();
                                     sleep(700);
                                     gamelogic->xiayi(matrix);

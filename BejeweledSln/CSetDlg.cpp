@@ -1,10 +1,12 @@
 #include "CSetDlg.h"
 #include "ui_CSetDlg.h"
 
-CSetDlg::CSetDlg(QWidget *parent) :
+CSetDlg::CSetDlg(QMediaPlayer* player, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CSetDlg)
 {
+    this->player = player;
+
     ui->setupUi(this);
     configini = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
     ui->nameEdit->setText(configini->value("Name/Name").toString());
@@ -21,6 +23,12 @@ CSetDlg::CSetDlg(QWidget *parent) :
     styleradio->addButton(ui->style1, 0);
     styleradio->addButton(ui->style2, 1);
 
+    ui->volumechange->setMaximum(100);
+    ui->volumechange->setMinimum(0);
+    ui->volumechange->setSingleStep(10);
+    ui->volumechange->setValue(configini->value("Music/volume").toInt());
+
+    connect(ui->volumechange, SIGNAL(valueChanged(int)), SLOT(valuechange()));
     connect(ui->default1, SIGNAL(clicked()),SLOT(default1()));
     connect(ui->default2, SIGNAL(clicked()),SLOT(default2()));
     connect(ui->diy1, SIGNAL(clicked()),SLOT(diy1()));
@@ -85,6 +93,7 @@ void CSetDlg::save()
     case 1: configini->setValue("Picture/Style", 1);break;
     }
     configini->setValue("Name/Name", ui->nameEdit->toPlainText());
+    configini->setValue("Music/volume", ui->volumechange->value());
 
     this->close();
 }
@@ -121,4 +130,8 @@ void CSetDlg::browser2()
 {
     QString path = QFileDialog::getOpenFileName(this, tr("Open Image"), "../BejeweledSln/image", tr("Image File(*.jpg)"));
     ui->bgpicpath->setText(path);
+}
+void CSetDlg::valuechange()
+{
+    player->setVolume(ui->volumechange->value());
 }

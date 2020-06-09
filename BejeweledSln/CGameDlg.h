@@ -13,6 +13,7 @@
 #include <QSettings>
 #include <QMovie>
 #include <QMediaPlayer>
+#include <QSound>
 
 
 namespace Ui {
@@ -44,7 +45,9 @@ private:
     Ui::CGameDlg *ui;
     bool isPause;
     int clickflag;
-
+    QMediaPlayer* player;
+    QSound* clickjewel;
+    QSound* xiaoqu;
 protected:
     virtual void keyPressEvent(QKeyEvent *ev);
     virtual void keyReleaseEvent(QKeyEvent *ev);
