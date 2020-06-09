@@ -36,11 +36,14 @@ public:
     void sleep(unsigned int msec);
     QSettings *configIni;
     QString style;
+    QSound* clickjewel;
+    QSound* xiaoqu;
 private:
     Ui::CGameClassic *ui;
     bool isPause;
     int clickflag;
     int level;
+    QMediaPlayer* player;
 private slots:
     void tishislot();
 

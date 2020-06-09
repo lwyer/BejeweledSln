@@ -20,6 +20,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
@@ -39,6 +40,8 @@ public:
     QTextEdit *bgmusicpath;
     QLabel *label_2;
     QPushButton *browser1;
+    QSlider *volumechange;
+    QLabel *label_4;
     QWidget *tab_2;
     QLabel *label_3;
     QRadioButton *default2;
@@ -99,6 +102,13 @@ public:
         browser1->setObjectName(QStringLiteral("browser1"));
         browser1->setEnabled(false);
         browser1->setGeometry(QRect(300, 170, 71, 28));
+        volumechange = new QSlider(tab);
+        volumechange->setObjectName(QStringLiteral("volumechange"));
+        volumechange->setGeometry(QRect(70, 240, 241, 22));
+        volumechange->setOrientation(Qt::Horizontal);
+        label_4 = new QLabel(tab);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(30, 210, 141, 16));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
@@ -167,7 +177,7 @@ public:
         QObject::connect(browser1, SIGNAL(clicked()), CSetDlg, SLOT(browser1()));
         QObject::connect(browser2, SIGNAL(clicked()), CSetDlg, SLOT(browser2()));
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(CSetDlg);
@@ -183,6 +193,7 @@ public:
         default1->setText(QApplication::translate("CSetDlg", "\351\273\230\350\256\244", Q_NULLPTR));
         label_2->setText(QApplication::translate("CSetDlg", " \346\270\270\346\210\217\350\203\214\346\231\257\351\237\263\344\271\220\350\256\276\347\275\256", Q_NULLPTR));
         browser1->setText(QApplication::translate("CSetDlg", "\346\265\217\350\247\210...", Q_NULLPTR));
+        label_4->setText(QApplication::translate("CSetDlg", " \346\270\270\346\210\217\350\203\214\346\231\257\351\237\263\344\271\220\351\237\263\351\207\217", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("CSetDlg", "\351\237\263\346\225\210\350\256\276\347\275\256", Q_NULLPTR));
         label_3->setText(QApplication::translate("CSetDlg", "\345\256\235\347\237\263\345\233\276\347\211\207", Q_NULLPTR));
         default2->setText(QApplication::translate("CSetDlg", "\351\273\230\350\256\244", Q_NULLPTR));

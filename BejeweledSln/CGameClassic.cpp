@@ -5,7 +5,15 @@ CGameClassic::CGameClassic(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGameClassic)
 {
+    clickjewel = new QSound("../BejeweledSln/sound/clickjewel.wav");
+    xiaoqu = new QSound("../BejeweledSln/sound/xiaoqu.wav");
+
     configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
+    player = new QMediaPlayer;
+    player->setMedia(QUrl::fromLocalFile("../BejeweledSln/backgroundMusic/classic1.mp3"));
+    player->setVolume(configIni->value("Music/volume").toInt());
+    player->play();
+
     style = configIni->value("Picture/Style").toString();
 
     ui->setupUi(this);
@@ -220,6 +228,7 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                 {
                     if(obj == jewel[i][j])
                     {
+                        clickjewel->play();
                         jewel1I = i;
                         jewel1J = j;
                         clickflag = 1;
@@ -241,7 +250,7 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                 {
                     if(obj == jewel[i][j])
                     {
-
+                        clickjewel->play();
                         kuang->hide();
                         if((i == jewel1I-1 && j == jewel1J)|| (i == jewel1I+1 && j == jewel1J)
                                 || (j == jewel1J -1 && i == jewel1I) || (j == jewel1J+1 && i == jewel1I))
@@ -284,6 +293,7 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                             {
 
                                 do{
+                                    xiaoqu->play();
                                     drawJewel();
                                     sleep(700);
                                     gamelogic->xiayi(matrix);

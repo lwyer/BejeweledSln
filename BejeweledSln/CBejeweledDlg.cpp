@@ -7,10 +7,13 @@ CBejeweledDlg::CBejeweledDlg(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QMediaPlayer* player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("D:/BejeweledSln/BejeweledSln/backgroundMusic/theme.mp3"));
+    player = new QMediaPlayer;
+    player->setMedia(QUrl::fromLocalFile("../BejeweledSln/backgroundMusic/theme.mp3"));
     player->setVolume(50);
     player->play();
+    QMediaPlayer* welcomeSound = new QMediaPlayer;
+    welcomeSound->setMedia(QUrl::fromLocalFile("../BejeweledSln/sound/welcomeback.wav"));
+    welcomeSound->play();
 }
 
 
@@ -21,18 +24,18 @@ CBejeweledDlg::~CBejeweledDlg()
 
 void CBejeweledDlg::start()
 {
-    CGameMode w;
+    CGameMode* w = new CGameMode(player, this);
     this->close();
-    w.show();
-    w.exec();
+    w->show();
+    w->exec();
 }
 
 void CBejeweledDlg::config()
 {
-    CSetDlg w;
-    w.setWindowModality(Qt::ApplicationModal);
-    w.show();
-    w.exec();
+    CSetDlg* w = new CSetDlg(player, this);
+    w->setWindowModality(Qt::ApplicationModal);
+    w->show();
+    w->exec();
 }
 
 void CBejeweledDlg::score()

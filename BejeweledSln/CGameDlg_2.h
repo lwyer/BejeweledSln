@@ -11,6 +11,7 @@
 #include <QSettings>
 #include <QMovie>
 #include <CGamePass.h>
+#include <QSound>
 
 namespace Ui {
 class CGameDlg_2;
@@ -34,11 +35,13 @@ public:
     void sleep(unsigned int msec);
     QSettings *configIni;
     QString style;
-
+    QSound* clickjewel;
+    QSound* xiaoqu;
 private:
     Ui::CGameDlg_2 *ui;
     int clickflag;
     int level;
+    QMediaPlayer* player;
 };
 
 #endif // CGAMEDLG_2_H

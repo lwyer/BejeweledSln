@@ -6,8 +6,16 @@ CGameDlg_2::CGameDlg_2(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGameDlg_2)
 {
-    ui->setupUi(this);
+    clickjewel = new QSound("../BejeweledSln/sound/clickjewel.wav");
+    xiaoqu = new QSound("../BejeweledSln/sound/xiaoqu.wav");
+
     configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
+    player = new QMediaPlayer;
+    player->setMedia(QUrl::fromLocalFile("../BejeweledSln/backgroundMusic/zen1.mp3"));
+    player->setVolume(configIni->value("Music/volume").toInt());
+    player->play();
+
+    ui->setupUi(this);
     style = configIni->value("Picture/Style").toString();
 
     ui->background->setPixmap(configIni->value("Picture/BgPic").toString());
@@ -156,6 +164,7 @@ void CGameDlg_2::drawJewel()
             jewel[i][j]->path = path;
             jewel[i][j]->setScaledContents(true);
             jewel[i][j]->setGeometry(x[j], y[i], 50, 50);
+            jewel[i][j]->setAttribute(Qt::WA_Hover,true);
             jewel[i][j]->installEventFilter(this);
             jewel[i][j]->show();
         }
@@ -164,6 +173,7 @@ void CGameDlg_2::drawJewel()
 
 bool CGameDlg_2::eventFilter(QObject*obj,QEvent* e)
 {
+    int xiaoqucount = 0;
     QMovie* movie = new QMovie("../BejeweledSln/image/kuang.gif");
     if(e->type() == QEvent::HoverEnter)
     {
@@ -179,12 +189,74 @@ bool CGameDlg_2::eventFilter(QObject*obj,QEvent* e)
                     kuang->setMovie(movie);
                     movie->start();
                     kuang->show();
+                    kuang->lower();
+                    ui->gamepanel->lower();
+                    ui->background->lower();
                 }
             }
         }
     }
     if(e->type() == QEvent::MouseButtonPress)
     {
+        for(int i = 0; i < 8; i++)
+        {
+            for(int j = 0; j < 8; j++)
+            {
+                if(obj == jewel[i][j])
+                {
+                    clickjewel->play();
+                    Z z1;
+                    z1.x = jewel[i][j]->x+1;
+                    z1.y = jewel[i][j]->y+1;
+                    if((xiaoqucount = gamelogic->wanfa2_jiaohuan1(matrix, z1))==0)
+                        return false;
+                    else
+                    {
+                        QPropertyAnimation* animation1 = new QPropertyAnimation(jewel[i][j], "pos");
+                        QPropertyAnimation* animation2 = new QPropertyAnimation(jewel[i+1][j], "pos");
+                        QPropertyAnimation* animation3 = new QPropertyAnimation(jewel[i][j+1], "pos");
+                        QPropertyAnimation* animation4 = new QPropertyAnimation(jewel[i+1][j+1], "pos");
+                        animation1->setDuration(500);
+                        animation2->setDuration(500);
+                        animation3->setDuration(500);
+                        animation4->setDuration(500);
+                        animation1->setStartValue(QPoint(jewel[i][j]->xpos, jewel[i][j]->ypos));
+                        animation1->setEndValue(QPoint(jewel[i][j+1]->xpos, jewel[i][j+1]->ypos));
+                        animation2->setStartValue(QPoint(jewel[i+1][j]->xpos, jewel[i+1][j]->ypos));
+                        animation2->setEndValue(QPoint(jewel[i][j]->xpos, jewel[i][j]->ypos));
+                        animation3->setStartValue(QPoint(jewel[i][j+1]->xpos, jewel[i][j+1]->ypos));
+                        animation3->setEndValue(QPoint(jewel[i+1][j+1]->xpos, jewel[i+1][j+1]->ypos));
+                        animation4->setStartValue(QPoint(jewel[i+1][j+1]->xpos, jewel[i+1][j+1]->ypos));
+                        animation4->setEndValue(QPoint(jewel[i+1][j]->xpos, jewel[i+1][j]->ypos));
+                        animation1->start();
+                        animation2->start();
+                        animation3->start();
+                        animation4->start();
+                        sleep(500);
+
+                        do{
+                            xiaoqu->play();
+                            drawJewel();
+                            sleep(700);
+                            gamelogic->xiayi(matrix);
+                            drawJewel();
+                            score += 100*xiaoqucount;
+                            if(score < ui->scorebar->maximum())
+                                ui->scorebar->setValue(score);
+                            else
+                                ui->scorebar->setValue(ui->scorebar->maximum());
+                            ui->scoreshow->setText(QString::number(score));
+                            sleep(1000);
+                        }while((xiaoqucount = gamelogic->xiaoqu2(matrix)) != 0);
+                    }
+                    if(gamelogic->wanfa2_all_cannot(matrix))
+                    {
+                        ui->allcannot->show();
+                        ui->allcannot->raise();
+                    }
+                }
+            }
+        }
 
     }
 

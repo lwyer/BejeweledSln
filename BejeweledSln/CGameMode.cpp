@@ -1,11 +1,12 @@
 #include "CGameMode.h"
 #include "ui_CGameMode.h"
 
-CGameMode::CGameMode(QWidget *parent) :
+CGameMode::CGameMode(QMediaPlayer* player, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGameMode)
 {
     ui->setupUi(this);
+    this->player = player;
 }
 
 CGameMode::~CGameMode()
@@ -16,6 +17,7 @@ CGameMode::~CGameMode()
 void CGameMode::lightning()
 {
     CGameDlg w;
+    player->stop();
     this->close();
     w.show();
     w.exec();
@@ -32,6 +34,7 @@ void CGameMode::back()
 void CGameMode::classic()
 {
     CGameClassic w;
+    player->stop();
     this->close();
     w.show();
     w.exec();
@@ -40,6 +43,7 @@ void CGameMode::classic()
 void CGameMode::jewel2()
 {
     CGameDlg_2 w;
+    player->stop();
     this->close();
     w.show();
     w.exec();
