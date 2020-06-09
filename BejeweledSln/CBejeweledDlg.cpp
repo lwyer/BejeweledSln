@@ -6,6 +6,11 @@ CBejeweledDlg::CBejeweledDlg(QWidget *parent) :
     ui(new Ui::CBejeweledDlg)
 {
     ui->setupUi(this);
+
+    QMediaPlayer* player = new QMediaPlayer;
+    player->setMedia(QUrl::fromLocalFile("D:/BejeweledSln/BejeweledSln/backgroundMusic/theme.mp3"));
+    player->setVolume(50);
+    player->play();
 }
 
 

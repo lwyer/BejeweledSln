@@ -12,7 +12,7 @@
 #include <QPropertyAnimation>
 #include <QSettings>
 #include <QMovie>
-
+#include <QMediaPlayer>
 
 
 namespace Ui {

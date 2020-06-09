@@ -7,8 +7,10 @@ CGameDlg_2::CGameDlg_2(QWidget *parent) :
     ui(new Ui::CGameDlg_2)
 {
     ui->setupUi(this);
+    configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
+    style = configIni->value("Picture/Style").toString();
 
-    ui->background->setPixmap(QPixmap("../BejeweledSln/image/background1.jpg"));
+    ui->background->setPixmap(configIni->value("Picture/BgPic").toString());
     ui->background->setScaledContents(true);
     ui->scoreshow->setText("0");
     ui->menu->setFocusPolicy(Qt::NoFocus);
@@ -19,8 +21,6 @@ CGameDlg_2::CGameDlg_2(QWidget *parent) :
     int x[8] = {50, 100, 150, 200, 250, 300, 350, 400};
     int y[8] = {20, 70, 120, 170, 220, 270, 320, 370};
 
-    configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
-    style = configIni->value("Picture/Style").toString();
     delete configIni;
 
     for(int i = 0; i < 8; i++)

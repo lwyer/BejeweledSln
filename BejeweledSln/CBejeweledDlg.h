@@ -7,6 +7,7 @@
 #include "CGameMode.h"
 #include "CRankDlg.h"
 #include <QSettings>
+#include <QMediaPlayer>
 
 namespace Ui {
 class CBejeweledDlg;

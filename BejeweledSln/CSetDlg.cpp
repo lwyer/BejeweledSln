@@ -21,10 +21,38 @@ CSetDlg::CSetDlg(QWidget *parent) :
     styleradio->addButton(ui->style1, 0);
     styleradio->addButton(ui->style2, 1);
 
+    connect(ui->default1, SIGNAL(clicked()),SLOT(default1()));
+    connect(ui->default2, SIGNAL(clicked()),SLOT(default2()));
+    connect(ui->diy1, SIGNAL(clicked()),SLOT(diy1()));
+    connect(ui->diy2, SIGNAL(clicked()),SLOT(diy2()));
 
+    if(configini->value("Picture/Type").toString() == "1")
+    {
+        ui->bgpicpath->setEnabled(true);
+        ui->browser2->setEnabled(true);
+        ui->diy2->setChecked(true);
+    }else
+    {
+        ui->bgpicpath->setEnabled(false);
+        ui->browser2->setEnabled(false);
+        ui->default2->setChecked(true);
+    }
+    if(configini->value("Music/Type").toString() == "1")
+    {
+        ui->bgmusicpath->setEnabled(true);
+        ui->browser1->setEnabled(true);
+        ui->diy1->setChecked(true);
+    }else
+    {
+        ui->bgmusicpath->setEnabled(false);
+        ui->browser1->setEnabled(false);
+        ui->default1->setChecked(true);
+    }
+    if(configini->value("Picture/Style").toString() == "1")
+        ui->style2->setChecked(true);
+    else
+        ui->style1->setChecked(false);
 }
-
-
 
 CSetDlg::~CSetDlg()
 {
@@ -40,21 +68,57 @@ void CSetDlg::save()
 {
     switch (musicradio->checkedId())
     {
-    case 0: configini->setValue("Music/BgMusicPath", "../BejeweledSln/backgroundMusic/lightning.mp3");break;
-    case 1: configini->setValue("Music/BgMusicPath", ui->bgmusicpath->toPlainText());break;
+    case 0: configini->setValue("Music/BgMusicPath", "../BejeweledSln/backgroundMusic/lightning.mp3");
+        configini->setValue("Music/Type", 0);break;
+    case 1: configini->setValue("Music/BgMusicPath", ui->bgmusicpath->toPlainText());
+        configini->setValue("Music/Type", 1);break;
     }
     switch(themeradio->checkedId())
     {
-    case 0: configini->setValue("Picture/BgPic", "../BejeweledSln/image/background1.jpg");break;
-    case 1: configini->setValue("Picture/BgPic", ui->bgpicpath->toPlainText());break;
+    case 0: configini->setValue("Picture/BgPic", "../BejeweledSln/image/background1.jpg");
+        configini->setValue("Picture/Type", 0);break;
+    case 1: configini->setValue("Picture/BgPic", ui->bgpicpath->toPlainText());
+        configini->setValue("Picture/Type", 1);break;
     }
     switch (styleradio->checkedId()) {
-    case 0: configini->setValue("Picture/Style", 1);break;
-    case 1: configini->setValue("Picture/Style", 0);break;
+    case 0: configini->setValue("Picture/Style", 0);break;
+    case 1: configini->setValue("Picture/Style", 1);break;
     }
     configini->setValue("Name/Name", ui->nameEdit->toPlainText());
 
     this->close();
 }
 
+void CSetDlg::default1()
+{
+    ui->bgmusicpath->setEnabled(false);
+    ui->browser1->setEnabled(false);
+}
 
+void CSetDlg::diy1()
+{
+    ui->bgmusicpath->setEnabled(true);
+    ui->browser1->setEnabled(true);
+}
+void CSetDlg::default2()
+{
+    ui->bgpicpath->setEnabled(false);
+    ui->browser2->setEnabled(false);
+}
+void CSetDlg::diy2()
+{
+    ui->bgpicpath->setEnabled(true);
+    ui->browser2->setEnabled(true);
+}
+
+void CSetDlg::browser1()
+{
+    QString path = QFileDialog::getOpenFileName(this, tr("Open Music"), "../BejeweledSln/backgroundMusic", tr("Music File(*.mp3)"));
+    ui->bgmusicpath->setText(path);
+}
+
+void CSetDlg::browser2()
+{
+    QString path = QFileDialog::getOpenFileName(this, tr("Open Image"), "../BejeweledSln/image", tr("Image File(*.jpg)"));
+    ui->bgpicpath->setText(path);
+}
