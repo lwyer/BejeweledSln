@@ -1,84 +1,85 @@
-#ifndef CMUSICPLAYER_H
-#define CMUSICPLAYER_H
+//#ifndef CMUSICPLAYER_H
+//#define CMUSICPLAYER_H
 
-#endif // CMUSICPLAYER_H
-
-
+//#endif // CMUSICPLAYER_H
 
 
 
-#include <QWidget>
-#include <QMediaPlayer>
 
-class VolumeButton;
+//#ifndef CMUSICPLAYER_H
 
-QT_FORWARD_DECLARE_CLASS(QLabel)
-QT_FORWARD_DECLARE_CLASS(QSlider)
-QT_FORWARD_DECLARE_CLASS(QAbstractButton)
-QT_FORWARD_DECLARE_CLASS(QWinTaskbarButton)
-QT_FORWARD_DECLARE_CLASS(QWinTaskbarProgress)
-QT_FORWARD_DECLARE_CLASS(QWinThumbnailToolBar)
-QT_FORWARD_DECLARE_CLASS(QWinThumbnailToolButton)
+//#include <QWidget>
+//#include <QMediaPlayer>
 
-class MusicPlayer : public QWidget
-{
-    Q_OBJECT
-public:
-    explicit MusicPlayer(QWidget *parent = nullptr);
+//class VolumeButton;
 
-    static QStringList supportedMimeTypes();
-    static QStringList supportedSuffixes();
+//QT_FORWARD_DECLARE_CLASS(QLabel)
+//QT_FORWARD_DECLARE_CLASS(QSlider)
+//QT_FORWARD_DECLARE_CLASS(QAbstractButton)
+//QT_FORWARD_DECLARE_CLASS(QWinTaskbarButton)
+//QT_FORWARD_DECLARE_CLASS(QWinTaskbarProgress)
+//QT_FORWARD_DECLARE_CLASS(QWinThumbnailToolBar)
+//QT_FORWARD_DECLARE_CLASS(QWinThumbnailToolButton)
 
-public slots:
-    void openFile();
-    void playUrl(const QUrl& url);
-    void togglePlayback();
-    void seekForward();
-    void seekBackward();
+//class MusicPlayer : public QWidget
+//{
+//    Q_OBJECT
+//public:
+//    explicit MusicPlayer(QWidget *parent = nullptr);
 
-protected:
-    bool event(QEvent *event) override;
-    void showEvent(QShowEvent *event) override;
-    void dragEnterEvent(QDragEnterEvent *event) override;
-    void dropEvent(QDropEvent *event) override;
-    void mousePressEvent(QMouseEvent *event) override;
-    void mouseMoveEvent(QMouseEvent *event) override;
-    void mouseReleaseEvent(QMouseEvent *event) override;
+//    static QStringList supportedMimeTypes();
+//    static QStringList supportedSuffixes();
 
-private slots:
-    void stylize();
-    void updateState(QMediaPlayer::State state);
-    void updatePosition(qint64 position);
-    void updateDuration(qint64 duration);
-    void setPosition(int position);
-    void updateInfo();
-    void handleError();
+//public slots:
+//    void openFile();
+//    void playUrl(const QUrl& url);
+//    void togglePlayback();
+//    void seekForward();
+//    void seekBackward();
 
-    void updateTaskbar();
-    void updateThumbnailToolBar();
+//protected:
+//    bool event(QEvent *event) override;
+//    void showEvent(QShowEvent *event) override;
+//    void dragEnterEvent(QDragEnterEvent *event) override;
+//    void dropEvent(QDropEvent *event) override;
+//    void mousePressEvent(QMouseEvent *event) override;
+//    void mouseMoveEvent(QMouseEvent *event) override;
+//    void mouseReleaseEvent(QMouseEvent *event) override;
 
-private:
-    void createWidgets();
-    void createShortcuts();
-    void createJumpList();
-    void createTaskbar();
-    void createThumbnailToolBar();
+//private slots:
+//    void stylize();
+//    void updateState(QMediaPlayer::State state);
+//    void updatePosition(qint64 position);
+//    void updateDuration(qint64 duration);
+//    void setPosition(int position);
+//    void updateInfo();
+//    void handleError();
 
-    QWinTaskbarButton *taskbarButton = nullptr;
-    QWinTaskbarProgress *taskbarProgress = nullptr;
-    QWinThumbnailToolBar *thumbnailToolBar = nullptr;
-    QWinThumbnailToolButton *playToolButton = nullptr;
-    QWinThumbnailToolButton *forwardToolButton = nullptr;
-    QWinThumbnailToolButton *backwardToolButton = nullptr;
+//    void updateTaskbar();
+//    void updateThumbnailToolBar();
 
-    QMediaPlayer mediaPlayer;
-    QAbstractButton *playButton = nullptr;
-    VolumeButton *volumeButton = nullptr;
-    QSlider *positionSlider = nullptr;
-    QLabel *positionLabel = nullptr;
-    QLabel *infoLabel = nullptr;
-    QPoint offset;
-    QString fileName;
-};
+//private:
+//    void createWidgets();
+//    void createShortcuts();
+//    void createJumpList();
+//    void createTaskbar();
+//    void createThumbnailToolBar();
 
-#endif // MUSICPLAYER_H
+//    QWinTaskbarButton *taskbarButton = nullptr;
+//    QWinTaskbarProgress *taskbarProgress = nullptr;
+//    QWinThumbnailToolBar *thumbnailToolBar = nullptr;
+//    QWinThumbnailToolButton *playToolButton = nullptr;
+//    QWinThumbnailToolButton *forwardToolButton = nullptr;
+//    QWinThumbnailToolButton *backwardToolButton = nullptr;
+
+//    QMediaPlayer mediaPlayer;
+//    QAbstractButton *playButton = nullptr;
+//    VolumeButton *volumeButton = nullptr;
+//    QSlider *positionSlider = nullptr;
+//    QLabel *positionLabel = nullptr;
+//    QLabel *infoLabel = nullptr;
+//    QPoint offset;
+//    QString fileName;
+//};
+
+//#endif // MUSICPLAYER_H
