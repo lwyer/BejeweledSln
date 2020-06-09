@@ -56,7 +56,7 @@ void CSetDlg::on_pushButton_5_clicked(bool checked)
            qDebug() << curPath;
            qDebug() << relPath;
            QSettings * configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
-           configIni->setValue("Music/BgMusicPath",relPath);
+           configIni->setValue("Music/BgMusicPath",Rpath);
 
            QSound * bell1 = new QSound(path);
            bell1->play();
