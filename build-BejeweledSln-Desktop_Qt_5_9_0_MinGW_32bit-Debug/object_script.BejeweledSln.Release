@@ -1,12 +1,6 @@
 INPUT(
 ./release\qrc_image.o
-./release\CBejeweledApp.o
-./release\CConfig.o
-./release\CConfigDao.o
-./release\CConfigLogic.o
 ./release\CGameLogic.o
-./release\CMusicPlayer.o
-./release\CPathTool.o
 ./release\CRankDao.o
 ./release\CRankLogic.o
 ./release\main.o
@@ -22,6 +16,8 @@ INPUT(
 ./release\CGamePass.o
 ./release\CGameLogic_2.o
 ./release\CGameDlg_2.o
+./release\CGameLogic_3.o
+./release\CGameDlg_3.o
 ./release\moc_CBejeweledDlg.o
 ./release\moc_CHelpDlg.o
 ./release\moc_CRankDlg.o
@@ -33,4 +29,5 @@ INPUT(
 ./release\moc_CGameClassic.o
 ./release\moc_CGamePass.o
 ./release\moc_CGameDlg_2.o
+./release\moc_CGameDlg_3.o
 );

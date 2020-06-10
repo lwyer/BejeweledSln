@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>290</y>
+     <y>260</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -30,7 +30,7 @@
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>210</y>
+     <y>220</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -43,39 +43,13 @@
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>330</y>
+     <y>300</y>
      <width>93</width>
      <height>28</height>
     </rect>
    </property>
    <property name="text">
     <string>退回主菜单</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="quit">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>370</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>退出游戏</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="config">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>250</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>游戏设置</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -112,5 +86,25 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>continue_2</sender>
+   <signal>clicked()</signal>
+   <receiver>CMenuDlg</receiver>
+   <slot>backtogame()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>132</x>
+     <y>220</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>397</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>backtogame()</slot>
+ </slots>
 </ui>

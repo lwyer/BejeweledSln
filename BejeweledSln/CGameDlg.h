@@ -14,7 +14,7 @@
 #include <QMovie>
 #include <QMediaPlayer>
 #include <QSound>
-
+#include "CBejeweledDlg.h"
 
 namespace Ui {
 class CGameDlg;
@@ -41,6 +41,7 @@ public:
     void sleep(unsigned int msec);
     QSettings *configIni;
     QString style;
+    int boomcount;
 private:
     Ui::CGameDlg *ui;
     bool isPause;
@@ -48,15 +49,21 @@ private:
     QMediaPlayer* player;
     QSound* clickjewel;
     QSound* xiaoqu;
+    QMediaPlayer* perfect;
+    QMediaPlayer* timeup;
+    QMediaPlayer* goodbye;
 protected:
     virtual void keyPressEvent(QKeyEvent *ev);
     virtual void keyReleaseEvent(QKeyEvent *ev);
+    void closeEvent(QCloseEvent *event);
 
 private slots:
     void menu();
     void updateProgress();
     void pauseorcontinue();
     void tishislot();
+    void backtohome();
+    void boom();
 };
 
 #endif // CGAMEDLG_H

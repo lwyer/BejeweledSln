@@ -126,7 +126,67 @@
     <string/>
    </property>
   </widget>
+  <widget class="QTextBrowser" name="boomcount">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>260</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="boom">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>270</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>爆炸</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>menu</sender>
+   <signal>clicked()</signal>
+   <receiver>CGameDlg_2</receiver>
+   <slot>menu()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>581</x>
+     <y>351</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>773</x>
+     <y>338</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>boom</sender>
+   <signal>clicked()</signal>
+   <receiver>CGameDlg_2</receiver>
+   <slot>boom()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>588</x>
+     <y>271</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>795</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>menu()</slot>
+  <slot>boom()</slot>
+ </slots>
 </ui>

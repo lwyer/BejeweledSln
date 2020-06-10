@@ -34,6 +34,9 @@ public:
     QLabel *classic_3;
     QLabel *label_4;
     QPushButton *jewel2;
+    QLabel *classic_4;
+    QPushButton *balance;
+    QLabel *label_5;
 
     void setupUi(QDialog *CGameMode)
     {
@@ -98,12 +101,26 @@ public:
         jewel2->setObjectName(QStringLiteral("jewel2"));
         jewel2->setGeometry(QRect(580, 410, 121, 71));
         jewel2->setFont(font1);
+        classic_4 = new QLabel(CGameMode);
+        classic_4->setObjectName(QStringLiteral("classic_4"));
+        classic_4->setGeometry(QRect(550, 60, 201, 191));
+        classic_4->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/config.png);"));
+        balance = new QPushButton(CGameMode);
+        balance->setObjectName(QStringLiteral("balance"));
+        balance->setGeometry(QRect(590, 110, 121, 71));
+        balance->setFont(font1);
+        label_5 = new QLabel(CGameMode);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(550, 260, 211, 91));
+        label_5->setFont(font);
+        label_5->setWordWrap(true);
 
         retranslateUi(CGameMode);
         QObject::connect(lightning, SIGNAL(clicked()), CGameMode, SLOT(lightning()));
         QObject::connect(pushButton_2, SIGNAL(clicked()), CGameMode, SLOT(back()));
         QObject::connect(pushButton, SIGNAL(clicked()), CGameMode, SLOT(classic()));
         QObject::connect(jewel2, SIGNAL(clicked()), CGameMode, SLOT(jewel2()));
+        QObject::connect(balance, SIGNAL(clicked()), CGameMode, SLOT(balance()));
 
         QMetaObject::connectSlotsByName(CGameMode);
     } // setupUi
@@ -122,6 +139,9 @@ public:
         classic_3->setText(QString());
         label_4->setText(QApplication::translate("CGameMode", "\345\256\235\347\237\263\350\277\267\351\230\2652\357\274\232\345\205\250\346\226\260\347\216\251\346\263\225\357\274\214\346\233\264\345\244\247\346\214\221\346\210\230\357\274\201", Q_NULLPTR));
         jewel2->setText(QApplication::translate("CGameMode", "\345\256\235\347\237\2632", Q_NULLPTR));
+        classic_4->setText(QString());
+        balance->setText(QApplication::translate("CGameMode", "\345\271\263\350\241\241", Q_NULLPTR));
+        label_5->setText(QApplication::translate("CGameMode", "\345\271\263\350\241\241\346\250\241\345\274\217\357\274\232\347\272\242\350\223\235\344\270\215\345\217\257\346\211\223\347\240\264\347\232\204\345\271\263\350\241\241\357\274\214\347\251\266\347\253\237\350\260\201\350\203\275\347\254\221\345\210\260\346\234\200\345\220\216", Q_NULLPTR));
     } // retranslateUi
 
 };

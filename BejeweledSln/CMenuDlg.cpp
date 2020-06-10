@@ -7,15 +7,13 @@ CMenuDlg::CMenuDlg(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->movie->setScaledContents(true);
-    QMovie *movie = new QMovie("../BejeweledSln/image/boom.gif");
+    QMovie *movie = new QMovie("../BejeweledSln/image/movie.gif");
     ui->movie->setMovie(movie);
     movie->start();
 
     ui->rank->setFocusPolicy(Qt::NoFocus);
     ui->continue_2->setFocusPolicy(Qt::NoFocus);
-    ui->config->setFocusPolicy(Qt::NoFocus);
     ui->backtohome->setFocusPolicy(Qt::NoFocus);
-    ui->quit->setFocusPolicy(Qt::NoFocus);
 }
 
 void CMenuDlg::keyPressEvent(QKeyEvent *ev)
@@ -40,3 +38,9 @@ CMenuDlg::~CMenuDlg()
 {
  //   delete ui;
 }
+
+void CMenuDlg::backtogame()
+{
+    this->close();
+}
+

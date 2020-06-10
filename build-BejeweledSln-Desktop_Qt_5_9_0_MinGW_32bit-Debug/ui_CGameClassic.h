@@ -33,6 +33,8 @@ public:
     QLabel *allcannot;
     QPushButton *pauseorcontinue_2;
     QLabel *levelcomplete;
+    QTextBrowser *boomcount;
+    QPushButton *boom;
 
     void setupUi(QDialog *CGameClassic)
     {
@@ -70,9 +72,17 @@ public:
         levelcomplete = new QLabel(CGameClassic);
         levelcomplete->setObjectName(QStringLiteral("levelcomplete"));
         levelcomplete->setGeometry(QRect(180, 180, 361, 91));
+        boomcount = new QTextBrowser(CGameClassic);
+        boomcount->setObjectName(QStringLiteral("boomcount"));
+        boomcount->setGeometry(QRect(470, 270, 71, 41));
+        boom = new QPushButton(CGameClassic);
+        boom->setObjectName(QStringLiteral("boom"));
+        boom->setGeometry(QRect(570, 280, 93, 28));
 
         retranslateUi(CGameClassic);
         QObject::connect(pauseorcontinue_2, SIGNAL(clicked()), CGameClassic, SLOT(tishislot()));
+        QObject::connect(menu, SIGNAL(clicked()), CGameClassic, SLOT(menu()));
+        QObject::connect(boom, SIGNAL(clicked()), CGameClassic, SLOT(boom()));
 
         QMetaObject::connectSlotsByName(CGameClassic);
     } // setupUi
@@ -86,6 +96,7 @@ public:
         allcannot->setText(QString());
         pauseorcontinue_2->setText(QApplication::translate("CGameClassic", "\346\217\220\347\244\272", Q_NULLPTR));
         levelcomplete->setText(QString());
+        boom->setText(QApplication::translate("CGameClassic", "\347\210\206\347\202\270", Q_NULLPTR));
     } // retranslateUi
 
 };

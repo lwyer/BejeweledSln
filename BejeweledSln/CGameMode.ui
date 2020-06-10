@@ -225,6 +225,65 @@
     <string>宝石2</string>
    </property>
   </widget>
+  <widget class="QLabel" name="classic_4">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>60</y>
+     <width>201</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/new/prefix1/image/config.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="balance">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>110</y>
+     <width>121</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>平衡</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>260</y>
+     <width>211</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>平衡模式：红蓝不可打破的平衡，究竟谁能笑到最后</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections>
@@ -292,11 +351,28 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>balance</sender>
+   <signal>clicked()</signal>
+   <receiver>CGameMode</receiver>
+   <slot>balance()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>626</x>
+     <y>133</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>982</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>lightning()</slot>
   <slot>back()</slot>
   <slot>classic()</slot>
   <slot>jewel2()</slot>
+  <slot>balance()</slot>
  </slots>
 </ui>

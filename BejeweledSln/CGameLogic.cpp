@@ -8,6 +8,103 @@ CGameLogic::CGameLogic(int kindd){
     this->kind=kindd;
 }
 
+void CGameLogic::boom(int num[][8]){
+ Z z;
+ z.x=rand()%6+1;
+ z.y=rand()%6+1;
+ if((z.x>1&&z.x<8)&&(z.y<8&&z.y>1)){
+  num[z.x-1][z.y-1]=0;
+  num[z.x-2][z.y-1]=0;
+  num[z.x][z.y-1]=0;
+  num[z.x-1][z.y-2]=0;
+  num[z.x-2][z.y-2]=0;
+  num[z.x][z.y-2]=0;
+  num[z.x-1][z.y]=0;
+  num[z.x-2][z.y]=0;
+  num[z.x][z.y]=0;
+ }else if(z.x==1&&z.y<=7&&z.y>=2){
+  num[z.x-1][z.y-1]=0;
+  num[z.x][z.y-1]=0;
+  num[z.x+1][z.y-1]=0;
+  num[z.x-1][z.y]=0;
+  num[z.x][z.y]=0;
+  num[z.x+1][z.y]=0;
+  num[z.x-1][z.y-2]=0;
+  num[z.x][z.y-2]=0;
+  num[z.x+1][z.y-2]=0;
+ }else if(z.x==8&&z.y<=7&&z.y>=2){
+  num[z.x-1][z.y-1]=0;
+  num[z.x-2][z.y-1]=0;
+  num[z.x-3][z.y-1]=0;
+  num[z.x-1][z.y-2]=0;
+  num[z.x-2][z.y-2]=0;
+  num[z.x-3][z.y-2]=0;
+  num[z.x-1][z.y]=0;
+  num[z.x-2][z.y]=0;
+  num[z.x-3][z.y]=0;
+ }else if(z.y==1&&z.x<=7&&z.x>=2){
+  num[z.x-1][z.y-1]=0;
+  num[z.x-2][z.y-1]=0;
+  num[z.x][z.y-1]=0;
+  num[z.x-1][z.y]=0;
+  num[z.x-2][z.y]=0;
+  num[z.x][z.y]=0;
+  num[z.x-1][z.y+1]=0;
+  num[z.x-2][z.y+1]=0;
+  num[z.x][z.y+1]=0;
+ }else if(z.y==8&&z.x<=7&&z.x>=2){
+  num[z.x-1][z.y-1]=0;
+  num[z.x-2][z.y-1]=0;
+  num[z.x][z.y-1]=0;
+  num[z.x-1][z.y-2]=0;
+  num[z.x-2][z.y-2]=0;
+  num[z.x][z.y-2]=0;
+  num[z.x-1][z.y-3]=0;
+  num[z.x-2][z.y-3]=0;
+  num[z.x][z.y-3]=0;
+ }else if(z.x==1&&z.y==1){
+  num[0][0]=0;
+  num[0][1]=0;
+  num[0][2]=0;
+  num[1][0]=0;
+  num[1][1]=0;
+  num[1][2]=0;
+  num[2][0]=0;
+  num[2][1]=0;
+  num[2][2]=0;
+ }else if(z.x==1&&z.y==8){
+  num[0][8]=0;
+  num[0][7]=0;
+  num[0][6]=0;
+  num[1][8]=0;
+  num[1][7]=0;
+  num[1][6]=0;
+  num[2][8]=0;
+  num[2][7]=0;
+  num[2][6]=0;
+ }else if(z.x==8&&z.y==1){
+  num[7][0]=0;
+  num[7][1]=0;
+  num[7][2]=0;
+  num[6][0]=0;
+  num[6][1]=0;
+  num[6][2]=0;
+  num[5][0]=0;
+  num[5][1]=0;
+  num[5][2]=0;
+ }else if(z.x==8&&z.y==8){
+  num[7][7]=0;
+  num[7][6]=0;
+  num[7][5]=0;
+  num[6][7]=0;
+  num[6][6]=0;
+  num[6][5]=0;
+  num[5][7]=0;
+  num[5][6]=0;
+  num[5][5]=0;
+ }
+}
+
 bool CGameLogic::xiaoqu1(int num[][8]) {
     int i,j;
     int result=false;

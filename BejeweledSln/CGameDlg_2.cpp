@@ -1,6 +1,8 @@
 #include "CGameDlg_2.h"
 #include "ui_CGameDlg_2.h"
 #include <iostream>
+#include "ui_CMenuDlg.h"
+
 
 CGameDlg_2::CGameDlg_2(QWidget *parent) :
     QDialog(parent),
@@ -14,6 +16,10 @@ CGameDlg_2::CGameDlg_2(QWidget *parent) :
     player->setMedia(QUrl::fromLocalFile("../BejeweledSln/backgroundMusic/zen1.mp3"));
     player->setVolume(configIni->value("Music/volume").toInt());
     player->play();
+    goodbye = new QMediaPlayer;
+    goodbye->setMedia(QUrl::fromLocalFile("../BejeweledSln/sound/goodbye.wav"));
+    goodbye->setVolume(100);
+
 
     ui->setupUi(this);
     style = configIni->value("Picture/Style").toString();
@@ -23,7 +29,7 @@ CGameDlg_2::CGameDlg_2(QWidget *parent) :
     ui->scoreshow->setText("0");
     ui->menu->setFocusPolicy(Qt::NoFocus);
 
-    gamelogic = new CGameLogic_2(5);
+    gamelogic = new CGameLogic_2(6);
     gamelogic->init(matrix);
     std::string path;
     int x[8] = {50, 100, 150, 200, 250, 300, 350, 400};
@@ -80,6 +86,8 @@ CGameDlg_2::CGameDlg_2(QWidget *parent) :
     kuang->hide();
     score = 0;
     level = 1;
+    boomcount = 0;
+    ui->boomcount->setText(QString::number(boomcount));
 
     ui->scorebar->setRange(0, 1200);
     ui->scorebar->setValue(0);
@@ -88,6 +96,57 @@ CGameDlg_2::CGameDlg_2(QWidget *parent) :
 CGameDlg_2::~CGameDlg_2()
 {
  //   delete ui;
+}
+
+void CGameDlg_2::boom()
+{
+    int xiaoqucount = 0;
+    if(boomcount > 0)
+    {
+        boomcount--;
+        ui->boomcount->setText(QString::number(boomcount));
+        gamelogic->boom(matrix);
+        do{
+            xiaoqu->play();
+            drawJewel();
+            sleep(700);
+            gamelogic->xiayi(matrix);
+            drawJewel();
+            score += 300;
+            ui->scoreshow->setText(QString::number(score));
+            sleep(1000);
+        }while((xiaoqucount = gamelogic->xiaoqu2(matrix)) != 0);
+        if(gamelogic->wanfa2_all_cannot(matrix))
+        {
+            ui->allcannot->show();
+            ui->allcannot->raise();
+        }
+    }
+}
+
+void CGameDlg_2::closeEvent(QCloseEvent *event)
+{
+    goodbye->play();
+    this->hide();
+    sleep(1500);
+    event->accept();
+}
+
+void CGameDlg_2::menu()
+{
+    CMenuDlg* w = new CMenuDlg(this);
+    connect(w->ui->backtohome, SIGNAL(clicked()), this, SLOT(backtohome()));
+    w->show();
+    w->exec();
+}
+
+void CGameDlg_2::backtohome()
+{
+    this->close();
+    player->stop();
+    CBejeweledDlg w;
+    w.show();
+    w.exec();
 }
 
 void CGameDlg_2::sleep(unsigned int msec){
@@ -241,6 +300,11 @@ bool CGameDlg_2::eventFilter(QObject*obj,QEvent* e)
                             gamelogic->xiayi(matrix);
                             drawJewel();
                             score += 100*xiaoqucount;
+                            if(xiaoqucount > 4)
+                            {
+                                boomcount++;
+                                ui->boomcount->setText(QString::number(boomcount));
+                            }
                             if(score < ui->scorebar->maximum())
                                 ui->scorebar->setValue(score);
                             else

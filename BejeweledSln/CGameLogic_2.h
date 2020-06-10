@@ -18,6 +18,7 @@ public:
     int xiaoqu2(int num[][8]);
     void init(int num[][8]);
     void xiayi(int num[][8]) ;
+    void boom(int num[][8]);
 
     int wanfa2_jiaohuan1(int num[][8],Z z);
     bool wanfa2_jiaohuan2(int num[][8],Z z);

@@ -19,13 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    CBejeweledApp.cpp \
-    CConfig.cpp \
-    CConfigDao.cpp \
-    CConfigLogic.cpp \
     CGameLogic.cpp \
-    CMusicPlayer.cpp \
-    CPathTool.cpp \
     CRankDao.cpp \
     CRankLogic.cpp \
     main.cpp \
@@ -40,16 +34,12 @@ SOURCES += \
     CGameClassic.cpp \
     CGamePass.cpp \
     CGameLogic_2.cpp \
-    CGameDlg_2.cpp
+    CGameDlg_2.cpp \
+    CGameLogic_3.cpp \
+    CGameDlg_3.cpp
 
 HEADERS += \
-    CBejeweledApp.h \
-    CConfig.h \
-    CConfigDao.h \
-    CConfigLogic.h \
     CGameLogic.h \
-    CMusicPlayer.h \
-    CPathTool.h \
     CRankDao.h \
     CRankLogic.h \
     CBejeweledDlg.h \
@@ -63,7 +53,9 @@ HEADERS += \
     CGameClassic.h \
     CGamePass.h \
     CGameLogic_2.h \
-    CGameDlg_2.h
+    CGameDlg_2.h \
+    CGameLogic_3.h \
+    CGameDlg_3.h
 
 FORMS += \
     CBejeweledDlg.ui \
@@ -75,7 +67,8 @@ FORMS += \
     CGameMode.ui \
     CGameClassic.ui \
     CGamePass.ui \
-    CGameDlg_2.ui
+    CGameDlg_2.ui \
+    CGameDlg_3.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
