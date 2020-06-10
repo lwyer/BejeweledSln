@@ -29,7 +29,7 @@
     </font>
    </property>
    <property name="text">
-    <string>恭喜您，经典模式通关！</string>
+    <string>恭喜您，该模式通关！</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">

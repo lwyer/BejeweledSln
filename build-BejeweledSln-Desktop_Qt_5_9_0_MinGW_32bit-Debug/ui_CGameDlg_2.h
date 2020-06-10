@@ -33,6 +33,8 @@ public:
     QPushButton *menu;
     QLabel *allcannot;
     QLabel *levelcomplete;
+    QTextBrowser *boomcount;
+    QPushButton *boom;
 
     void setupUi(QDialog *CGameDlg_2)
     {
@@ -70,8 +72,16 @@ public:
         levelcomplete = new QLabel(CGameDlg_2);
         levelcomplete->setObjectName(QStringLiteral("levelcomplete"));
         levelcomplete->setGeometry(QRect(190, 190, 361, 91));
+        boomcount = new QTextBrowser(CGameDlg_2);
+        boomcount->setObjectName(QStringLiteral("boomcount"));
+        boomcount->setGeometry(QRect(470, 260, 71, 41));
+        boom = new QPushButton(CGameDlg_2);
+        boom->setObjectName(QStringLiteral("boom"));
+        boom->setGeometry(QRect(560, 270, 93, 28));
 
         retranslateUi(CGameDlg_2);
+        QObject::connect(menu, SIGNAL(clicked()), CGameDlg_2, SLOT(menu()));
+        QObject::connect(boom, SIGNAL(clicked()), CGameDlg_2, SLOT(boom()));
 
         QMetaObject::connectSlotsByName(CGameDlg_2);
     } // setupUi
@@ -85,6 +95,7 @@ public:
         menu->setText(QApplication::translate("CGameDlg_2", "\350\217\234\345\215\225", Q_NULLPTR));
         allcannot->setText(QString());
         levelcomplete->setText(QString());
+        boom->setText(QApplication::translate("CGameDlg_2", "\347\210\206\347\202\270", Q_NULLPTR));
     } // retranslateUi
 
 };

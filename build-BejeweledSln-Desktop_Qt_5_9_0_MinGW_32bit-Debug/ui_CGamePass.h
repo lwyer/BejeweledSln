@@ -51,7 +51,7 @@ public:
     void retranslateUi(QDialog *CGamePass)
     {
         CGamePass->setWindowTitle(QApplication::translate("CGamePass", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("CGamePass", "\346\201\255\345\226\234\346\202\250\357\274\214\347\273\217\345\205\270\346\250\241\345\274\217\351\200\232\345\205\263\357\274\201", Q_NULLPTR));
+        label->setText(QApplication::translate("CGamePass", "\346\201\255\345\226\234\346\202\250\357\274\214\350\257\245\346\250\241\345\274\217\351\200\232\345\205\263\357\274\201", Q_NULLPTR));
         pushButton->setText(QApplication::translate("CGamePass", "\350\277\224\345\233\236\344\270\273\350\217\234\345\215\225", Q_NULLPTR));
     } // retranslateUi
 

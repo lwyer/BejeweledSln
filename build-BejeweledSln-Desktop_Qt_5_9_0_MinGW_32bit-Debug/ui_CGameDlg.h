@@ -34,8 +34,10 @@ public:
     QLabel *timeout;
     QLabel *allcannot;
     QPushButton *pauseorcontinue;
-    QPushButton *pauseorcontinue_2;
+    QPushButton *tishi;
     QLabel *label;
+    QTextBrowser *boomcount;
+    QPushButton *boom;
 
     void setupUi(QDialog *CGameDlg)
     {
@@ -55,7 +57,7 @@ public:
         progressBar->setValue(24);
         menu = new QPushButton(CGameDlg);
         menu->setObjectName(QStringLiteral("menu"));
-        menu->setGeometry(QRect(530, 340, 93, 28));
+        menu->setGeometry(QRect(530, 370, 93, 28));
         pause = new QLabel(CGameDlg);
         pause->setObjectName(QStringLiteral("pause"));
         pause->setGeometry(QRect(50, 20, 400, 400));
@@ -77,18 +79,25 @@ public:
         allcannot->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/allcannot.png);"));
         pauseorcontinue = new QPushButton(CGameDlg);
         pauseorcontinue->setObjectName(QStringLiteral("pauseorcontinue"));
-        pauseorcontinue->setGeometry(QRect(530, 260, 93, 28));
-        pauseorcontinue_2 = new QPushButton(CGameDlg);
-        pauseorcontinue_2->setObjectName(QStringLiteral("pauseorcontinue_2"));
-        pauseorcontinue_2->setGeometry(QRect(530, 180, 93, 28));
+        pauseorcontinue->setGeometry(QRect(530, 200, 93, 28));
+        tishi = new QPushButton(CGameDlg);
+        tishi->setObjectName(QStringLiteral("tishi"));
+        tishi->setGeometry(QRect(530, 150, 93, 28));
         label = new QLabel(CGameDlg);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(210, 180, 361, 91));
+        boomcount = new QTextBrowser(CGameDlg);
+        boomcount->setObjectName(QStringLiteral("boomcount"));
+        boomcount->setGeometry(QRect(480, 290, 71, 41));
+        boom = new QPushButton(CGameDlg);
+        boom->setObjectName(QStringLiteral("boom"));
+        boom->setGeometry(QRect(570, 300, 93, 28));
 
         retranslateUi(CGameDlg);
         QObject::connect(menu, SIGNAL(clicked()), CGameDlg, SLOT(menu()));
         QObject::connect(pauseorcontinue, SIGNAL(clicked()), CGameDlg, SLOT(pauseorcontinue()));
-        QObject::connect(pauseorcontinue_2, SIGNAL(clicked()), CGameDlg, SLOT(tishislot()));
+        QObject::connect(tishi, SIGNAL(clicked()), CGameDlg, SLOT(tishislot()));
+        QObject::connect(boom, SIGNAL(clicked()), CGameDlg, SLOT(boom()));
 
         QMetaObject::connectSlotsByName(CGameDlg);
     } // setupUi
@@ -103,8 +112,9 @@ public:
         timeout->setText(QString());
         allcannot->setText(QString());
         pauseorcontinue->setText(QApplication::translate("CGameDlg", "\346\232\202\345\201\234", Q_NULLPTR));
-        pauseorcontinue_2->setText(QApplication::translate("CGameDlg", "\346\217\220\347\244\272", Q_NULLPTR));
+        tishi->setText(QApplication::translate("CGameDlg", "\346\217\220\347\244\272", Q_NULLPTR));
         label->setText(QString());
+        boom->setText(QApplication::translate("CGameDlg", "\347\210\206\347\202\270", Q_NULLPTR));
     } // retranslateUi
 
 };

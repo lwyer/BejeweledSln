@@ -2,6 +2,7 @@
 #include "ui_CGameDlg.h"
 #include <QDebug>
 #include <iostream>
+#include "ui_CMenuDlg.h"
 
 CGameDlg::CGameDlg(QWidget *parent) :
     QDialog(parent),
@@ -9,6 +10,15 @@ CGameDlg::CGameDlg(QWidget *parent) :
 {
     clickjewel = new QSound("../BejeweledSln/sound/clickjewel.wav");
     xiaoqu = new QSound("../BejeweledSln/sound/xiaoqu.wav");
+    perfect = new QMediaPlayer;
+    perfect->setMedia(QUrl::fromLocalFile("../BejeweledSln/sound/perfect.wav"));
+    perfect->setVolume(70);
+    timeup = new QMediaPlayer;
+    timeup->setMedia(QUrl::fromLocalFile("../BejeweledSln/sound/timeup.wav"));
+    timeup->setVolume(100);
+    goodbye = new QMediaPlayer;
+    goodbye->setMedia(QUrl::fromLocalFile("../BejeweledSln/sound/goodbye.wav"));
+    goodbye->setVolume(100);
 
     configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
     player = new QMediaPlayer;
@@ -80,6 +90,8 @@ CGameDlg::CGameDlg(QWidget *parent) :
     kuang = new QLabel(this);
     kuang->hide();
     score = 0;
+    boomcount = 0;
+    ui->boomcount->setText(QString::number(boomcount));
 
     ui->progressBar->setRange(0, 60);
     ui->progressBar->setValue(60);
@@ -117,6 +129,15 @@ void CGameDlg::keyReleaseEvent(QKeyEvent *ev)
     QWidget::keyReleaseEvent(ev);
 }
 
+void CGameDlg::closeEvent(QCloseEvent *event)
+{
+    goodbye->play();
+    this->hide();
+    sleep(1500);
+    event->accept();
+}
+
+
 CGameDlg::~CGameDlg()
 {
  //   delete ui;
@@ -124,11 +145,23 @@ CGameDlg::~CGameDlg()
 
 void CGameDlg::menu()
 {
-    CMenuDlg w;
+    CMenuDlg* w = new CMenuDlg(this);
+    isPause=false;
+    pauseorcontinue();
+    connect(w->ui->backtohome, SIGNAL(clicked()), this, SLOT(backtohome()));
+    w->show();
+    w->exec();
+}
+
+void CGameDlg::backtohome()
+{
+    this->close();
+    player->stop();
+    CBejeweledDlg w;
     w.show();
     w.exec();
-    ui->pause->show();
 }
+
 
 void CGameDlg::pauseorcontinue()
 {
@@ -145,6 +178,33 @@ void CGameDlg::pauseorcontinue()
         isPause = true;
         timer->stop();
         ui->pauseorcontinue->setText("开始");
+    }
+}
+
+void CGameDlg::boom()
+{
+    int xiaoqucount = 0;
+    if(boomcount > 0)
+    {
+        boomcount--;
+        ui->boomcount->setText(QString::number(boomcount));
+        gamelogic->boom(matrix);
+        do{
+            xiaoqu->play();
+            drawJewel();
+            sleep(700);
+            gamelogic->xiayi(matrix);
+            drawJewel();
+            score += 300;
+            ui->scoreshow->setText(QString::number(score));
+            sleep(1000);
+        }while((xiaoqucount = gamelogic->xiaoqu2(matrix)) != 0);
+        if(gamelogic->all_cannot(matrix))
+        {
+            timer->stop();
+            ui->allcannot->show();
+            ui->allcannot->raise();
+        }
     }
 }
 
@@ -199,6 +259,9 @@ void CGameDlg::updateProgress()
         ui->timeout->raise();
         ui->timeout->show();
         ui->pauseorcontinue->setEnabled(false);
+        ui->tishi->setEnabled(false);
+        timeup->play();
+        ui->boom->setEnabled(false);
     }
     ui->progressBar->setValue(nCurrentValue);
 }
@@ -368,6 +431,13 @@ bool CGameDlg::eventFilter(QObject*obj,QEvent* e)
                                     gamelogic->xiayi(matrix);
                                     drawJewel();
                                     score += 100*xiaoqucount;
+                                    if(xiaoqucount > 4)
+                                    {
+                                        boomcount++;
+                                        ui->boomcount->setText(QString::number(boomcount));
+                                    }
+                                    if(xiaoqucount >= 6)
+                                        perfect->play();
                                     ui->scoreshow->setText(QString::number(score));
                                     sleep(1000);
                                 }while((xiaoqucount = gamelogic->xiaoqu2(matrix)) != 0);

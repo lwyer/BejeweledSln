@@ -37,11 +37,22 @@ public:
     QString style;
     QSound* clickjewel;
     QSound* xiaoqu;
+    int boomcount;
+    QMediaPlayer* goodbye;
+
+protected:
+    void closeEvent(QCloseEvent *event);
+
 private:
     Ui::CGameDlg_2 *ui;
     int clickflag;
     int level;
     QMediaPlayer* player;
+private slots:
+    void backtohome();
+    void menu();
+    void boom();
+
 };
 
 #endif // CGAMEDLG_2_H

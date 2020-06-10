@@ -24,6 +24,7 @@ public:
 private:
     Ui::CBejeweledDlg *ui;
     QMediaPlayer* player;
+    QSound* keypress;
 private slots:
     void start();
     void config();

@@ -26,8 +26,6 @@ public:
     QPushButton *rank;
     QPushButton *continue_2;
     QPushButton *backtohome;
-    QPushButton *quit;
-    QPushButton *config;
     QLabel *label;
     QLabel *movie;
 
@@ -38,19 +36,13 @@ public:
         CMenuDlg->resize(278, 442);
         rank = new QPushButton(CMenuDlg);
         rank->setObjectName(QStringLiteral("rank"));
-        rank->setGeometry(QRect(90, 290, 93, 28));
+        rank->setGeometry(QRect(90, 260, 93, 28));
         continue_2 = new QPushButton(CMenuDlg);
         continue_2->setObjectName(QStringLiteral("continue_2"));
-        continue_2->setGeometry(QRect(90, 210, 93, 28));
+        continue_2->setGeometry(QRect(90, 220, 93, 28));
         backtohome = new QPushButton(CMenuDlg);
         backtohome->setObjectName(QStringLiteral("backtohome"));
-        backtohome->setGeometry(QRect(90, 330, 93, 28));
-        quit = new QPushButton(CMenuDlg);
-        quit->setObjectName(QStringLiteral("quit"));
-        quit->setGeometry(QRect(90, 370, 93, 28));
-        config = new QPushButton(CMenuDlg);
-        config->setObjectName(QStringLiteral("config"));
-        config->setGeometry(QRect(90, 250, 93, 28));
+        backtohome->setGeometry(QRect(90, 300, 93, 28));
         label = new QLabel(CMenuDlg);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(110, 10, 61, 41));
@@ -63,6 +55,7 @@ public:
         movie->setGeometry(QRect(70, 50, 140, 140));
 
         retranslateUi(CMenuDlg);
+        QObject::connect(continue_2, SIGNAL(clicked()), CMenuDlg, SLOT(backtogame()));
 
         QMetaObject::connectSlotsByName(CMenuDlg);
     } // setupUi
@@ -73,8 +66,6 @@ public:
         rank->setText(QApplication::translate("CMenuDlg", "\346\216\222\350\241\214\346\246\234", Q_NULLPTR));
         continue_2->setText(QApplication::translate("CMenuDlg", "\347\273\247\347\273\255\346\270\270\346\210\217", Q_NULLPTR));
         backtohome->setText(QApplication::translate("CMenuDlg", "\351\200\200\345\233\236\344\270\273\350\217\234\345\215\225", Q_NULLPTR));
-        quit->setText(QApplication::translate("CMenuDlg", "\351\200\200\345\207\272\346\270\270\346\210\217", Q_NULLPTR));
-        config->setText(QApplication::translate("CMenuDlg", "\346\270\270\346\210\217\350\256\276\347\275\256", Q_NULLPTR));
         label->setText(QApplication::translate("CMenuDlg", "\350\217\234\345\215\225", Q_NULLPTR));
         movie->setText(QString());
     } // retranslateUi

@@ -14,6 +14,8 @@ CBejeweledDlg::CBejeweledDlg(QWidget *parent) :
     QMediaPlayer* welcomeSound = new QMediaPlayer;
     welcomeSound->setMedia(QUrl::fromLocalFile("../BejeweledSln/sound/welcomeback.wav"));
     welcomeSound->play();
+
+    keypress = new QSound("../BejeweledSln/sound/click.wav");
 }
 
 
@@ -24,6 +26,7 @@ CBejeweledDlg::~CBejeweledDlg()
 
 void CBejeweledDlg::start()
 {
+    keypress->play();
     CGameMode* w = new CGameMode(player, this);
     this->close();
     w->show();
@@ -32,6 +35,7 @@ void CBejeweledDlg::start()
 
 void CBejeweledDlg::config()
 {
+    keypress->play();
     CSetDlg* w = new CSetDlg(player, this);
     w->setWindowModality(Qt::ApplicationModal);
     w->show();
@@ -40,6 +44,7 @@ void CBejeweledDlg::config()
 
 void CBejeweledDlg::score()
 {
+    keypress->play();
     CRankDlg w;
     w.setWindowModality(Qt::ApplicationModal);
     w.show();
@@ -48,6 +53,7 @@ void CBejeweledDlg::score()
 
 void CBejeweledDlg::help()
 {
+    keypress->play();
     CHelpDlg w;
     w.setWindowModality(Qt::ApplicationModal);
     w.show();

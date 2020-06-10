@@ -6,6 +6,8 @@
 #include "CBejeweledDlg.h"
 #include "CGameClassic.h"
 #include "CGameDlg_2.h"
+#include <QTime>
+#include "CGameDlg_3.h"
 
 namespace Ui {
 class CGameMode;
@@ -18,7 +20,8 @@ class CGameMode : public QDialog
 public:
     explicit CGameMode(QMediaPlayer* player, QWidget *parent = 0);
     ~CGameMode();
-
+    QSound* keypress;
+    void sleep(unsigned int msec);
 private:
     Ui::CGameMode *ui;
     QMediaPlayer* player;
@@ -28,6 +31,7 @@ private slots:
     void back();
     void classic();
     void jewel2();
+    void balance();
 };
 
 #endif // CGAMEMODE_H

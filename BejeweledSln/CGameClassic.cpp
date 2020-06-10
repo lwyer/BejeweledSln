@@ -1,5 +1,6 @@
 #include "CGameClassic.h"
 #include "ui_CGameClassic.h"
+#include "ui_CMenuDlg.h"
 
 CGameClassic::CGameClassic(QWidget *parent) :
     QDialog(parent),
@@ -7,6 +8,15 @@ CGameClassic::CGameClassic(QWidget *parent) :
 {
     clickjewel = new QSound("../BejeweledSln/sound/clickjewel.wav");
     xiaoqu = new QSound("../BejeweledSln/sound/xiaoqu.wav");
+    perfect = new QMediaPlayer;
+    perfect->setMedia(QUrl::fromLocalFile("../BejeweledSln/sound/perfect.wav"));
+    perfect->setVolume(70);
+    levelcomplete = new QMediaPlayer;
+    levelcomplete->setMedia(QUrl::fromLocalFile("../BejeweledSln/sound/levelcomplete.wav"));
+    levelcomplete->setVolume(70);
+    goodbye = new QMediaPlayer;
+    goodbye->setMedia(QUrl::fromLocalFile("../BejeweledSln/sound/goodbye.wav"));
+    goodbye->setVolume(100);
 
     configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
     player = new QMediaPlayer;
@@ -79,6 +89,8 @@ CGameClassic::CGameClassic(QWidget *parent) :
     kuang->hide();
     score = 0;
     level = 1;
+    boomcount = 0;
+    ui->boomcount->setText(QString::number(boomcount));
 
     ui->scorebar->setRange(0, 1200);
     ui->scorebar->setValue(0);
@@ -88,6 +100,57 @@ CGameClassic::CGameClassic(QWidget *parent) :
 CGameClassic::~CGameClassic()
 {
  //   delete ui;
+}
+
+void CGameClassic::closeEvent(QCloseEvent *event)
+{
+    goodbye->play();
+    this->hide();
+    sleep(1500);
+    event->accept();
+}
+
+void CGameClassic::menu()
+{
+    CMenuDlg* w = new CMenuDlg(this);
+    connect(w->ui->backtohome, SIGNAL(clicked()), this, SLOT(backtohome()));
+    w->show();
+    w->exec();
+}
+
+void CGameClassic::backtohome()
+{
+    this->close();
+    player->stop();
+    CBejeweledDlg w;
+    w.show();
+    w.exec();
+}
+
+void CGameClassic::boom()
+{
+    int xiaoqucount = 0;
+    if(boomcount > 0)
+    {
+        boomcount--;
+        ui->boomcount->setText(QString::number(boomcount));
+        gamelogic->boom(matrix);
+        do{
+            xiaoqu->play();
+            drawJewel();
+            sleep(700);
+            gamelogic->xiayi(matrix);
+            drawJewel();
+            score += 0;
+            ui->scoreshow->setText(QString::number(score));
+            sleep(1000);
+        }while((xiaoqucount = gamelogic->xiaoqu2(matrix)) != 0);
+        if(gamelogic->all_cannot(matrix))
+        {
+            ui->allcannot->show();
+            ui->allcannot->raise();
+        }
+    }
 }
 
 void CGameClassic::tishislot()
@@ -299,6 +362,13 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                                     gamelogic->xiayi(matrix);
                                     drawJewel();
                                     score += 100*xiaoqucount;
+                                    if(xiaoqucount > 4)
+                                    {
+                                        boomcount++;
+                                        ui->boomcount->setText(QString::number(boomcount));
+                                    }
+                                    if(xiaoqucount >= 6)
+                                        perfect->play();
                                     if(score < ui->scorebar->maximum())
                                         ui->scorebar->setValue(score);
                                     else
@@ -308,6 +378,7 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                                 }while((xiaoqucount = gamelogic->xiaoqu2(matrix)) != 0);
                                 if(score >= 1200 && level == 1)
                                 {
+                                    levelcomplete->play();
                                     ui->levelcomplete->setMovie(movie);
                                     ui->levelcomplete->show();
                                     ui->levelcomplete->raise();
@@ -324,6 +395,7 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                                     ui->scoreshow->setText("0");                                 
                                 }else if(score >= 2400 && level == 2)
                                 {
+                                    levelcomplete->play();
                                     ui->levelcomplete->setMovie(movie);
                                     ui->levelcomplete->show();
                                     ui->levelcomplete->raise();
@@ -340,6 +412,7 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                                     ui->scoreshow->setText("0");
                                 }else if(score >= 3000 && level == 3)
                                 {
+                                    levelcomplete->play();
                                     ui->levelcomplete->setMovie(movie);
                                     ui->levelcomplete->show();
                                     ui->levelcomplete->raise();
@@ -356,6 +429,7 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                                     ui->scoreshow->setText("0");
                                 }else if(score >= 4200 && level == 4)
                                 {
+                                    levelcomplete->play();
                                     ui->levelcomplete->setMovie(movie);
                                     ui->levelcomplete->show();
                                     ui->levelcomplete->raise();
@@ -363,6 +437,7 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                                     sleep(2000);
                                     ui->levelcomplete->close();
                                     level++;
+                                    player->stop();
                                     CGamePass w;
                                     w.setWindowModality(Qt::ApplicationModal);
                                     w.show();;

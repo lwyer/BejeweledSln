@@ -11,6 +11,7 @@
 #include <QSettings>
 #include <QMovie>
 #include <CGamePass.h>
+#include "CBejeweledDlg.h"
 
 namespace Ui {
 class CGameClassic;
@@ -38,14 +39,26 @@ public:
     QString style;
     QSound* clickjewel;
     QSound* xiaoqu;
+    int boomcount;
+    QMediaPlayer* perfect;
+    QMediaPlayer* levelcomplete;
+
 private:
     Ui::CGameClassic *ui;
     bool isPause;
     int clickflag;
     int level;
     QMediaPlayer* player;
+    QMediaPlayer* goodbye;
+
+protected:
+    void closeEvent(QCloseEvent *event);
+
 private slots:
     void tishislot();
+    void menu();
+    void backtohome();
+    void boom();
 
 };
 
