@@ -5,10 +5,18 @@ CGameMode::CGameMode(QMediaPlayer* player, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGameMode)
 {
+    QSettings* configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
+
     ui->setupUi(this);
     this->player = player;
 
     keypress = new QSound("../BejeweledSln/sound/clickgame.wav");
+    if(configIni->value("Switch/BgMusic").toString() == "0")
+        player->setVolume(0);
+    if(configIni->value("Switch/Sound").toString() == "0")
+    {
+        keypress = new QSound("../BejeweledSln/sound/wu.wav");
+    }
 }
 
 CGameMode::~CGameMode()

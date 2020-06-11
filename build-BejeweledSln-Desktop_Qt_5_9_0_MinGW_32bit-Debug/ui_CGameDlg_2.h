@@ -29,7 +29,7 @@ public:
     QLabel *gamepanel;
     QTextBrowser *scoreshow;
     QProgressBar *scorebar;
-    QPushButton *pauseorcontinue_2;
+    QPushButton *tishi;
     QPushButton *menu;
     QLabel *allcannot;
     QLabel *levelcomplete;
@@ -59,9 +59,9 @@ public:
         scorebar->setObjectName(QStringLiteral("scorebar"));
         scorebar->setGeometry(QRect(60, 440, 631, 23));
         scorebar->setValue(24);
-        pauseorcontinue_2 = new QPushButton(CGameDlg_2);
-        pauseorcontinue_2->setObjectName(QStringLiteral("pauseorcontinue_2"));
-        pauseorcontinue_2->setGeometry(QRect(540, 200, 93, 28));
+        tishi = new QPushButton(CGameDlg_2);
+        tishi->setObjectName(QStringLiteral("tishi"));
+        tishi->setGeometry(QRect(540, 200, 93, 28));
         menu = new QPushButton(CGameDlg_2);
         menu->setObjectName(QStringLiteral("menu"));
         menu->setGeometry(QRect(540, 330, 93, 28));
@@ -82,6 +82,7 @@ public:
         retranslateUi(CGameDlg_2);
         QObject::connect(menu, SIGNAL(clicked()), CGameDlg_2, SLOT(menu()));
         QObject::connect(boom, SIGNAL(clicked()), CGameDlg_2, SLOT(boom()));
+        QObject::connect(tishi, SIGNAL(clicked()), CGameDlg_2, SLOT(tishislot()));
 
         QMetaObject::connectSlotsByName(CGameDlg_2);
     } // setupUi
@@ -91,7 +92,7 @@ public:
         CGameDlg_2->setWindowTitle(QApplication::translate("CGameDlg_2", "Dialog", Q_NULLPTR));
         background->setText(QString());
         gamepanel->setText(QString());
-        pauseorcontinue_2->setText(QApplication::translate("CGameDlg_2", "\346\217\220\347\244\272", Q_NULLPTR));
+        tishi->setText(QApplication::translate("CGameDlg_2", "\346\217\220\347\244\272", Q_NULLPTR));
         menu->setText(QApplication::translate("CGameDlg_2", "\350\217\234\345\215\225", Q_NULLPTR));
         allcannot->setText(QString());
         levelcomplete->setText(QString());

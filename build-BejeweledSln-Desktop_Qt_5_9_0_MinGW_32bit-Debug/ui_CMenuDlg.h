@@ -56,6 +56,7 @@ public:
 
         retranslateUi(CMenuDlg);
         QObject::connect(continue_2, SIGNAL(clicked()), CMenuDlg, SLOT(backtogame()));
+        QObject::connect(backtohome, SIGNAL(clicked()), CMenuDlg, SLOT(backtohome()));
 
         QMetaObject::connectSlotsByName(CMenuDlg);
     } // setupUi

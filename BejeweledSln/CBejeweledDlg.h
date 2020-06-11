@@ -25,11 +25,14 @@ private:
     Ui::CBejeweledDlg *ui;
     QMediaPlayer* player;
     QSound* keypress;
+    QMediaPlayer* welcomeSound;
+    QSettings* configIni;
 private slots:
     void start();
     void config();
     void score();
     void help();
+    void homeupdate();
 };
 
 #endif // CBEJEWELEDDLG_H

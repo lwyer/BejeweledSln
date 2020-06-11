@@ -25,6 +25,8 @@ public:
     QButtonGroup* themeradio;
     QButtonGroup* styleradio;
     QMediaPlayer* player;
+    Ui::CSetDlg *ui;
+
 
 private slots:
     void cancel();
@@ -37,7 +39,6 @@ private slots:
     void browser2();
     void valuechange();
 private:
-    Ui::CSetDlg *ui;
 };
 
 #endif // CSETDLG_H

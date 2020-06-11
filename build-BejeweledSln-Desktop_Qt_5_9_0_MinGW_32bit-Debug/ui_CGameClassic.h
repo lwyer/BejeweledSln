@@ -31,7 +31,7 @@ public:
     QLabel *gamepanel;
     QPushButton *menu;
     QLabel *allcannot;
-    QPushButton *pauseorcontinue_2;
+    QPushButton *tishi;
     QLabel *levelcomplete;
     QTextBrowser *boomcount;
     QPushButton *boom;
@@ -66,9 +66,9 @@ public:
         allcannot->setObjectName(QStringLiteral("allcannot"));
         allcannot->setGeometry(QRect(50, 20, 400, 400));
         allcannot->setStyleSheet(QStringLiteral("image: url(:/new/prefix1/image/allcannot.png);"));
-        pauseorcontinue_2 = new QPushButton(CGameClassic);
-        pauseorcontinue_2->setObjectName(QStringLiteral("pauseorcontinue_2"));
-        pauseorcontinue_2->setGeometry(QRect(540, 190, 93, 28));
+        tishi = new QPushButton(CGameClassic);
+        tishi->setObjectName(QStringLiteral("tishi"));
+        tishi->setGeometry(QRect(540, 190, 93, 28));
         levelcomplete = new QLabel(CGameClassic);
         levelcomplete->setObjectName(QStringLiteral("levelcomplete"));
         levelcomplete->setGeometry(QRect(180, 180, 361, 91));
@@ -80,7 +80,7 @@ public:
         boom->setGeometry(QRect(570, 280, 93, 28));
 
         retranslateUi(CGameClassic);
-        QObject::connect(pauseorcontinue_2, SIGNAL(clicked()), CGameClassic, SLOT(tishislot()));
+        QObject::connect(tishi, SIGNAL(clicked()), CGameClassic, SLOT(tishislot()));
         QObject::connect(menu, SIGNAL(clicked()), CGameClassic, SLOT(menu()));
         QObject::connect(boom, SIGNAL(clicked()), CGameClassic, SLOT(boom()));
 
@@ -94,7 +94,7 @@ public:
         gamepanel->setText(QString());
         menu->setText(QApplication::translate("CGameClassic", "\350\217\234\345\215\225", Q_NULLPTR));
         allcannot->setText(QString());
-        pauseorcontinue_2->setText(QApplication::translate("CGameClassic", "\346\217\220\347\244\272", Q_NULLPTR));
+        tishi->setText(QApplication::translate("CGameClassic", "\346\217\220\347\244\272", Q_NULLPTR));
         levelcomplete->setText(QString());
         boom->setText(QApplication::translate("CGameClassic", "\347\210\206\347\202\270", Q_NULLPTR));
     } // retranslateUi

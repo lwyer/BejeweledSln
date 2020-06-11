@@ -71,7 +71,7 @@
     <number>24</number>
    </property>
   </widget>
-  <widget class="QPushButton" name="pauseorcontinue_2">
+  <widget class="QPushButton" name="tishi">
    <property name="geometry">
     <rect>
      <x>540</x>
@@ -184,9 +184,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>tishi</sender>
+   <signal>clicked()</signal>
+   <receiver>CGameDlg_2</receiver>
+   <slot>tishislot()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>601</x>
+     <y>208</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>857</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>menu()</slot>
   <slot>boom()</slot>
+  <slot>tishislot()</slot>
  </slots>
 </ui>

@@ -24,6 +24,17 @@ CGameDlg_3::CGameDlg_3(QWidget *parent) :
     player->setVolume(configIni->value("Music/volume").toInt());
     player->play();
 
+    if(configIni->value("Switch/BgMusic").toString() == "0")
+        player->setVolume(0);
+    if(configIni->value("Switch/Sound").toString() == "0")
+    {
+        clickjewel = new QSound("../BejeweledSln/sound/wu.wav");
+        xiaoqu = new QSound("../BejeweledSln/sound/wu.wav");
+        perfect->setVolume(0);
+        levelcomplete->setVolume(0);
+        goodbye->setVolume(0);
+    }
+
     style = configIni->value("Picture/Style").toString();
 
     ui->setupUi(this);

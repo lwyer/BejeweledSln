@@ -60,6 +60,15 @@ CSetDlg::CSetDlg(QMediaPlayer* player, QWidget *parent) :
         ui->style2->setChecked(true);
     else
         ui->style1->setChecked(false);
+    if(configini->value("Switch/BgMusic").toString() == "1")
+        ui->bgmusicswitch->setChecked(true);
+    else
+        ui->bgmusicswitch->setChecked(false);
+    if(configini->value("Switch/Sound").toString() == "1")
+        ui->soundswitch->setChecked(true);
+    else
+        ui->soundswitch->setChecked(false);
+
 }
 
 CSetDlg::~CSetDlg()
@@ -94,6 +103,16 @@ void CSetDlg::save()
     }
     configini->setValue("Name/Name", ui->nameEdit->toPlainText());
     configini->setValue("Music/volume", ui->volumechange->value());
+
+    if(ui->bgmusicswitch->isChecked())
+        configini->setValue("Switch/BgMusic", 1);
+    else
+        configini->setValue("Switch/BgMusic", 0);
+    if(ui->soundswitch->isChecked())
+        configini->setValue("Switch/Sound", 1);
+    else
+        configini->setValue("Switch/Sound", 0);
+
 
     this->close();
 }
