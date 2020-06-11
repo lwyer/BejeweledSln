@@ -278,6 +278,11 @@ void CGameDlg::updateProgress()
         timeup->play();
         ui->boom->setEnabled(false);
         d.updateById(id, score);
+        CTimeup* w = new CTimeup(id, this);
+        w->setWindowModality(Qt::ApplicationModal);
+        w->show();
+        w->exec();
+        this->close();
     }
     ui->progressBar->setValue(nCurrentValue);
 }
@@ -323,6 +328,7 @@ void CGameDlg::drawJewel()
                     jewel[i][j]->setScaledContents(true);
                     jewel[i][j]->show();
                     movie->start();
+                    isContinue = true;
                 }
             }else
             {
@@ -366,6 +372,7 @@ void CGameDlg::drawJewel()
 bool CGameDlg::eventFilter(QObject*obj,QEvent* e)
 {
     int xiaoqucount = 0;
+    int nCurrentValue;
     if(e->type() == QEvent::MouseButtonPress)
     {
         if(clickflag == 0){
@@ -457,6 +464,7 @@ bool CGameDlg::eventFilter(QObject*obj,QEvent* e)
                                     ui->scoreshow->setText(QString::number(score));
                                     sleep(1000);
                                 }while((xiaoqucount = gamelogic->xiaoqu2(matrix)) != 0);
+
                             }
                             if(gamelogic->all_cannot(matrix))
                             {

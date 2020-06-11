@@ -16,6 +16,7 @@
 #include <QSound>
 #include "CBejeweledDlg.h"
 #include "database.h"
+#include "CTimeup.h"
 
 namespace Ui {
 class CGameDlg;

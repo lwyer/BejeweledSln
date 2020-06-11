@@ -54,12 +54,15 @@ void MainWindow::on_pushButton_clicked()
         CBejeweledDlg* w = new CBejeweledDlg(id, this);
         w->show();
         w->exec();
-    }
+
     configIni->setValue("Name/id", id);
+    configIni->setValue("Name/Name", d.queryname(id));
+    configIni->setValue("Name/password", password);
     if(ui->rempass->isChecked())
         configIni->setValue("Name/isRemember", 1);
     else
         configIni->setValue("Name/isRemember", 0);
+    }
 
 }
 

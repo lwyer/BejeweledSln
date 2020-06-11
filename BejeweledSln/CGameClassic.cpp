@@ -250,6 +250,7 @@ void CGameClassic::drawJewel()
                     jewel[i][j]->setScaledContents(true);
                     jewel[i][j]->show();
                     movie->start();
+                    isContinue = true;
                 }
             }else
             {
@@ -435,7 +436,7 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                                     gamelogic = new CGameLogic(8);
                                     gamelogic->init(matrix);
                                     drawJewel();
-                                    ui->scorebar->setRange(0, 3000);
+                                    ui->scorebar->setRange(0, 4200);
                                     ui->scorebar->setValue(0);
                                     score = 0;
                                     ui->scoreshow->setText("0");

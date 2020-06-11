@@ -261,6 +261,7 @@ void CGameDlg_2::drawJewel()
                     jewel[i][j]->setScaledContents(true);
                     jewel[i][j]->show();
                     movie->start();
+                    isContinue = true;
                 }
             }else
             {
