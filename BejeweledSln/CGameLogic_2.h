@@ -23,6 +23,7 @@ public:
     int wanfa2_jiaohuan1(int num[][8],Z z);
     bool wanfa2_jiaohuan2(int num[][8],Z z);
     bool wanfa2_all_cannot(int num[][8]);
+    void wanfa2_tishi(int num[][8],Z &z);
 };
 
 #endif // CGAMELOGIC_2_H

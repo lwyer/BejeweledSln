@@ -26,6 +26,7 @@ protected:
 
 private slots:
     void backtogame();
+    void backtohome();
 };
 
 #endif // CMENUDLG_H

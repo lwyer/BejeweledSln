@@ -44,3 +44,8 @@ void CMenuDlg::backtogame()
     this->close();
 }
 
+void CMenuDlg::backtohome()
+{
+    this->close();
+}
+

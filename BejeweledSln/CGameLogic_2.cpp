@@ -160,8 +160,18 @@ int CGameLogic_2::xiaoqu2(int num[][8]) {
       Z z1;
       z1.x=i;
       z1.y=m;
-      z[n]=z1;
-      n++;
+      int f;
+      bool repeat=false;
+      for(f=0;f<n;f++){
+       if(z[f].x==z1.x&&z[f].y==z1.y){
+        repeat=true;
+        break;
+       }
+      }
+      if(!repeat){
+       z[n]=z1;
+          n++;
+      }
      }
     }
    }
@@ -178,8 +188,20 @@ int CGameLogic_2::xiaoqu2(int num[][8]) {
       Z z1;
       z1.x=m;
       z1.y=j;
-      z[n]=z1;
-      n++;
+//      z[n]=z1;
+//      n++;
+      int f;
+      bool repeat=false;
+      for(f=0;f<n;f++){
+       if(z[f].x==z1.x&&z[f].y==z1.y){
+        repeat=true;
+        break;
+       }
+      }
+      if(!repeat){
+       z[n]=z1;
+          n++;
+      }
      }
     }
    }
@@ -190,26 +212,6 @@ int CGameLogic_2::xiaoqu2(int num[][8]) {
   for(u=0; u<n; u++) {
    num[z[u].x][z[u].y]=0;
   }
-//  for(i=7; i>=0; i--) {
-//   for(j=0; j<8; j++) {
-//    if(num[i][j]==0) {
-//     v=i;
-//     while(num[v][j]==0&&v>0) {
-//      v--;
-//     }
-//     num[i][j]=num[v][j];
-//     num[v][j]=0;
-//    }
-//   }
-//  }
-//  for(i=0; i<8; i++) {
-//   for(j=0; j<8; j++) {
-//    if(num[i][j]==0) {
-//     num[i][j]=rand()%6+1;
-//    }
-//   }
-//  }
-
  }
  return n;
 }
@@ -328,4 +330,19 @@ bool CGameLogic_2::wanfa2_all_cannot(int num[][8]){
   }
  }
  return result;
+}
+
+void CGameLogic_2::wanfa2_tishi(int num[][8],Z &z){
+ int i,j;
+ for(i=1; i<8; i++) {
+  for(j=1; j<8; j++) {
+   Z z1;
+   z1.x=i;
+   z1.y=j;
+   if(wanfa2_jiaohuan2(num,z1)) {
+    z=z1;
+    return;
+   }
+  }
+ }
 }

@@ -45,86 +45,86 @@ bool CGameLogic_3::xiaoqu1(int num[][8]) {
 }
 
 int CGameLogic_3::xiaoqu2(int num[][8]) {
-    srand((int)time(NULL));
-    int n=0;
-    int i,j,m;
-    Z z[64];
-    bool result=false;
-    for(i=0; i<8; i++) {
-        for(j=0; j<8; j++) {
-            int k=j+1;
-            if(k<8) {
-                for(; k<8; k++) {
-                    if(num[i][j]!=num[i][k]) {
-                        break;
-                    }
-                }
-                if(k-j>=3) {
-                    if(num[i][j]==1)
-                        this->blue++;
-                    if(num[i][j]==6)
-                        this->red++;
-                    result=true;
-                    for(m=j; m<k; m++) {
-                        Z z1;
-                        z1.x=i;
-                        z1.y=m;
-                        z[n]=z1;
-                        n++;
-                    }
-                }
-            }
-            k=i+1;
-            if(k<8) {
-                for(; k<8; k++) {
-                    if(num[i][j]!=num[k][j]) {
-                        break;
-                    }
-                }
-                if(k-i>=3) {
-                    if(num[i][j]==1)
-                        this->blue++;
-                    if(num[i][j]==6)
-                        this->red++;
-                    result=true;
-                    for(m=i; m<k; m++) {
-                        Z z1;
-                        z1.x=m;
-                        z1.y=j;
-                        z[n]=z1;
-                        n++;
-                    }
-                }
-            }
-        }
+ srand((int)time(NULL));
+ int n=0;
+ int i,j,m;
+ Z z[64];
+ bool result=false;
+ for(i=0; i<8; i++) {
+  for(j=0; j<8; j++) {
+   int k=j+1;
+   if(k<8) {
+    for(; k<8; k++) {
+     if(num[i][j]!=num[i][k]) {
+      break;
+     }
     }
-    if(result) {
-        int u,v;
-        for(u=0; u<n; u++) {
-            num[z[u].x][z[u].y]=0;
-        }
-        //  for(i=7; i>=0; i--) {
-        //   for(j=0; j<8; j++) {
-        //    if(num[i][j]==0) {
-        //     v=i;
-        //     while(num[v][j]==0&&v>0) {
-        //      v--;
-        //     }
-        //     num[i][j]=num[v][j];
-        //     num[v][j]=0;
-        //    }
-        //   }
-        //  }
-        //  for(i=0; i<8; i++) {
-        //   for(j=0; j<8; j++) {
-        //    if(num[i][j]==0) {
-        //     num[i][j]=rand()%6+1;
-        //    }
-        //   }
-        //  }
-
+    if(k-j>=3) {
+     result=true;
+     for(m=j; m<k; m++) {
+      Z z1;
+      z1.x=i;
+      z1.y=m;
+      int f;
+      bool repeat=false;
+      for(f=0; f<n; f++) {
+       if(z[f].x==z1.x&&z[f].y==z1.y) {
+        repeat=true;
+        break;
+       }
+      }
+      if(!repeat) {
+       if(num[i][m]==1)
+        this->blue++;
+       if(num[i][m]==6)
+        this->red++;
+       z[n]=z1;
+       n++;
+      }
+     }
     }
-    return n;
+   }
+   k=i+1;
+   if(k<8) {
+    for(; k<8; k++) {
+     if(num[i][j]!=num[k][j]) {
+      break;
+     }
+    }
+    if(k-i>=3) {
+     result=true;
+     for(m=i; m<k; m++) {
+      Z z1;
+      z1.x=m;
+      z1.y=j;
+      int f;
+      bool repeat=false;
+      for(f=0; f<n; f++) {
+       if(z[f].x==z1.x&&z[f].y==z1.y) {
+        repeat=true;
+        break;
+       }
+      }
+      if(!repeat) {
+       if(num[m][j]==1)
+        this->blue++;
+       if(num[m][j]==6)
+        this->red++;
+       z[n]=z1;
+       n++;
+      }
+     }
+    }
+   }
+  }
+ }
+ if(result) {
+  int u,v;
+  for(u=0; u<n; u++) {
+   num[z[u].x][z[u].y]=0;
+  }
+ }
+ return n;
 }
 
 void CGameLogic_3::xiayi(int num[][8])

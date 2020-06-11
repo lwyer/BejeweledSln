@@ -103,8 +103,25 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>backtohome</sender>
+   <signal>clicked()</signal>
+   <receiver>CMenuDlg</receiver>
+   <slot>backtohome()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>309</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>452</x>
+     <y>326</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>backtogame()</slot>
+  <slot>backtohome()</slot>
  </slots>
 </ui>

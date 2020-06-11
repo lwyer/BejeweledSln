@@ -8,6 +8,8 @@ CGameDlg::CGameDlg(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGameDlg)
 {
+    configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
+
     clickjewel = new QSound("../BejeweledSln/sound/clickjewel.wav");
     xiaoqu = new QSound("../BejeweledSln/sound/xiaoqu.wav");
     perfect = new QMediaPlayer;
@@ -20,11 +22,20 @@ CGameDlg::CGameDlg(QWidget *parent) :
     goodbye->setMedia(QUrl::fromLocalFile("../BejeweledSln/sound/goodbye.wav"));
     goodbye->setVolume(100);
 
-    configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
     player = new QMediaPlayer;
     player->setMedia(QUrl::fromLocalFile("../BejeweledSln/backgroundMusic/lightning.mp3"));
     player->setVolume(configIni->value("Music/volume").toInt());
     player->play();
+    if(configIni->value("Switch/BgMusic").toString() == "0")
+        player->setVolume(0);
+    if(configIni->value("Switch/Sound").toString() == "0")
+    {
+        clickjewel = new QSound("../BejeweledSln/sound/wu.wav");
+        xiaoqu = new QSound("../BejeweledSln/sound/wu.wav");
+        perfect->setVolume(0);
+        timeup->setVolume(0);
+        goodbye->setVolume(0);
+    }
 
     style = configIni->value("Picture/Style").toString();
     ui->setupUi(this);

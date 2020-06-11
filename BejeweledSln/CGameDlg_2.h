@@ -52,6 +52,7 @@ private slots:
     void backtohome();
     void menu();
     void boom();
+    void tishislot();
 
 };
 
