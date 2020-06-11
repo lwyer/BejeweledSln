@@ -4,10 +4,14 @@
 #include <iostream>
 #include "ui_CMenuDlg.h"
 
-CGameDlg::CGameDlg(QWidget *parent) :
+CGameDlg::CGameDlg(int id, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGameDlg)
 {
+    this->id = id;
+    d.createConnection();
+    d.createTable();
+
     configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
 
     clickjewel = new QSound("../BejeweledSln/sound/clickjewel.wav");
@@ -168,9 +172,9 @@ void CGameDlg::backtohome()
 {
     this->close();
     player->stop();
-    CBejeweledDlg w;
-    w.show();
-    w.exec();
+    CBejeweledDlg* w = new CBejeweledDlg(id, this);
+    w->show();
+    w->exec();
 }
 
 
@@ -273,6 +277,7 @@ void CGameDlg::updateProgress()
         ui->tishi->setEnabled(false);
         timeup->play();
         ui->boom->setEnabled(false);
+        d.updateById(id, score);
     }
     ui->progressBar->setValue(nCurrentValue);
 }
@@ -455,6 +460,7 @@ bool CGameDlg::eventFilter(QObject*obj,QEvent* e)
                             }
                             if(gamelogic->all_cannot(matrix))
                             {
+                                d.updateById(id, score);
                                 timer->stop();
                                 ui->allcannot->show();
                                 ui->allcannot->raise();

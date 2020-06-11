@@ -23,7 +23,7 @@ class CGameDlg_3 : public QDialog
     Q_OBJECT
 
 public:
-    explicit CGameDlg_3(QWidget *parent = 0);
+    explicit CGameDlg_3(int id, QWidget *parent = 0);
     ~CGameDlg_3();
 
     bool eventFilter(QObject*obj,QEvent* e);
@@ -53,6 +53,7 @@ private:
     int level;
     QMediaPlayer* player;
     QMediaPlayer* goodbye;
+    int id;
 
 protected:
     void closeEvent(QCloseEvent *event);

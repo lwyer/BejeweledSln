@@ -24,6 +24,8 @@ protected:
     virtual void keyPressEvent(QKeyEvent *ev);
     virtual void keyReleaseEvent(QKeyEvent *ev);
 
+private:
+\
 private slots:
     void backtogame();
     void backtohome();

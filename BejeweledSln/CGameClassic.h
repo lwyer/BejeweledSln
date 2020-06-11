@@ -22,7 +22,7 @@ class CGameClassic : public QDialog
     Q_OBJECT
 
 public:
-    explicit CGameClassic(QWidget *parent = 0);
+    explicit CGameClassic(int id, QWidget *parent = 0);
     ~CGameClassic();
 
     bool eventFilter(QObject*obj,QEvent* e);
@@ -50,7 +50,7 @@ private:
     int level;
     QMediaPlayer* player;
     QMediaPlayer* goodbye;
-
+    int id;
 protected:
     void closeEvent(QCloseEvent *event);
 

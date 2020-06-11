@@ -1,8 +1,6 @@
 INPUT(
 ./debug\qrc_image.o
 ./debug\CGameLogic.o
-./debug\CRankDao.o
-./debug\CRankLogic.o
 ./debug\main.o
 ./debug\CBejeweledDlg.o
 ./debug\CHelpDlg.o
@@ -18,6 +16,8 @@ INPUT(
 ./debug\CGameDlg_2.o
 ./debug\CGameLogic_3.o
 ./debug\CGameDlg_3.o
+./debug\database.o
+./debug\mainwindow.o
 ./debug\moc_CBejeweledDlg.o
 ./debug\moc_CHelpDlg.o
 ./debug\moc_CRankDlg.o
@@ -30,4 +30,5 @@ INPUT(
 ./debug\moc_CGamePass.o
 ./debug\moc_CGameDlg_2.o
 ./debug\moc_CGameDlg_3.o
+./debug\moc_mainwindow.o
 );

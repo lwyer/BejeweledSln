@@ -2,10 +2,11 @@
 #include "ui_CGameClassic.h"
 #include "ui_CMenuDlg.h"
 
-CGameClassic::CGameClassic(QWidget *parent) :
+CGameClassic::CGameClassic(int id, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGameClassic)
 {
+    this->id = id;
     clickjewel = new QSound("../BejeweledSln/sound/clickjewel.wav");
     xiaoqu = new QSound("../BejeweledSln/sound/xiaoqu.wav");
     perfect = new QMediaPlayer;
@@ -133,9 +134,9 @@ void CGameClassic::backtohome()
 {
     this->close();
     player->stop();
-    CBejeweledDlg w;
-    w.show();
-    w.exec();
+    CBejeweledDlg* w = new CBejeweledDlg(id, this);
+    w->show();
+    w->exec();
 }
 
 void CGameClassic::boom()
@@ -449,10 +450,10 @@ bool CGameClassic::eventFilter(QObject*obj,QEvent* e)
                                     ui->levelcomplete->close();
                                     level++;
                                     player->stop();
-                                    CGamePass w;
-                                    w.setWindowModality(Qt::ApplicationModal);
-                                    w.show();;
-                                    w.exec();
+                                    CGamePass* w = new CGamePass(id, this);
+                                    w->setWindowModality(Qt::ApplicationModal);
+                                    w->show();;
+                                    w->exec();
                                     this->close();
                                 }
                             }

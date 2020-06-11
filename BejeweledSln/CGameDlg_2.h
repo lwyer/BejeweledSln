@@ -22,7 +22,7 @@ class CGameDlg_2 : public QDialog
     Q_OBJECT
 
 public:
-    explicit CGameDlg_2(QWidget *parent = 0);
+    explicit CGameDlg_2(int id, QWidget *parent = 0);
     ~CGameDlg_2();
 
     bool eventFilter(QObject*obj,QEvent* e);
@@ -48,6 +48,8 @@ private:
     int clickflag;
     int level;
     QMediaPlayer* player;
+    int id;
+
 private slots:
     void backtohome();
     void menu();
