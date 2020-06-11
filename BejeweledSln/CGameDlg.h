@@ -15,6 +15,7 @@
 #include <QMediaPlayer>
 #include <QSound>
 #include "CBejeweledDlg.h"
+#include "database.h"
 
 namespace Ui {
 class CGameDlg;
@@ -26,7 +27,7 @@ class CGameDlg : public QDialog
 
 public:
 
-    explicit CGameDlg(QWidget *parent = 0);
+    explicit CGameDlg(int id, QWidget *parent = 0);
     ~CGameDlg();
     bool eventFilter(QObject*obj,QEvent* e);
     Mylabel* jewel[8][8];
@@ -52,6 +53,8 @@ private:
     QMediaPlayer* perfect;
     QMediaPlayer* timeup;
     QMediaPlayer* goodbye;
+    int id;
+    DataBase d;
 protected:
     virtual void keyPressEvent(QKeyEvent *ev);
     virtual void keyReleaseEvent(QKeyEvent *ev);

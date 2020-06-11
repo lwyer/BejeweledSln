@@ -2,10 +2,11 @@
 #include "ui_cbejeweleddlg.h"
 #include "ui_CSetDlg.h"
 
-CBejeweledDlg::CBejeweledDlg(QWidget *parent) :
+CBejeweledDlg::CBejeweledDlg(int id, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CBejeweledDlg)
 {
+    this->id = id;
     configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
 
     ui->setupUi(this);
@@ -37,7 +38,7 @@ CBejeweledDlg::~CBejeweledDlg()
 void CBejeweledDlg::start()
 {
     keypress->play();
-    CGameMode* w = new CGameMode(player, this);
+    CGameMode* w = new CGameMode(id, player, this);
     this->close();
     w->show();
     w->exec();

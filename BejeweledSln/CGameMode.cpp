@@ -1,10 +1,11 @@
 #include "CGameMode.h"
 #include "ui_CGameMode.h"
 
-CGameMode::CGameMode(QMediaPlayer* player, QWidget *parent) :
+CGameMode::CGameMode(int id, QMediaPlayer* player, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGameMode)
 {
+    this->id = id;
     QSettings* configIni = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
 
     ui->setupUi(this);
@@ -35,20 +36,20 @@ void CGameMode::lightning()
     player->stop();
     keypress->play();
     sleep(4000);
-    CGameDlg w;
+    CGameDlg* w = new CGameDlg(id, this);
     this->close();
-    w.show();
-    w.exec();
+    w->show();
+    w->exec();
 }
 
 
 void CGameMode::back()
 {    
     player->stop();
-    CBejeweledDlg w;
+    CBejeweledDlg* w = new CBejeweledDlg(id, this);
     this->close();
-    w.show();
-    w.exec();
+    w->show();
+    w->exec();
 }
 
 void CGameMode::classic()
@@ -58,10 +59,10 @@ void CGameMode::classic()
     keypress->play();
     sleep(4000);
 
-    CGameClassic w;
+    CGameClassic* w = new CGameClassic(id, this);
     this->close();
-    w.show();
-    w.exec();
+    w->show();
+    w->exec();
 }
 
 void CGameMode::jewel2()
@@ -71,10 +72,10 @@ void CGameMode::jewel2()
     keypress->play();
     sleep(4000);
 
-    CGameDlg_2 w;
+    CGameDlg_2* w=new CGameDlg_2(id, this);
     this->close();
-    w.show();
-    w.exec();
+    w->show();
+    w->exec();
 }
 
 void CGameMode::balance()
@@ -84,8 +85,8 @@ void CGameMode::balance()
     keypress->play();
     sleep(4000);
 
-    CGameDlg_3 w;
+    CGameDlg_3* w = new CGameDlg_3(id, this);
     this->close();
-    w.show();
-    w.exec();
+    w->show();
+    w->exec();
 }

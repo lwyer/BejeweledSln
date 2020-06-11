@@ -2,6 +2,7 @@
 #define CRANKDLG_H
 
 #include <QDialog>
+#include "database.h"
 
 namespace Ui {
 class CRankDlg;

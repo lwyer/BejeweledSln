@@ -1,10 +1,11 @@
 #include "CGamePass.h"
 #include "ui_CGamePass.h"
 
-CGamePass::CGamePass(QWidget *parent) :
+CGamePass::CGamePass(int id, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGamePass)
 {
+    this->id = id;
     ui->setupUi(this);
 }
 
@@ -15,8 +16,8 @@ CGamePass::~CGamePass()
 
 void CGamePass::back()
 {
-    CBejeweledDlg w;
+    CBejeweledDlg* w = new CBejeweledDlg(id, this);
     this->close();
-    w.show();
-    w.exec();
+    w->show();
+    w->exec();
 }

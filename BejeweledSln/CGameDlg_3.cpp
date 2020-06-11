@@ -2,10 +2,12 @@
 #include "ui_CGameDlg_3.h"
 #include "ui_CMenuDlg.h"
 
-CGameDlg_3::CGameDlg_3(QWidget *parent) :
+CGameDlg_3::CGameDlg_3(int id, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGameDlg_3)
 {    
+    this->id = id;
+
     clickjewel = new QSound("../BejeweledSln/sound/clickjewel.wav");
     xiaoqu = new QSound("../BejeweledSln/sound/xiaoqu.wav");
     perfect = new QMediaPlayer;
@@ -132,9 +134,9 @@ void CGameDlg_3::backtohome()
 {
     this->close();
     player->stop();
-    CBejeweledDlg w;
-    w.show();
-    w.exec();
+    CBejeweledDlg* w = new CBejeweledDlg(id, this);
+    w->show();
+    w->exec();
 }
 
 void CGameDlg_3::tishislot()
@@ -392,10 +394,10 @@ bool CGameDlg_3::eventFilter(QObject*obj,QEvent* e)
                                     sleep(2000);
                                     ui->levelcomplete->close();
                                     player->stop();
-                                    CGamePass w;
-                                    w.setWindowModality(Qt::ApplicationModal);
-                                    w.show();;
-                                    w.exec();
+                                    CGamePass* w = new CGamePass(id, this);
+                                    w->setWindowModality(Qt::ApplicationModal);
+                                    w->show();
+                                    w->exec();
                                     this->close();
                                  }
                             }

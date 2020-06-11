@@ -16,24 +16,21 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QTableView>
+#include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_CRankDlg
 {
 public:
-    QTableView *tableView;
     QLabel *label;
+    QTextEdit *textEdit;
 
     void setupUi(QDialog *CRankDlg)
     {
         if (CRankDlg->objectName().isEmpty())
             CRankDlg->setObjectName(QStringLiteral("CRankDlg"));
         CRankDlg->resize(400, 459);
-        tableView = new QTableView(CRankDlg);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(60, 110, 281, 291));
         label = new QLabel(CRankDlg);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(160, 50, 71, 41));
@@ -41,6 +38,9 @@ public:
         font.setFamily(QStringLiteral("Adobe Devanagari"));
         font.setPointSize(14);
         label->setFont(font);
+        textEdit = new QTextEdit(CRankDlg);
+        textEdit->setObjectName(QStringLiteral("textEdit"));
+        textEdit->setGeometry(QRect(50, 100, 291, 331));
 
         retranslateUi(CRankDlg);
 

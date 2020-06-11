@@ -20,8 +20,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     CGameLogic.cpp \
-    CRankDao.cpp \
-    CRankLogic.cpp \
     main.cpp \
     CBejeweledDlg.cpp \
     CHelpDlg.cpp \
@@ -36,12 +34,12 @@ SOURCES += \
     CGameLogic_2.cpp \
     CGameDlg_2.cpp \
     CGameLogic_3.cpp \
-    CGameDlg_3.cpp
+    CGameDlg_3.cpp \
+    database.cpp \
+    mainwindow.cpp
 
 HEADERS += \
     CGameLogic.h \
-    CRankDao.h \
-    CRankLogic.h \
     CBejeweledDlg.h \
     CHelpDlg.h \
     CRankDlg.h \
@@ -55,7 +53,9 @@ HEADERS += \
     CGameLogic_2.h \
     CGameDlg_2.h \
     CGameLogic_3.h \
-    CGameDlg_3.h
+    CGameDlg_3.h \
+    database.h \
+    mainwindow.h
 
 FORMS += \
     CBejeweledDlg.ui \
@@ -68,7 +68,8 @@ FORMS += \
     CGameClassic.ui \
     CGamePass.ui \
     CGameDlg_2.ui \
-    CGameDlg_3.ui
+    CGameDlg_3.ui \
+    mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

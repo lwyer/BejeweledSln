@@ -4,10 +4,11 @@
 #include "ui_CMenuDlg.h"
 
 
-CGameDlg_2::CGameDlg_2(QWidget *parent) :
+CGameDlg_2::CGameDlg_2(int id, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CGameDlg_2)
 {
+    this->id = id;
     clickjewel = new QSound("../BejeweledSln/sound/clickjewel.wav");
     xiaoqu = new QSound("../BejeweledSln/sound/xiaoqu.wav");
 
@@ -214,9 +215,9 @@ void CGameDlg_2::backtohome()
 {
     this->close();
     player->stop();
-    CBejeweledDlg w;
-    w.show();
-    w.exec();
+    CBejeweledDlg* w = new CBejeweledDlg(id, this);
+    w->show();
+    w->exec();
 }
 
 void CGameDlg_2::sleep(unsigned int msec){

@@ -18,13 +18,14 @@ class CGameMode : public QDialog
     Q_OBJECT
 
 public:
-    explicit CGameMode(QMediaPlayer* player, QWidget *parent = 0);
+    explicit CGameMode(int id, QMediaPlayer* player, QWidget *parent = 0);
     ~CGameMode();
     QSound* keypress;
     void sleep(unsigned int msec);
 private:
     Ui::CGameMode *ui;
     QMediaPlayer* player;
+    int id;
 
 private slots:
     void lightning();
