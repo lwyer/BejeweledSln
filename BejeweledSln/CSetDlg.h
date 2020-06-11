@@ -8,6 +8,7 @@
 #include <QFileDialog>
 #include <QButtonGroup>
 #include <QMediaPlayer>
+#include "database.h"
 
 namespace Ui {
 class CSetDlg;
@@ -18,7 +19,7 @@ class CSetDlg : public QDialog
     Q_OBJECT
 
 public:
-    explicit CSetDlg(QMediaPlayer* player, QWidget *parent = 0);
+    explicit CSetDlg(int id, QMediaPlayer* player, QWidget *parent = 0);
     ~CSetDlg();
     QSettings* configini;
     QButtonGroup* musicradio;
@@ -26,7 +27,8 @@ public:
     QButtonGroup* styleradio;
     QMediaPlayer* player;
     Ui::CSetDlg *ui;
-
+    DataBase d;
+    int id;
 
 private slots:
     void cancel();

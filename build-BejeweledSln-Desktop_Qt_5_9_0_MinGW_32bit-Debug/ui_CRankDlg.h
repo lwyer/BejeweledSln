@@ -30,17 +30,17 @@ public:
     {
         if (CRankDlg->objectName().isEmpty())
             CRankDlg->setObjectName(QStringLiteral("CRankDlg"));
-        CRankDlg->resize(400, 459);
+        CRankDlg->resize(420, 459);
         label = new QLabel(CRankDlg);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(160, 50, 71, 41));
+        label->setGeometry(QRect(120, 50, 181, 41));
         QFont font;
         font.setFamily(QStringLiteral("Adobe Devanagari"));
         font.setPointSize(14);
         label->setFont(font);
         textEdit = new QTextEdit(CRankDlg);
         textEdit->setObjectName(QStringLiteral("textEdit"));
-        textEdit->setGeometry(QRect(50, 100, 291, 331));
+        textEdit->setGeometry(QRect(20, 100, 351, 331));
 
         retranslateUi(CRankDlg);
 
@@ -50,7 +50,7 @@ public:
     void retranslateUi(QDialog *CRankDlg)
     {
         CRankDlg->setWindowTitle(QApplication::translate("CRankDlg", "Dialog", Q_NULLPTR));
-        label->setText(QApplication::translate("CRankDlg", "\346\216\222\350\241\214\346\246\234", Q_NULLPTR));
+        label->setText(QApplication::translate("CRankDlg", "\351\227\252\347\224\265\346\250\241\345\274\217\346\216\222\350\241\214\346\246\234", Q_NULLPTR));
     } // retranslateUi
 
 };

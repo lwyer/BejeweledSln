@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>420</width>
     <height>459</height>
    </rect>
   </property>
@@ -16,9 +16,9 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>120</x>
      <y>50</y>
-     <width>71</width>
+     <width>181</width>
      <height>41</height>
     </rect>
    </property>
@@ -29,15 +29,15 @@
     </font>
    </property>
    <property name="text">
-    <string>排行榜</string>
+    <string>闪电模式排行榜</string>
    </property>
   </widget>
   <widget class="QTextEdit" name="textEdit">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>20</x>
      <y>100</y>
-     <width>291</width>
+     <width>351</width>
      <height>331</height>
     </rect>
    </property>
