@@ -19,6 +19,8 @@ public:
     bool queryAll();          //查询所有信息
     bool queryone(int id,QString password);
     bool updateById(int id,int credite);//更新分数
+    QString queryname(int id);//查询名字
+    bool updatename(int id,QString name);//更新名字
 
     bool deleteById(int id);  //删除
     QString sortById();          //排序

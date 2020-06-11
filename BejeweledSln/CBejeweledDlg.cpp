@@ -47,7 +47,7 @@ void CBejeweledDlg::start()
 void CBejeweledDlg::config()
 {
     keypress->play();
-    CSetDlg* w = new CSetDlg(player, this);
+    CSetDlg* w = new CSetDlg(id, player, this);
     connect(w->ui->pushButton, SIGNAL(clicked()), this, SLOT(homeupdate()));
     w->setWindowModality(Qt::ApplicationModal);
     w->show();
@@ -57,19 +57,19 @@ void CBejeweledDlg::config()
 void CBejeweledDlg::score()
 {
     keypress->play();
-    CRankDlg w;
-    w.setWindowModality(Qt::ApplicationModal);
-    w.show();
-    w.exec();
+    CRankDlg* w = new CRankDlg(this);
+    w->setWindowModality(Qt::ApplicationModal);
+    w->show();
+    w->exec();
 }
 
 void CBejeweledDlg::help()
 {
     keypress->play();
-    CHelpDlg w;
-    w.setWindowModality(Qt::ApplicationModal);
-    w.show();
-    w.exec();
+    CHelpDlg* w = new CHelpDlg(this);
+    w->setWindowModality(Qt::ApplicationModal);
+    w->show();
+    w->exec();
 }
 
 void CBejeweledDlg::homeupdate()

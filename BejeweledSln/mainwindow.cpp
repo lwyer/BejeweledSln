@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent) :
     player->setVolume(configIni->value("Music/volume").toInt());
     player->play();
     ui->lineEdit_3->setEchoMode(QLineEdit::Password);
+    ui->lineEdit_4->setEchoMode(QLineEdit::Password);
 
     ui->lineEdit_2->setText(configIni->value("Name/id").toString());
     if(configIni->value("Name/isRemember").toString() == "1")
@@ -54,6 +55,12 @@ void MainWindow::on_pushButton_clicked()
         w->show();
         w->exec();
     }
+    configIni->setValue("Name/id", id);
+    if(ui->rempass->isChecked())
+        configIni->setValue("Name/isRemember", 1);
+    else
+        configIni->setValue("Name/isRemember", 0);
+
 }
 
 //注册按钮

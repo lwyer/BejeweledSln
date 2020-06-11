@@ -1,15 +1,18 @@
 #include "CSetDlg.h"
 #include "ui_CSetDlg.h"
 
-CSetDlg::CSetDlg(QMediaPlayer* player, QWidget *parent) :
+CSetDlg::CSetDlg(int id, QMediaPlayer* player, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CSetDlg)
 {
+    d.createConnection();
+    d.createTable();
     this->player = player;
+    this->id = id;
 
     ui->setupUi(this);
     configini = new QSettings("../BejeweledSln/config.ini", QSettings::IniFormat);
-    ui->nameEdit->setText(configini->value("Name/Name").toString());
+    ui->nameEdit->setText(d.queryname(id));
     ui->bgmusicpath->setText(configini->value("Music/BgMusicPath").toString());
     ui->bgpicpath->setText(configini->value("Picture/BgPic").toString());
     musicradio = new QButtonGroup(this);
@@ -101,6 +104,7 @@ void CSetDlg::save()
     case 0: configini->setValue("Picture/Style", 0);break;
     case 1: configini->setValue("Picture/Style", 1);break;
     }
+    d.updatename(id, ui->nameEdit->toPlainText());
     configini->setValue("Name/Name", ui->nameEdit->toPlainText());
     configini->setValue("Music/volume", ui->volumechange->value());
 

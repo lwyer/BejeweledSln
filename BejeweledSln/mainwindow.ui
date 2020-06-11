@@ -199,6 +199,19 @@
      <string>注册</string>
     </property>
    </widget>
+   <widget class="QCheckBox" name="rempass">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>120</y>
+      <width>91</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>记住密码</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

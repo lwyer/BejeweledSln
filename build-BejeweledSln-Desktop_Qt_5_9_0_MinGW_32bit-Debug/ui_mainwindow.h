@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -41,6 +42,7 @@ public:
     QLabel *tishi;
     QRadioButton *logon;
     QRadioButton *login;
+    QCheckBox *rempass;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -96,6 +98,9 @@ public:
         login = new QRadioButton(centralwidget);
         login->setObjectName(QStringLiteral("login"));
         login->setGeometry(QRect(220, 220, 115, 19));
+        rempass = new QCheckBox(centralwidget);
+        rempass->setObjectName(QStringLiteral("rempass"));
+        rempass->setGeometry(QRect(310, 120, 91, 19));
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
@@ -116,6 +121,7 @@ public:
         tishi->setText(QString());
         logon->setText(QApplication::translate("MainWindow", "\347\231\273\345\275\225", Q_NULLPTR));
         login->setText(QApplication::translate("MainWindow", "\346\263\250\345\206\214", Q_NULLPTR));
+        rempass->setText(QApplication::translate("MainWindow", "\350\256\260\344\275\217\345\257\206\347\240\201", Q_NULLPTR));
     } // retranslateUi
 
 };
