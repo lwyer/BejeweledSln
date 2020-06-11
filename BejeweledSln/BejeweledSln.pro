@@ -36,7 +36,8 @@ SOURCES += \
     CGameLogic_3.cpp \
     CGameDlg_3.cpp \
     database.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    CTimeup.cpp
 
 HEADERS += \
     CGameLogic.h \
@@ -55,7 +56,8 @@ HEADERS += \
     CGameLogic_3.h \
     CGameDlg_3.h \
     database.h \
-    mainwindow.h
+    mainwindow.h \
+    CTimeup.h
 
 FORMS += \
     CBejeweledDlg.ui \
@@ -69,7 +71,8 @@ FORMS += \
     CGamePass.ui \
     CGameDlg_2.ui \
     CGameDlg_3.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    CTimeup.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

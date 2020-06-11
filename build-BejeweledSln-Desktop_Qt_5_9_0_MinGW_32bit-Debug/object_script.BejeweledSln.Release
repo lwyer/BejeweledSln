@@ -18,6 +18,7 @@ INPUT(
 ./release\CGameDlg_3.o
 ./release\database.o
 ./release\mainwindow.o
+./release\CTimeup.o
 ./release\moc_CBejeweledDlg.o
 ./release\moc_CHelpDlg.o
 ./release\moc_CRankDlg.o
@@ -31,4 +32,5 @@ INPUT(
 ./release\moc_CGameDlg_2.o
 ./release\moc_CGameDlg_3.o
 ./release\moc_mainwindow.o
+./release\moc_CTimeup.o
 );
